@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - PrimeTransit</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-dark': '#000000',
+                        'accent': '#FFD700',
+                        'secondary': '#000000',
+                        orange: {
+                            50: '#fffbe6',
+                            100: '#fff4b5',
+                            200: '#ffe978',
+                            300: '#ffde3d',
+                            400: '#FFD700',
+                            500: '#000000',
+                            600: '#000000',
+                            700: '#000000',
+                            800: '#000000',
+                            900: '#000000',
+                            950: '#000000'
+                        },
+                        'bg-light': '#F8FAFC',
+                        'card': '#FFFFFF',
+                        'primary': '#111827',
+                        'text-secondary': '#6B7280',
+                        'border': '#E5E7EB'
+                    }
+                }
+            }
+        };
+    </script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-bg-light">
+    <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-500">
+        <div id="site-topbar" class="relative z-20 h-10 bg-gradient-to-r from-white/70 via-orange-50/70 to-orange-300/70 backdrop-blur-md border-b border-orange-200/60">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center justify-between text-[10px] sm:text-xs text-slate-800">
+                <div class="flex items-center gap-2 sm:gap-5">
+                    <a href="tel:+14073414310" class="hidden sm:inline-flex items-center gap-1.5 hover:text-accent transition-colors"><i class="ri-phone-line text-[10px]"></i><span>+1-4073414310</span></a>
+                    <a href="mailto:support@luxuryfleetservices.com" class="inline-flex items-center gap-1.5 hover:text-accent transition-colors"><i class="ri-mail-line text-[10px]"></i><span class="max-w-[130px] sm:max-w-none truncate">support@luxuryfleetservices.com</span></a>
+                </div>
+                <div class="flex items-center gap-2">
+                    <a href="#" aria-label="Facebook" class="w-6 h-6 rounded-full bg-orange-100 hover:bg-accent hover:text-white flex items-center justify-center transition-colors"><i class="ri-facebook-fill text-[10px]"></i></a>
+                    <a href="#" aria-label="Instagram" class="w-6 h-6 rounded-full bg-orange-100 hover:bg-accent hover:text-white flex items-center justify-center transition-colors"><i class="ri-instagram-line text-[10px]"></i></a>
+                    <a href="#" aria-label="X" class="w-6 h-6 rounded-full bg-orange-100 hover:bg-accent hover:text-white flex items-center justify-center transition-colors"><i class="ri-twitter-x-line text-[10px]"></i></a>
+                    <a href="#" aria-label="YouTube" class="w-6 h-6 rounded-full bg-orange-100 hover:bg-accent hover:text-white flex items-center justify-center transition-colors"><i class="ri-youtube-fill text-[10px]"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-r from-orange-300/45 via-orange-50/45 to-white/45 backdrop-blur-xl border-b border-orange-200/40"></div>
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="index.html" class="flex items-center space-x-3 group">
+                    <div class="relative">
+                        <img src="images/logo.png" alt="Luxury Fleet Services logo" class="w-10 h-10 object-contain drop-shadow-md transition-transform group-hover:scale-105">
+                    </div>
+                    <div>
+                        <span class="text-xl font-extrabold bg-gradient-to-r from-primary-dark to-primary bg-clip-text text-transparent">PrimeTransit</span>
+                        <div class="text-xs font-semibold -mt-1 bg-gradient-to-r from-[#FFD700] via-[#C9A227] to-black bg-clip-text text-transparent">Luxury Fleet Services</div>
+                    </div>
+                </a>
+                <div class="hidden lg:flex items-center space-x-1">
+                    <a href="index.html" class="nav-link px-4 py-1.5 rounded-xl font-semibold text-sm transition-all"><i class="ri-home-5-line mr-2"></i>Home</a>
+                    <div class="relative services-nav-group">
+                        <a href="service.html" class="nav-link active px-4 py-1.5 rounded-xl font-semibold text-sm transition-all inline-flex items-center"><i class="ri-service-line mr-2"></i>Services <i class="ri-arrow-down-s-line ml-2 text-[10px]"></i></a>
+                        <div class="services-mega-dropdown">
+    <div class="services-dropdown-cover">
+        <img src="images/6.jpg" alt="Transportation service menu" loading="lazy">
+    </div>
+    <div class="services-mega-grid">
+        <a href="service.html#detail-airport-pickup-drop" class="services-mega-link">Orlando Airport Transportation</a>
+        <a href="service.html#detail-with-driver-car" class="services-mega-link">Walt Disney World Transportation</a>
+        <a href="service.html#detail-family-car-options" class="services-mega-link">Universal Orlando Transportation</a>
+        <a href="service.html#detail-daily-car-rental" class="services-mega-link">Port Canaveral Cruise Transportation</a>
+        <a href="service.html#detail-corporate-rentals" class="services-mega-link">Corporate Transportation</a>
+    </div>
+</div>
+                    </div>
+                    <a href="car-listing.html" class="nav-link px-4 py-1.5 rounded-xl font-semibold text-sm transition-all"><i class="ri-car-line mr-2"></i>Cars</a>
+                    <a href="about.html" class="nav-link px-4 py-1.5 rounded-xl font-semibold text-sm transition-all"><i class="ri-information-line mr-2"></i>About</a>
+                    <a href="contact.html" class="nav-link px-4 py-1.5 rounded-xl font-semibold text-sm transition-all"><i class="ri-phone-line mr-2"></i>Contact</a>
+                </div>
+                <div class="hidden lg:flex items-center space-x-3">
+                    <a href="contact.html#enquiry-form" class="btn-primary px-6 py-2 text-white rounded-xl font-bold">Enquiry Form</a>
+                </div>
+                <div class="lg:hidden flex items-center gap-2">
+                    <a href="contact.html#enquiry-form" aria-label="Enquiry" class="inline-flex items-center px-3 h-9 rounded-lg btn-primary text-white text-xs font-bold shadow-sm"><i class="ri-mail-line mr-1.5 text-[11px]"></i>Enquiry</a>
+                    <a href="tel:+14073414310" aria-label="Call" class="w-9 h-9 flex items-center justify-center rounded-lg bg-white/75 backdrop-blur-sm border border-white/70 text-primary-dark hover:bg-accent hover:text-white transition-all shadow-sm"><i class="ri-phone-line text-sm"></i></a>
+                    <button id="mobile-menu-btn" class="w-9 h-9 flex items-center justify-center rounded-xl hover:bg-bg-light text-primary-dark transition-all"><i class="ri-menu-line text-xl"></i></button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="lg:hidden absolute top-full left-0 right-0 bg-white border-b border-border shadow-xl transform -translate-y-full opacity-0 invisible transition-all duration-300">
+            <div class="px-4 py-6 space-y-2">
+                <a href="index.html" class="flex items-center px-4 py-3 rounded-xl font-medium text-text-secondary hover:bg-bg-light hover:text-accent transition"><i class="ri-home-5-line mr-3"></i>Home</a>
+                <a href="service.html" class="flex items-center px-4 py-3 rounded-xl font-semibold text-primary-dark bg-bg-light"><i class="ri-service-line mr-3 text-accent"></i>Services</a>
+                <a href="car-listing.html" class="flex items-center px-4 py-3 rounded-xl font-medium text-text-secondary hover:bg-bg-light hover:text-accent transition"><i class="ri-car-line mr-3"></i>Cars</a>
+                <a href="about.html" class="flex items-center px-4 py-3 rounded-xl font-medium text-text-secondary hover:bg-bg-light hover:text-accent transition"><i class="ri-information-line mr-3"></i>About</a>
+                <a href="contact.html" class="flex items-center px-4 py-3 rounded-xl font-medium text-text-secondary hover:bg-bg-light hover:text-accent transition"><i class="ri-phone-line mr-3"></i>Contact</a>
+                <div class="pt-4 border-t border-border">
+                    <a href="contact.html#enquiry-form" class="w-full inline-flex items-center justify-center px-4 py-3 btn-primary text-white rounded-xl font-bold"><i class="ri-mail-line mr-2"></i>Enquiry Form</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="pt-[104px] h-[420px] relative overflow-hidden">
+        <img src="images/5.jpg" alt="Transportation service hero" class="absolute inset-0 w-full h-full object-cover">
+        <div class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/55 to-black/55"></div>
+        <div class="relative h-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center">
+            <div class="max-w-2xl text-white">
+                <h1 class="text-4xl md:text-5xl font-extrabold">Our Transportation Services</h1>
+                <p class="mt-3 text-slate-200 text-lg">Flexible plans for city rides, outstation trips, airport transfer, and premium events.</p>
+                <a href="car-listing.html" class="mt-7 inline-flex items-center px-7 py-3 rounded-xl btn-primary text-white font-bold">View Available Fleet <i class="ri-arrow-right-line ml-2 text-xs"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-extrabold text-primary-dark">Transportation Service Plans</h2>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
+                <article class="rounded-2xl border border-border bg-card p-7 shadow-sm">
+                    <h3 class="text-2xl font-bold text-primary-dark">Hourly</h3>
+                    <p class="mt-3 text-4xl font-extrabold text-primary-dark">Rs. 499<span class="text-base text-text-secondary">/hr</span></p>
+                    <ul class="mt-5 space-y-2 text-sm text-text-secondary">
+                        <li><i class="ri-check-line text-accent mr-2"></i>Ideal for city ride</li>
+                        <li><i class="ri-check-line text-accent mr-2"></i>20 km included</li>
+                        <li><i class="ri-check-line text-accent mr-2"></i>Fuel as per plan</li>
+                    </ul>
+                    <a href="contact.html#enquiry-form" class="mt-6 inline-flex w-full items-center justify-center rounded-xl border border-border px-4 py-3 font-semibold text-primary-dark hover:bg-bg-light transition">Book Plan</a>
+                </article>
+
+                <article class="relative rounded-2xl border-2 border-accent bg-card p-7 shadow-xl">
+                    <span class="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-accent px-4 py-1 text-xs font-bold text-white">Most Popular</span>
+                    <h3 class="text-2xl font-bold text-primary-dark">Daily</h3>
+                    <p class="mt-3 text-4xl font-extrabold text-primary-dark">Rs. 2499<span class="text-base text-text-secondary">/day</span></p>
+                    <ul class="mt-5 space-y-2 text-sm text-text-secondary">
+                        <li><i class="ri-check-line text-accent mr-2"></i>Best for regular use</li>
+                        <li><i class="ri-check-line text-accent mr-2"></i>250 km included</li>
+                        <li><i class="ri-check-line text-accent mr-2"></i>Flexible fuel policy</li>
+                    </ul>
+                    <a href="contact.html#enquiry-form" class="mt-6 inline-flex w-full items-center justify-center rounded-xl bg-accent px-4 py-3 font-semibold text-white hover:bg-orange-500 transition">Book Plan</a>
+                </article>
+
+                <article class="rounded-2xl border border-border bg-card p-7 shadow-sm">
+                    <h3 class="text-2xl font-bold text-primary-dark">Weekly</h3>
+                    <p class="mt-3 text-4xl font-extrabold text-primary-dark">Rs. 13999<span class="text-base text-text-secondary">/week</span></p>
+                    <ul class="mt-5 space-y-2 text-sm text-text-secondary">
+                        <li><i class="ri-check-line text-accent mr-2"></i>Discounted package</li>
+                        <li><i class="ri-check-line text-accent mr-2"></i>1800 km included</li>
+                        <li><i class="ri-check-line text-accent mr-2"></i>Fuel policy support</li>
+                    </ul>
+                    <a href="contact.html#enquiry-form" class="mt-6 inline-flex w-full items-center justify-center rounded-xl border border-border px-4 py-3 font-semibold text-primary-dark hover:bg-bg-light transition">Book Plan</a>
+                </article>
+
+                <article class="rounded-2xl border border-border bg-card p-7 shadow-sm">
+                    <h3 class="text-2xl font-bold text-primary-dark">Monthly</h3>
+                    <p class="mt-3 text-4xl font-extrabold text-primary-dark">Rs. 45999<span class="text-base text-text-secondary">/month</span></p>
+                    <ul class="mt-5 space-y-2 text-sm text-text-secondary">
+                        <li><i class="ri-check-line text-accent mr-2"></i>Best for long-term transportation plans</li>
+                        <li><i class="ri-check-line text-accent mr-2"></i>7500 km included</li>
+                        <li><i class="ri-check-line text-accent mr-2"></i>Priority maintenance support</li>
+                    </ul>
+                    <a href="contact.html#enquiry-form" class="mt-6 inline-flex w-full items-center justify-center rounded-xl border border-border px-4 py-3 font-semibold text-primary-dark hover:bg-bg-light transition">Book Plan</a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 bg-bg-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-8">
+                <span class="route-rate-pill">Route Rate Packages</span>
+            </div>
+
+            <div class="route-rate-card">
+                <div class="route-rate-head">
+                    <h2><i class="ri-map-pin-2-line"></i>Orlando International Airport To Hotels &amp; Resorts</h2>
+                </div>
+
+                <div class="route-rate-table-wrap">
+                    <table class="route-rate-table">
+                        <thead>
+                            <tr>
+                                <th>To</th>
+                                <th>One Way</th>
+                                <th>Round Trip</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>All WDW Disney Property Resorts</td>
+                                <td>
+                                    <div class="route-rate-price-wrap">
+                                        <strong>$95</strong>
+                                        <a href="contact.html#enquiry-form">Book Now</a>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="route-rate-price-wrap">
+                                        <strong>$185</strong>
+                                        <a href="contact.html#enquiry-form">Book Now</a>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Universal Studios Area Hotels</td>
+                                <td>
+                                    <div class="route-rate-price-wrap">
+                                        <strong>$95</strong>
+                                        <a href="contact.html#enquiry-form">Book Now</a>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="route-rate-price-wrap">
+                                        <strong>$185</strong>
+                                        <a href="contact.html#enquiry-form">Book Now</a>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>International Drive Hotels</td>
+                                <td>
+                                    <div class="route-rate-price-wrap">
+                                        <strong>$95</strong>
+                                        <a href="contact.html#enquiry-form">Book Now</a>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="route-rate-price-wrap">
+                                        <strong>$185</strong>
+                                        <a href="contact.html#enquiry-form">Book Now</a>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Disney Springs Hotels</td>
+                                <td>
+                                    <div class="route-rate-price-wrap">
+                                        <strong>$95</strong>
+                                        <a href="contact.html#enquiry-form">Book Now</a>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="route-rate-price-wrap">
+                                        <strong>$185</strong>
+                                        <a href="contact.html#enquiry-form">Book Now</a>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Kissimmee I92 Area Hotels</td>
+                                <td>
+                                    <div class="route-rate-price-wrap">
+                                        <strong>$105</strong>
+                                        <a href="contact.html#enquiry-form">Book Now</a>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="route-rate-price-wrap">
+                                        <strong>$205</strong>
+                                        <a href="contact.html#enquiry-form">Book Now</a>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Omni Championsgate / Reunion</td>
+                                <td>
+                                    <div class="route-rate-price-wrap">
+                                        <strong>$125</strong>
+                                        <a href="contact.html#enquiry-form">Book Now</a>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="route-rate-price-wrap">
+                                        <strong>$245</strong>
+                                        <a href="contact.html#enquiry-form">Book Now</a>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-gradient-to-br from-primary-dark via-primary to-[#0B1220] text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold tracking-wide uppercase bg-accent/20 border border-accent/40 text-accent">Trusted Transportation Services</span>
+                <h2 class="mt-4 text-4xl font-extrabold">Why Choose Us</h2>
+                <p class="mt-3 text-slate-300 max-w-3xl mx-auto">Primary service quality with secondary accent highlights for transparency, support, and dependable mobility.</p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6">
+                <article class="rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm shadow-lg">
+                    <div class="w-12 h-12 rounded-xl bg-accent text-white flex items-center justify-center"><i class="ri-headphone-line"></i></div>
+                    <h3 class="mt-4 text-xl font-bold">24/7 Road Assistance</h3>
+                    <p class="mt-2 text-slate-300">Dedicated support team for immediate help on route.</p>
+                </article>
+                <article class="rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm shadow-lg">
+                    <div class="w-12 h-12 rounded-xl bg-accent text-white flex items-center justify-center"><i class="ri-file-list-3-line"></i></div>
+                    <h3 class="mt-4 text-xl font-bold">No Hidden Charges</h3>
+                    <p class="mt-2 text-slate-300">Clear, transparent pricing with upfront package details.</p>
+                </article>
+                <article class="rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm shadow-lg">
+                    <div class="w-12 h-12 rounded-xl bg-accent text-white flex items-center justify-center"><i class="ri-roadster-line"></i></div>
+                    <h3 class="mt-4 text-xl font-bold">Professionally Maintained Vehicles</h3>
+                    <p class="mt-2 text-slate-300">Every vehicle goes through strict quality and cleanliness checks.</p>
+                </article>
+                <article class="rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm shadow-lg">
+                    <div class="w-12 h-12 rounded-xl bg-accent text-white flex items-center justify-center"><i class="ri-flashlight-line"></i></div>
+                    <h3 class="mt-4 text-xl font-bold">Instant Booking Confirmation</h3>
+                    <p class="mt-2 text-slate-300">Fast confirmation flow for urgent and planned trips.</p>
+                </article>
+            </div>
+            <div class="mt-10 grid grid-cols-2 lg:grid-cols-4 gap-4">
+                <div class="rounded-2xl border border-white/15 bg-white/10 p-4 text-center"><p class="text-3xl font-extrabold text-accent">5,000+</p><p class="text-sm text-slate-300">Happy Customers</p></div>
+                <div class="rounded-2xl border border-white/15 bg-white/10 p-4 text-center"><p class="text-3xl font-extrabold text-accent">120+</p><p class="text-sm text-slate-300">Fleet</p></div>
+                <div class="rounded-2xl border border-white/15 bg-white/10 p-4 text-center"><p class="text-3xl font-extrabold text-accent">24/7</p><p class="text-sm text-slate-300">Booking Support</p></div>
+                <div class="rounded-2xl border border-white/15 bg-white/10 p-4 text-center"><p class="text-3xl font-extrabold text-accent">4.9</p><p class="text-sm text-slate-300">Rating</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-14 min-h-[220px] bg-[#F8FAFC]">
+        <div class="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-primary-dark">Availability / Service Hours</h2>
+                <p class="mt-3 text-text-secondary">Get instant clarity on pickup timing and support availability.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-5 justify-items-center">
+                <article class="w-full max-w-[260px] h-[120px] rounded-[11px_50px_11px_50px] bg-white border border-accent/25 shadow-sm px-4 flex flex-col items-center justify-center text-center gap-2.5">
+                    <div class="w-11 h-11 rounded-full bg-primary-dark text-white flex items-center justify-center">
+                        <i class="ri-time-line text-sm"></i>
+                    </div>
+                    <h3 class="text-sm font-bold text-primary-dark">Operating Hours</h3>
+                    <p class="text-xs text-text-secondary">Pickup available from 7:00 AM - 10:00 PM</p>
+                </article>
+
+                <article class="w-full max-w-[260px] h-[120px] rounded-[11px_50px_11px_50px] bg-white border border-accent/25 shadow-sm px-4 flex flex-col items-center justify-center text-center gap-2.5">
+                    <div class="w-11 h-11 rounded-full bg-primary-dark text-white flex items-center justify-center">
+                        <i class="ri-headphone-line text-sm"></i>
+                    </div>
+                    <h3 class="text-sm font-bold text-primary-dark">24/7 Customer Support</h3>
+                    <p class="text-xs text-text-secondary">Our team is always available to assist you anytime.</p>
+                </article>
+
+                <article class="w-full max-w-[260px] h-[120px] rounded-[11px_50px_11px_50px] bg-white border border-accent/25 shadow-sm px-4 flex flex-col items-center justify-center text-center gap-2.5">
+                    <div class="w-11 h-11 rounded-full bg-primary-dark text-white flex items-center justify-center">
+                        <i class="ri-flashlight-line text-sm"></i>
+                    </div>
+                    <h3 class="text-sm font-bold text-primary-dark">Instant Online Booking</h3>
+                    <p class="text-xs text-text-secondary">Reserve your vehicle in less than 2 minutes.</p>
+                </article>
+
+                <article class="w-full max-w-[260px] h-[120px] rounded-[11px_50px_11px_50px] bg-white border border-accent/25 shadow-sm px-4 flex flex-col items-center justify-center text-center gap-2.5">
+                    <div class="w-11 h-11 rounded-full bg-primary-dark text-white flex items-center justify-center">
+                        <i class="ri-roadster-line text-sm"></i>
+                    </div>
+                    <h3 class="text-sm font-bold text-primary-dark">Same Day Availability</h3>
+                    <p class="text-xs text-text-secondary">Book today and travel today (subject to availability).</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-gradient-to-b from-white to-orange-50/35">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="rounded-3xl overflow-hidden border border-border bg-white shadow-xl">
+                <div class="grid grid-cols-1 lg:grid-cols-12">
+                    <div class="lg:col-span-4 bg-primary-dark text-white p-8 md:p-10">
+                        <p class="inline-flex items-center px-3 py-1.5 rounded-full bg-white/10 border border-white/20 text-xs font-semibold tracking-[0.2em] uppercase text-orange-200">
+                            Premium Local Service
+                        </p>
+                        <h2 class="mt-5 text-3xl md:text-4xl font-extrabold leading-tight">Orlando Car Services</h2>
+                        <p class="mt-4 text-slate-200 leading-relaxed">
+                            We Specialize In Tailored Transportation Services For Every Orlando Adventure
+                        </p>
+                    </div>
+                    <div class="lg:col-span-8 p-8 md:p-10 bg-gradient-to-br from-white to-orange-50/40">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <article class="rounded-2xl border border-border bg-white p-5 shadow-sm">
+                                <h3 class="text-lg font-bold text-primary-dark">Theme Park Transportation</h3>
+                                <p class="mt-2 text-sm font-semibold text-primary-dark">Ride to Orlando's theme parks in style.</p>
+                                <p class="mt-2 text-sm text-text-secondary">Enter a world of enchantment without the hassle of parking or navigation. Our Theme Park Transportation service is your golden ticket to/from the wonders of Disney, the thrills of Universal, and all of Orlando's magical attractions. Choose comfort and convenience for your fairy-tale adventure.</p>
+                            </article>
+                            <article class="rounded-2xl border border-border bg-white p-5 shadow-sm">
+                                <h3 class="text-lg font-bold text-primary-dark">Cruise Port Transportation</h3>
+                                <p class="mt-2 text-sm font-semibold text-primary-dark">Set sail smoothly with seamless Cruise Port transfers.</p>
+                                <p class="mt-2 text-sm text-text-secondary">Begin your oceanic journey with the serenity it deserves. Our Cruise Port Transportation offers timely and sophisticated travel to/from Port Canaveral. Board your cruise with ease, thanks to our punctual, professional service that ensures you're ocean-bound without a worry.</p>
+                            </article>
+                            <article class="rounded-2xl border border-border bg-white p-5 shadow-sm">
+                                <h3 class="text-lg font-bold text-primary-dark">Hotel Transportation</h3>
+                                <p class="mt-2 text-sm font-semibold text-primary-dark">Hotel transfers that extend the luxury of your stay.</p>
+                                <p class="mt-2 text-sm text-text-secondary">Your comfort should start before check-in and extend beyond check-out. Our Hotel Transportation service provides plush rides to and from your accommodation. Whether it's a family suite or a business room, we make every transfer part of your premium Orlando experience.</p>
+                            </article>
+                            <article class="rounded-2xl border border-border bg-white p-5 shadow-sm">
+                                <h3 class="text-lg font-bold text-primary-dark">Corporate &amp; Convention Transportation</h3>
+                                <p class="mt-2 text-sm font-semibold text-primary-dark">Professional convention transfers - Arrive prepared and focused.</p>
+                                <p class="mt-2 text-sm text-text-secondary">Make a professional impression as you arrive at your convention. Our dedicated Corporate &amp; Convention Transportation caters to individuals and groups with punctual, discreet service. Network, prepare, or relax on the way to your event with the confidence.</p>
+                            </article>
+                            <article class="rounded-2xl border border-border bg-white p-5 shadow-sm">
+                                <h3 class="text-lg font-bold text-primary-dark">Nightlife Transportation</h3>
+                                <p class="mt-2 text-sm font-semibold text-primary-dark">Discover Orlando’s vibrant nightlife with a personal chauffeur.</p>
+                                <p class="mt-2 text-sm text-text-secondary">Experience the pulse of Orlando’s nightlife without the hassle of parking or the need for a designated driver. Our Nightlife Transportation service is your ticket to the city's hottest spots, offering a safe, stylish, and convenient way to enjoy your evening to the fullest.</p>
+                            </article>
+                            <article class="rounded-2xl border border-border bg-white p-5 shadow-sm">
+                                <h3 class="text-lg font-bold text-primary-dark">Airport Transportation</h3>
+                                <p class="mt-2 text-sm font-semibold text-primary-dark">Airport Transfers That Set the Standard for Comfort and Reliability</p>
+                                <p class="mt-2 text-sm text-text-secondary">Start and end your travels on a high note with our Airport Transportation service. We offer punctual, comfortable transfers to and from Orlando Airport (MCO), ensuring a stress-free transition from air to road. Trust us to uphold the punctuality and peace of mind that your itinerary demands.</p>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-14">
+                <h2 class="text-4xl font-extrabold text-primary-dark">Explore Service Details</h2>
+                <p class="mt-3 text-text-secondary max-w-3xl mx-auto">Select from our transportation lineup. Every service is designed for comfort, punctuality, and instant support.</p>
+                <div class="mt-5 flex justify-center">
+                    <button id="show-all-services" type="button" class="hidden inline-flex items-center px-4 py-2 rounded-lg border border-primary-dark/15 bg-white text-primary-dark font-semibold hover:bg-bg-light transition">
+                        <i class="ri-layout-grid-line mr-2 text-sm"></i>Show All Services
+                    </button>
+                </div>
+            </div>
+
+            <div class="space-y-8">
+                <article id="detail-with-driver-car" class="scroll-mt-28 rounded-3xl border border-border bg-card shadow-sm overflow-hidden">
+                    <div id="service-with-driver" class="scroll-mt-28"></div>
+                    <div class="grid grid-cols-1 lg:grid-cols-2">
+                        <div class="lg:order-2"><img src="images/2.jpg" alt="Walt Disney World transportation" class="w-full h-[280px] lg:h-full object-cover"></div>
+                        <div class="p-8 lg:p-10 lg:order-1">
+                            <h3 class="text-2xl font-extrabold text-primary-dark">Walt Disney World Transportation</h3>
+                            <p class="mt-3 text-text-secondary">Professional chauffeurs for city meetings, family outings, and stress-free travel without navigation hassle.</p>
+                            <ul class="mt-4 space-y-2 text-sm text-text-secondary"><li><i class="ri-check-line text-accent mr-2"></i>Trained verified drivers</li><li><i class="ri-check-line text-accent mr-2"></i>Comfort-first experience</li></ul>
+                            <div class="mt-6 flex flex-wrap gap-3">
+                                <a href="car-listing.html" class="inline-flex items-center px-5 py-2.5 rounded-xl bg-primary-dark text-white font-bold hover:bg-slate-800 transition">Explore <i class="ri-arrow-right-line ml-2 text-xs"></i></a>
+                                <a href="contact.html#enquiry-form" class="inline-flex items-center px-5 py-2.5 rounded-xl bg-accent text-white font-bold hover:bg-orange-500 transition"><i class="ri-mail-line mr-2 text-xs"></i>Enquiry</a>
+                                <a href="tel:+14073414310" class="inline-flex items-center px-5 py-2.5 rounded-xl border border-primary-dark/20 text-primary-dark font-bold hover:bg-primary-dark hover:text-white transition"><i class="ri-phone-fill mr-2 text-xs"></i>Call Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article id="detail-family-car-options" class="scroll-mt-28 rounded-3xl border border-border bg-card shadow-sm overflow-hidden">
+                    <div id="service-family-car" class="scroll-mt-28"></div>
+                    <div class="grid grid-cols-1 lg:grid-cols-2">
+                        <div><img src="images/4.jpg" alt="Universal Orlando transportation" class="w-full h-[280px] lg:h-full object-cover"></div>
+                        <div class="p-8 lg:p-10">
+                            <h3 class="text-2xl font-extrabold text-primary-dark">Universal Orlando Transportation</h3>
+                            <p class="mt-3 text-text-secondary">Reliable rides to Universal parks, hotels, and nearby attractions with clean vehicles and professional chauffeurs.</p>
+                            <ul class="mt-4 space-y-2 text-sm text-text-secondary"><li><i class="ri-check-line text-accent mr-2"></i>Flexible park pickup points</li><li><i class="ri-check-line text-accent mr-2"></i>Family and group vehicle options</li></ul>
+                            <div class="mt-6 flex flex-wrap gap-3">
+                                <a href="car-listing.html" class="inline-flex items-center px-5 py-2.5 rounded-xl bg-primary-dark text-white font-bold hover:bg-slate-800 transition">Explore <i class="ri-arrow-right-line ml-2 text-xs"></i></a>
+                                <a href="contact.html#enquiry-form" class="inline-flex items-center px-5 py-2.5 rounded-xl bg-accent text-white font-bold hover:bg-orange-500 transition"><i class="ri-mail-line mr-2 text-xs"></i>Enquiry</a>
+                                <a href="tel:+14073414310" class="inline-flex items-center px-5 py-2.5 rounded-xl border border-primary-dark/20 text-primary-dark font-bold hover:bg-primary-dark hover:text-white transition"><i class="ri-phone-fill mr-2 text-xs"></i>Call Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article id="detail-daily-car-rental" class="scroll-mt-28 rounded-3xl border border-border bg-card shadow-sm overflow-hidden">
+                    <div class="grid grid-cols-1 lg:grid-cols-2">
+                        <div class="lg:order-2"><img src="images/3.jpg" alt="Daily transportation service" class="w-full h-[280px] lg:h-full object-cover"></div>
+                        <div class="p-8 lg:p-10 lg:order-1">
+                            <h3 class="text-2xl font-extrabold text-primary-dark">Port Canaveral Cruise Transportation</h3>
+                            <p class="mt-3 text-text-secondary">Dedicated cruise-port transportation with punctual pickup, baggage support, and direct transfer service.</p>
+                            <ul class="mt-4 space-y-2 text-sm text-text-secondary"><li><i class="ri-check-line text-accent mr-2"></i>Cost-effective daily packages</li><li><i class="ri-check-line text-accent mr-2"></i>Multiple vehicle categories</li></ul>
+                            <div class="mt-6 flex flex-wrap gap-3">
+                                <a href="car-listing.html" class="inline-flex items-center px-5 py-2.5 rounded-xl bg-primary-dark text-white font-bold hover:bg-slate-800 transition">Explore <i class="ri-arrow-right-line ml-2 text-xs"></i></a>
+                                <a href="contact.html#enquiry-form" class="inline-flex items-center px-5 py-2.5 rounded-xl bg-accent text-white font-bold hover:bg-orange-500 transition"><i class="ri-mail-line mr-2 text-xs"></i>Enquiry</a>
+                                <a href="tel:+14073414310" class="inline-flex items-center px-5 py-2.5 rounded-xl border border-primary-dark/20 text-primary-dark font-bold hover:bg-primary-dark hover:text-white transition"><i class="ri-phone-fill mr-2 text-xs"></i>Call Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article id="detail-airport-pickup-drop" class="scroll-mt-28 rounded-3xl border border-border bg-card shadow-sm overflow-hidden">
+                    <div id="service-airport-transfer" class="scroll-mt-28"></div>
+                    <div class="grid grid-cols-1 lg:grid-cols-2">
+                        <div><img src="images/9.jpg" alt="Airport pickup and drop" class="w-full h-[280px] lg:h-full object-cover"></div>
+                        <div class="p-8 lg:p-10">
+                            <h3 class="text-2xl font-extrabold text-primary-dark">Orlando Airport Transportation</h3>
+                            <p class="mt-3 text-text-secondary">Reliable transfers with schedule tracking and quick turnaround for domestic and international terminals.</p>
+                            <ul class="mt-4 space-y-2 text-sm text-text-secondary"><li><i class="ri-check-line text-accent mr-2"></i>Flight-aware dispatch</li><li><i class="ri-check-line text-accent mr-2"></i>Professional driver support</li></ul>
+                            <div class="mt-6 flex flex-wrap gap-3">
+                                <a href="car-listing.html" class="inline-flex items-center px-5 py-2.5 rounded-xl bg-primary-dark text-white font-bold hover:bg-slate-800 transition">Explore <i class="ri-arrow-right-line ml-2 text-xs"></i></a>
+                                <a href="contact.html#enquiry-form" class="inline-flex items-center px-5 py-2.5 rounded-xl bg-accent text-white font-bold hover:bg-orange-500 transition"><i class="ri-mail-line mr-2 text-xs"></i>Enquiry</a>
+                                <a href="tel:+14073414310" class="inline-flex items-center px-5 py-2.5 rounded-xl border border-primary-dark/20 text-primary-dark font-bold hover:bg-primary-dark hover:text-white transition"><i class="ri-phone-fill mr-2 text-xs"></i>Call Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article id="detail-corporate-rentals" class="scroll-mt-28 rounded-3xl border border-border bg-card shadow-sm overflow-hidden">
+                    <div class="grid grid-cols-1 lg:grid-cols-2">
+                        <div class="lg:order-2"><img src="images/4.jpg" alt="Corporate transportation" class="w-full h-[280px] lg:h-full object-cover"></div>
+                        <div class="p-8 lg:p-10 lg:order-1">
+                            <h3 class="text-2xl font-extrabold text-primary-dark">Corporate Transportation</h3>
+                            <p class="mt-3 text-text-secondary">Dedicated mobility for teams, guests, site visits, and executive movement with invoice-ready billing.</p>
+                            <ul class="mt-4 space-y-2 text-sm text-text-secondary"><li><i class="ri-check-line text-accent mr-2"></i>Monthly billing support</li><li><i class="ri-check-line text-accent mr-2"></i>Priority booking assistance</li></ul>
+                            <div class="mt-6 flex flex-wrap gap-3">
+                                <a href="car-listing.html" class="inline-flex items-center px-5 py-2.5 rounded-xl bg-primary-dark text-white font-bold hover:bg-slate-800 transition">Explore <i class="ri-arrow-right-line ml-2 text-xs"></i></a>
+                                <a href="contact.html#enquiry-form" class="inline-flex items-center px-5 py-2.5 rounded-xl bg-accent text-white font-bold hover:bg-orange-500 transition"><i class="ri-mail-line mr-2 text-xs"></i>Enquiry</a>
+                                <a href="tel:+14073414310" class="inline-flex items-center px-5 py-2.5 rounded-xl border border-primary-dark/20 text-primary-dark font-bold hover:bg-primary-dark hover:text-white transition"><i class="ri-phone-fill mr-2 text-xs"></i>Call Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+            <div>
+                <img src="images/9.jpg" alt="Safety and insurance" class="w-full rounded-3xl shadow-lg object-cover h-[360px]">
+            </div>
+            <div>
+                <h2 class="text-4xl font-extrabold text-primary-dark">Safety & Insurance</h2>
+                <ul class="mt-6 space-y-3 text-text-secondary">
+                    <li><i class="ri-checkbox-circle-line text-accent mr-2"></i>Sanitized vehicles before every trip</li>
+                    <li><i class="ri-checkbox-circle-line text-accent mr-2"></i>Verified and trained drivers</li>
+                    <li><i class="ri-checkbox-circle-line text-accent mr-2"></i>Insurance coverage across packages</li>
+                    <li><i class="ri-checkbox-circle-line text-accent mr-2"></i>Emergency support and escalation line</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 min-h-[360px] bg-bg-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-extrabold text-primary-dark">Service Process</h2>
+                <p class="mt-3 text-text-secondary max-w-3xl mx-auto">A clear 5-step flow from choosing a service to starting your trip.</p>
+            </div>
+
+            <div class="relative max-w-[1100px] mx-auto">
+                <div class="hidden lg:block absolute top-6 left-1/2 -translate-x-1/2 w-[900px] h-[2px] bg-border"></div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
+                    <article class="relative text-center">
+                        <div class="w-12 h-12 rounded-full bg-primary-dark text-white mx-auto flex items-center justify-center text-base font-bold">01</div>
+                        <h3 class="mt-4 text-lg font-bold text-primary-dark">Choose Service Type</h3>
+                        <p class="mt-2 text-sm text-text-secondary">Select the transportation service that fits your travel needs.</p>
+                    </article>
+
+                    <article class="relative text-center">
+                        <div class="w-12 h-12 rounded-full bg-primary-dark text-white mx-auto flex items-center justify-center text-base font-bold">02</div>
+                        <h3 class="mt-4 text-lg font-bold text-primary-dark">Select Pickup Date</h3>
+                        <p class="mt-2 text-sm text-text-secondary">Pick convenient date and location.</p>
+                    </article>
+
+                    <article class="relative text-center">
+                        <div class="w-12 h-12 rounded-full bg-primary-dark text-white mx-auto flex items-center justify-center text-base font-bold">03</div>
+                        <h3 class="mt-4 text-lg font-bold text-primary-dark">Share Trip Details</h3>
+                        <p class="mt-2 text-sm text-text-secondary">Share pickup, destination, passenger count, and timing securely.</p>
+                    </article>
+
+                    <article class="relative text-center">
+                        <div class="w-12 h-12 rounded-full bg-primary-dark text-white mx-auto flex items-center justify-center text-base font-bold">04</div>
+                        <h3 class="mt-4 text-lg font-bold text-primary-dark">Confirm Booking</h3>
+                        <p class="mt-2 text-sm text-text-secondary">Instant confirmation via email and WhatsApp.</p>
+                    </article>
+
+                    <article class="relative text-center">
+                        <div class="w-12 h-12 rounded-full bg-primary-dark text-white mx-auto flex items-center justify-center text-base font-bold">05</div>
+                        <h3 class="mt-4 text-lg font-bold text-primary-dark">Start Your Trip</h3>
+                        <p class="mt-2 text-sm text-text-secondary">Meet your driver and begin your journey comfortably.</p>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-bg-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="relative overflow-hidden rounded-3xl border border-border bg-white shadow-xl">
+                <div class="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-accent/20 blur-3xl pointer-events-none"></div>
+                <div class="grid grid-cols-1 lg:grid-cols-2">
+                    <div class="relative bg-primary-dark text-white p-8 md:p-10 lg:p-12">
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wide bg-white/10 border border-white/20 text-accent">Quality Promise</span>
+                        <h2 class="mt-4 text-3xl md:text-4xl font-extrabold">Our Vehicle Quality Promise</h2>
+                        <p class="mt-4 text-slate-300 max-w-xl">
+                            Every vehicle undergoes regular inspection and cleaning before delivery to ensure a smooth and safe driving experience.
+                        </p>
+                        <div class="mt-6 space-y-3 text-sm text-slate-200">
+                            <p class="flex items-start"><i class="ri-checkbox-circle-line text-accent mt-0.5 mr-2"></i><span>Multi-point checks before every handover</span></p>
+                            <p class="flex items-start"><i class="ri-checkbox-circle-line text-accent mt-0.5 mr-2"></i><span>Prepared for city, highway, and long-distance trips</span></p>
+                        </div>
+                    </div>
+
+                    <div class="relative p-6 md:p-8 lg:p-10">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <article class="rounded-2xl border border-accent/35 bg-bg-light p-5 min-h-[148px]">
+                                <div class="w-10 h-10 rounded-full bg-primary-dark text-white flex items-center justify-center mb-3">
+                                    <i class="ri-tools-line text-sm"></i>
+                                </div>
+                                <h3 class="text-lg font-bold text-primary-dark">Regular Servicing</h3>
+                                <p class="mt-2 text-sm text-text-secondary">Vehicles inspected and serviced periodically.</p>
+                            </article>
+
+                            <article class="rounded-2xl border border-accent/35 bg-bg-light p-5 min-h-[148px]">
+                                <div class="w-10 h-10 rounded-full bg-primary-dark text-white flex items-center justify-center mb-3">
+                                    <i class="ri-hand-sanitizer-line text-sm"></i>
+                                </div>
+                                <h3 class="text-lg font-bold text-primary-dark">Clean Interiors</h3>
+                                <p class="mt-2 text-sm text-text-secondary">Sanitized and cleaned before every booking.</p>
+                            </article>
+
+                            <article class="rounded-2xl border border-accent/35 bg-bg-light p-5 min-h-[148px]">
+                                <div class="w-10 h-10 rounded-full bg-primary-dark text-white flex items-center justify-center mb-3">
+                                    <i class="ri-shield-check-line text-sm"></i>
+                                </div>
+                                <h3 class="text-lg font-bold text-primary-dark">Verified Condition</h3>
+                                <p class="mt-2 text-sm text-text-secondary">Checked brakes, tires and engine health.</p>
+                            </article>
+
+                            <article class="rounded-2xl border border-accent/35 bg-bg-light p-5 min-h-[148px]">
+                                <div class="w-10 h-10 rounded-full bg-primary-dark text-white flex items-center justify-center mb-3">
+                                    <i class="ri-file-text-line text-sm"></i>
+                                </div>
+                                <h3 class="text-lg font-bold text-primary-dark">Fully Insured</h3>
+                                <p class="mt-2 text-sm text-text-secondary">Comprehensive insurance coverage included.</p>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="overflow-hidden rounded-3xl border border-border bg-gradient-to-r from-white to-orange-50/40 shadow-xl">
+                <div class="grid grid-cols-1 lg:grid-cols-2">
+                    <div class="p-8 md:p-10 lg:border-r lg:border-border">
+                        <h2 class="text-3xl font-extrabold text-primary-dark">Transportation Policies</h2>
+                        <p class="mt-3 text-text-secondary">Please review key booking rules before confirming your trip.</p>
+                        <ul class="mt-6 space-y-3">
+                            <li class="flex items-start text-text-secondary"><i class="ri-checkbox-circle-line text-accent mt-1 mr-2"></i><span>Security deposit is refundable after inspection</span></li>
+                            <li class="flex items-start text-text-secondary"><i class="ri-checkbox-circle-line text-accent mt-1 mr-2"></i><span>Late return may include extra hourly charges</span></li>
+                            <li class="flex items-start text-text-secondary"><i class="ri-checkbox-circle-line text-accent mt-1 mr-2"></i><span>Free cancellation 24 hours before pickup</span></li>
+                            <li class="flex items-start text-text-secondary"><i class="ri-checkbox-circle-line text-accent mt-1 mr-2"></i><span>Fuel must be returned at same level</span></li>
+                        </ul>
+                        <p class="mt-6 text-sm text-text-secondary italic">Terms may vary depending on vehicle category.</p>
+                    </div>
+
+                    <div class="bg-accent p-8 md:p-10 flex flex-col justify-center">
+                        <h3 class="text-3xl font-extrabold text-primary-dark">Need help choosing a service?</h3>
+                        <p class="mt-3 text-primary-dark/90 max-w-xl">Our team is ready to assist you in selecting the right transportation plan.</p>
+                        <div class="mt-6 flex flex-wrap gap-3">
+                            <a href="tel:+14073414310" class="inline-flex items-center justify-center h-11 px-[22px] rounded-full bg-black text-white font-bold hover:bg-slate-900 transition">
+                                <i class="ri-phone-line mr-2"></i>Call Now
+                            </a>
+                            <a href="https://wa.me/14073414310" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center h-11 px-[22px] rounded-full bg-white text-black font-bold hover:bg-slate-100 transition">
+                                <i class="ri-whatsapp-line mr-2"></i>WhatsApp Chat
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 bg-bg-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="relative overflow-hidden rounded-3xl border border-orange-200/40 shadow-2xl min-h-[320px]">
+                <img src="images/8.jpg" alt="Road transportation background" class="absolute inset-0 w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-r from-black/85 via-black/70 to-black/60"></div>
+                <div class="relative z-10 h-full p-8 md:p-10 lg:p-12 flex flex-col justify-center">
+                    <p class="text-orange-200 text-xs font-semibold uppercase tracking-[0.2em]">Final Call To Action</p>
+                    <h2 class="mt-3 text-3xl md:text-5xl font-extrabold text-white max-w-4xl leading-tight">Ready to travel? Book your transportation in 2 minutes.</h2>
+                    <p class="mt-4 text-slate-200 max-w-2xl">Instant support, transparent pricing, and verified vehicles for airport, cruise, attraction, and corporate travel plans.</p>
+                    <div class="mt-8 flex flex-wrap gap-3">
+                        <a href="car-listing.html" class="inline-flex items-center px-7 py-3 rounded-xl bg-accent text-white font-bold hover:bg-orange-500 transition">Browse Fleet <i class="ri-arrow-right-line ml-2 text-xs"></i></a>
+                        <a href="contact.html#enquiry-form" class="inline-flex items-center px-7 py-3 rounded-xl border border-white/35 text-white font-bold hover:bg-white hover:text-primary-dark transition">Talk To Expert <i class="ri-phone-fill ml-2 text-xs"></i></a>
+                    </div>
+                    <div class="mt-6 flex flex-wrap gap-2 text-xs">
+                        <span class="px-3 py-1.5 rounded-full bg-white/10 border border-white/20 text-slate-100">Instant Confirmation</span>
+                        <span class="px-3 py-1.5 rounded-full bg-white/10 border border-white/20 text-slate-100">No Hidden Charges</span>
+                        <span class="px-3 py-1.5 rounded-full bg-white/10 border border-white/20 text-slate-100">24/7 Booking Support</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="relative overflow-hidden bg-slate-950 text-slate-200 py-10">
+        <div class="absolute inset-0 pointer-events-none">
+            <div class="absolute -top-20 -left-20 w-72 h-72 bg-accent/15 rounded-full blur-3xl"></div>
+            <div class="absolute -bottom-24 right-0 w-80 h-80 bg-orange-500/10 rounded-full blur-3xl"></div>
+        </div>
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="rounded-3xl border border-white/10 bg-white/5 backdrop-blur-sm p-4 sm:p-5 mb-8 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+                <div>
+                    <p class="text-xs uppercase tracking-[0.25em] text-orange-200 font-semibold">Drive Today</p>
+                    <h3 class="text-2xl font-extrabold text-white mt-1">Need Transportation Right Now?</h3>
+                    <p class="text-slate-300 text-sm mt-1">Talk to our booking team and get instant availability.</p>
+                </div>
+                <div class="flex flex-wrap gap-3">
+                    <a href="tel:+14073414310" class="inline-flex items-center px-5 py-2.5 rounded-xl bg-white text-primary-dark font-bold hover:bg-accent hover:text-white transition">
+                        <i class="ri-phone-fill mr-2 text-xs"></i>Call Now
+                    </a>
+                    <a href="contact.html#enquiry-form" class="inline-flex items-center px-5 py-2.5 rounded-xl border border-white/30 text-white font-bold hover:bg-white hover:text-primary-dark transition">
+                        <i class="ri-mail-line mr-2 text-xs"></i>Quick Enquiry
+                    </a>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
+                <div>
+                    <a href="index.html" class="inline-flex items-center space-x-3">
+                        <span class="w-10 h-10 rounded-xl bg-white/10 border border-white/20 flex items-center justify-center overflow-hidden shadow-lg">
+                            <img src="images/logo.png" alt="Luxury Fleet Services logo" class="w-8 h-8 object-contain">
+                        </span>
+                        <span>
+                            <span class="block text-xl font-extrabold text-white">PrimeTransit</span>
+                            <span class="block text-xs font-semibold -mt-0.5 bg-gradient-to-r from-[#FFD700] via-[#C9A227] to-black bg-clip-text text-transparent">Luxury Fleet Services</span>
+                        </span>
+                    </a>
+                    <p class="text-slate-300 text-sm mt-4 leading-relaxed">Reliable transportation solutions for airport rides, cruise transfers, corporate travel, and family trips across major routes.</p>
+                    <div class="flex items-center gap-3 mt-5">
+                        <a href="#" aria-label="Facebook" class="w-9 h-9 rounded-full border border-white/20 text-slate-200 hover:bg-accent hover:border-accent hover:text-white flex items-center justify-center transition"><i class="ri-facebook-fill text-sm"></i></a>
+                        <a href="#" aria-label="Instagram" class="w-9 h-9 rounded-full border border-white/20 text-slate-200 hover:bg-accent hover:border-accent hover:text-white flex items-center justify-center transition"><i class="ri-instagram-line text-sm"></i></a>
+                        <a href="#" aria-label="X" class="w-9 h-9 rounded-full border border-white/20 text-slate-200 hover:bg-accent hover:border-accent hover:text-white flex items-center justify-center transition"><i class="ri-twitter-x-line text-sm"></i></a>
+                        <a href="#" aria-label="YouTube" class="w-9 h-9 rounded-full border border-white/20 text-slate-200 hover:bg-accent hover:border-accent hover:text-white flex items-center justify-center transition"><i class="ri-youtube-fill text-sm"></i></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="index.html" class="text-slate-300 hover:text-accent transition">Home</a></li>
+                        <li><a href="car-listing.html" class="text-slate-300 hover:text-accent transition">Fleet</a></li>
+                        <li><a href="service.html" class="text-slate-300 hover:text-accent transition">Services</a></li>
+                        <li><a href="about.html" class="text-slate-300 hover:text-accent transition">About Us</a></li>
+                        <li><a href="contact.html" class="text-slate-300 hover:text-accent transition">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-4">Popular Services</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="service.html#detail-airport-pickup-drop" class="text-slate-300 hover:text-accent transition">Orlando Airport Transportation</a></li>
+                        <li><a href="service.html#detail-with-driver-car" class="text-slate-300 hover:text-accent transition">Walt Disney World Transportation</a></li>
+                        <li><a href="service.html#detail-family-car-options" class="text-slate-300 hover:text-accent transition">Universal Orlando Transportation</a></li>
+                        <li><a href="service.html#detail-daily-car-rental" class="text-slate-300 hover:text-accent transition">Port Canaveral Cruise Transportation</a></li>
+                        <li><a href="service.html#detail-corporate-rentals" class="text-slate-300 hover:text-accent transition">Corporate Transportation</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-4">Contact Info</h4>
+                    <div class="space-y-2 text-sm text-slate-300 mb-4">
+                        <p><i class="ri-phone-fill text-accent mr-2"></i><a href="tel:+14073414310" class="hover:text-accent transition">+1-4073414310</a></p>
+                        <p><i class="ri-mail-line text-accent mr-2"></i><a href="mailto:support@luxuryfleetservices.com" class="hover:text-accent transition">support@luxuryfleetservices.com</a></p>
+                        <p><i class="ri-map-pin-line text-accent mr-2"></i>5549 Bay Lagoo Cir, Orlando FL 32819</p>
+                    </div>
+                    <form class="footer-newsletter-form flex gap-2" action="#" method="post">
+                        <input type="email" required placeholder="Your email" class="w-full px-3 py-2 rounded-lg bg-white/10 border border-white/20 text-white placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-accent">
+                        <button type="submit" class="px-4 py-2 rounded-lg bg-accent text-white font-semibold hover:bg-orange-500 transition">Join</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="mt-8 pt-5 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-slate-400">
+                <p>&copy; 2026 PrimeTransit. All rights reserved.</p>
+                <div class="flex items-center gap-4">
+                    <a href="about.html" class="hover:text-accent transition">Company</a>
+                    <a href="service.html" class="hover:text-accent transition">Services</a>
+                    <a href="contact.html" class="hover:text-accent transition">Support</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/navbar.js"></script>
+    <script src="js/service-focus.js"></script>
+    <script src="js/footer.js"></script>
+</body>
+</html>

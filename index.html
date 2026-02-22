@@ -1,0 +1,1313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PrimeTransit - Luxury Fleet Services</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-dark': '#000000',
+                        'accent': '#FFD700',
+                        'secondary': '#000000',
+                        orange: {
+                            50: '#fffbe6',
+                            100: '#fff4b5',
+                            200: '#ffe978',
+                            300: '#ffde3d',
+                            400: '#FFD700',
+                            500: '#000000',
+                            600: '#000000',
+                            700: '#000000',
+                            800: '#000000',
+                            900: '#000000',
+                            950: '#000000'
+                        },
+                        'bg-light': '#F8FAFC',
+                        'card': '#FFFFFF',
+                        'primary': '#111827',
+                        'text-secondary': '#6B7280',
+                        'border': '#E5E7EB',
+                        'success': '#16A34A',
+                        'danger': '#DC2626',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-bg-light">
+    <!-- Premium Navbar -->
+    <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-500">
+        <!-- Top Contact Bar -->
+        <div id="site-topbar" class="relative z-20 h-10 bg-gradient-to-r from-white/70 via-orange-50/70 to-orange-300/70 backdrop-blur-md border-b border-orange-200/60">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center justify-between text-[10px] sm:text-xs text-slate-800">
+                <div class="flex items-center gap-2 sm:gap-5">
+                    <a href="tel:+14073414310" class="hidden sm:inline-flex items-center gap-1.5 hover:text-accent transition-colors">
+                        <i class="ri-phone-line text-[10px]"></i>
+                        <span>+1-4073414310</span>
+                    </a>
+                    <a href="mailto:support@luxuryfleetservices.com" class="inline-flex items-center gap-1.5 hover:text-accent transition-colors">
+                        <i class="ri-mail-line text-[10px]"></i>
+                        <span class="max-w-[130px] sm:max-w-none truncate">support@luxuryfleetservices.com</span>
+                    </a>
+                </div>
+                <div class="flex items-center gap-2">
+                    <a href="#" aria-label="Facebook" class="w-6 h-6 rounded-full bg-orange-100 hover:bg-accent hover:text-white flex items-center justify-center transition-colors">
+                        <i class="ri-facebook-fill text-[10px]"></i>
+                    </a>
+                    <a href="#" aria-label="Instagram" class="w-6 h-6 rounded-full bg-orange-100 hover:bg-accent hover:text-white flex items-center justify-center transition-colors">
+                        <i class="ri-instagram-line text-[10px]"></i>
+                    </a>
+                    <a href="#" aria-label="X" class="w-6 h-6 rounded-full bg-orange-100 hover:bg-accent hover:text-white flex items-center justify-center transition-colors">
+                        <i class="ri-twitter-x-line text-[10px]"></i>
+                    </a>
+                    <a href="#" aria-label="YouTube" class="w-6 h-6 rounded-full bg-orange-100 hover:bg-accent hover:text-white flex items-center justify-center transition-colors">
+                        <i class="ri-youtube-fill text-[10px]"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- Background with blur effect -->
+        <div class="absolute inset-0 bg-gradient-to-r from-orange-300/45 via-orange-50/45 to-white/45 backdrop-blur-xl border-b border-orange-200/40"></div>
+        
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo with Animation -->
+                <a href="index.html" class="flex items-center space-x-3 group">
+                    <div class="relative">
+                        <img src="images/logo.png" alt="Luxury Fleet Services logo" class="w-10 h-10 object-contain drop-shadow-md transition-transform group-hover:scale-105">
+                    </div>
+                    <div>
+                        <span class="text-xl font-extrabold bg-gradient-to-r from-primary-dark to-primary bg-clip-text text-transparent">PrimeTransit</span>
+                        <div class="text-xs font-semibold -mt-1 bg-gradient-to-r from-[#FFD700] via-[#C9A227] to-black bg-clip-text text-transparent">Luxury Fleet Services</div>
+                    </div>
+                </a>
+
+                <!-- Desktop Menu with Hover Effects -->
+                <div class="hidden lg:flex items-center space-x-1">
+                    <a href="index.html" class="nav-link active px-4 py-1.5 rounded-xl font-semibold text-sm transition-all">
+                        <i class="ri-home-5-line mr-2"></i>Home
+                    </a>
+                    <div class="relative services-nav-group">
+    <a href="service.html" class="nav-link px-4 py-1.5 rounded-xl font-semibold text-sm transition-all inline-flex items-center"><i class="ri-service-line mr-2"></i>Services <i class="ri-arrow-down-s-line ml-2 text-[10px]"></i></a>
+    <div class="services-mega-dropdown">
+    <div class="services-dropdown-cover">
+        <img src="images/6.jpg" alt="Transportation service menu" loading="lazy">
+    </div>
+    <div class="services-mega-grid">
+        <a href="service.html#detail-airport-pickup-drop" class="services-mega-link">Orlando Airport Transportation</a>
+        <a href="service.html#detail-with-driver-car" class="services-mega-link">Walt Disney World Transportation</a>
+        <a href="service.html#detail-family-car-options" class="services-mega-link">Universal Orlando Transportation</a>
+        <a href="service.html#detail-daily-car-rental" class="services-mega-link">Port Canaveral Cruise Transportation</a>
+        <a href="service.html#detail-corporate-rentals" class="services-mega-link">Corporate Transportation</a>
+    </div>
+</div>
+</div>
+                    <a href="car-listing.html" class="nav-link px-4 py-1.5 rounded-xl font-semibold text-sm transition-all group relative">
+                        <i class="ri-car-line mr-2"></i>Cars
+                        <span class="absolute -top-1 -right-1 w-2 h-2 bg-accent rounded-full opacity-0 group-hover:opacity-100 transition"></span>
+                    </a>
+                    <a href="about.html" class="nav-link px-4 py-1.5 rounded-xl font-semibold text-sm transition-all">
+                        <i class="ri-information-line mr-2"></i>About
+                    </a>
+                    <a href="contact.html" class="nav-link px-4 py-1.5 rounded-xl font-semibold text-sm transition-all">
+                        <i class="ri-phone-line mr-2"></i>Contact
+                    </a>
+                </div>
+
+                <!-- Right Side Actions -->
+                <div class="hidden lg:flex items-center space-x-3">
+                    <a href="contact.html#enquiry-form" class="btn-primary px-6 py-2 text-white rounded-xl font-bold">
+                        Enquiry Form
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                                <div class="lg:hidden flex items-center gap-2">
+                    <a href="contact.html#enquiry-form" aria-label="Enquiry" class="inline-flex items-center px-3 h-9 rounded-lg btn-primary text-white text-xs font-bold shadow-sm">
+                        <i class="ri-mail-line mr-1.5 text-[11px]"></i>Enquiry
+                    </a>
+                    <a href="tel:+14073414310" aria-label="Call" class="w-9 h-9 flex items-center justify-center rounded-lg bg-white/75 backdrop-blur-sm border border-white/70 text-primary-dark hover:bg-accent hover:text-white transition-all shadow-sm">
+                        <i class="ri-phone-line text-sm"></i>
+                    </a>
+                    <button id="mobile-menu-btn" class="w-9 h-9 flex items-center justify-center rounded-xl hover:bg-bg-light text-primary-dark transition-all">
+                        <i class="ri-menu-line text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu with Slide Animation -->
+        <div id="mobile-menu" class="lg:hidden absolute top-full left-0 right-0 bg-white border-b border-border shadow-xl transform -translate-y-full opacity-0 invisible transition-all duration-300">
+            <div class="px-4 py-6 space-y-2">
+                <a href="index.html" class="flex items-center px-4 py-3 rounded-xl font-semibold text-primary-dark bg-bg-light">
+                    <i class="ri-home-5-line mr-3 text-accent"></i>Home
+                </a>
+                <a href="service.html" class="flex items-center px-4 py-3 rounded-xl font-medium text-text-secondary hover:bg-bg-light hover:text-accent transition">
+                    <i class="ri-service-line mr-3"></i>Services
+                </a>
+                <a href="car-listing.html" class="flex items-center px-4 py-3 rounded-xl font-medium text-text-secondary hover:bg-bg-light hover:text-accent transition">
+                    <i class="ri-car-line mr-3"></i>Cars</a>
+                <a href="about.html" class="flex items-center px-4 py-3 rounded-xl font-medium text-text-secondary hover:bg-bg-light hover:text-accent transition">
+                    <i class="ri-information-line mr-3"></i>About
+                </a>
+                <a href="contact.html" class="flex items-center px-4 py-3 rounded-xl font-medium text-text-secondary hover:bg-bg-light hover:text-accent transition">
+                    <i class="ri-phone-line mr-3"></i>Contact
+                </a>
+                <div class="pt-4 border-t border-border">
+                    <a href="contact.html#enquiry-form" class="w-full inline-flex items-center justify-center px-4 py-3 btn-primary text-white rounded-xl font-bold">
+                        <i class="ri-mail-line mr-2"></i>Enquiry Form
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative home-hero-banner overflow-visible">
+        <div class="home-hero-shell hero-gradient">
+        <!-- Animated Background -->
+        <div class="absolute inset-0">
+            <div class="absolute inset-0 opacity-30">
+                <video autoplay muted loop class="w-full h-full object-cover">
+                    <source src="images/7.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-b from-transparent via-primary-dark/20 to-primary-dark/50"></div>
+        </div>
+        
+        <!-- Floating Elements -->
+        <div class="absolute top-20 right-10 w-72 h-72 bg-accent/10 rounded-full blur-3xl float-animation"></div>
+        <div class="absolute bottom-20 left-10 w-96 h-96 bg-accent/5 rounded-full blur-3xl float-animation" style="animation-delay: 2s;"></div>
+        
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Left Content -->
+                <div class="text-white fade-in-up">
+                    <div class="inline-block mb-4">
+                        <span class="px-4 py-2 bg-accent/20 backdrop-blur-sm rounded-full text-sm font-semibold border border-accent/30">
+                            <i class="ri-star-fill text-accent mr-2"></i>Luxury Fleet Services
+                        </span>
+                    </div>
+                    <h1 class="text-5xl md:text-7xl font-extrabold mb-6 leading-tight">
+                        Book <span class="gradient-text" style="-webkit-text-fill-color: #FFD700;">Luxury Fleet Services</span> Today
+                    </h1>
+                    <p class="text-xl md:text-2xl mb-8 text-gray-200 leading-relaxed">
+                        Professional transportation with clean vehicles, trained chauffeurs and on-time service for every trip.
+                    </p>
+                    <div class="flex flex-wrap gap-4 mb-8">
+                        <div class="flex items-center space-x-2">
+                            <div class="w-12 h-12 bg-accent/20 rounded-lg flex items-center justify-center">
+                                <i class="ri-check-line text-accent"></i>
+                            </div>
+                            <span class="text-gray-200">500+ Daily Trips</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <div class="w-12 h-12 bg-accent/20 rounded-lg flex items-center justify-center">
+                                <i class="ri-check-line text-accent"></i>
+                            </div>
+                            <span class="text-gray-200">Airport & Cruise Routes</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <div class="w-12 h-12 bg-accent/20 rounded-lg flex items-center justify-center">
+                                <i class="ri-check-line text-accent"></i>
+                            </div>
+                            <span class="text-gray-200">24/7 Support</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Search Form -->
+                <div class="fade-in-up" style="animation-delay: 0.2s;">
+                    <div class="glass rounded-3xl p-8 shadow-2xl border border-white/20">
+                        <div class="flex items-center mb-6">
+                            <div class="w-12 h-12 bg-accent rounded-xl flex items-center justify-center mr-4">
+                                <i class="ri-search-line text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold text-primary-dark">Quick Booking</h3>
+                                <p class="text-text-secondary">Choose your best fleet and schedule instantly</p>
+                            </div>
+                        </div>
+                        <form id="search-form" class="space-y-4">
+                            <div>
+                                <label class="block text-sm font-semibold text-primary-dark mb-2">
+                                    <i class="ri-roadster-line text-accent mr-2"></i>Choose Best Fleet
+                                </label>
+                                <select id="quick-fleet" class="w-full px-4 py-3.5 border-2 border-border rounded-xl text-primary-dark focus:outline-none focus:ring-2 focus:ring-accent focus:border-accent transition-all">
+                                    <option value="">Choose Best Fleet</option>
+                                    <option value="Toyota Camry">Toyota Camry</option>
+                                    <option value="Honda CR-V">Honda CR-V</option>
+                                    <option value="Maruti Swift">Maruti Swift</option>
+                                    <option value="Hyundai Creta">Hyundai Creta</option>
+                                    <option value="Honda City">Honda City</option>
+                                    <option value="Tata Nexon EV">Tata Nexon EV</option>
+                                    <option value="Mahindra XUV700">Mahindra XUV700</option>
+                                    <option value="Hyundai i20">Hyundai i20</option>
+                                </select>
+                            </div>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-sm font-semibold text-primary-dark mb-2">
+                                        <i class="ri-calendar-line text-accent mr-2"></i>Date
+                                    </label>
+                                    <input id="quick-date" type="date" class="w-full px-4 py-3.5 border-2 border-border rounded-xl text-primary-dark focus:outline-none focus:ring-2 focus:ring-accent focus:border-accent transition-all">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-semibold text-primary-dark mb-2">
+                                        <i class="ri-time-line text-accent mr-2"></i>Time
+                                    </label>
+                                    <input id="quick-time" type="time" class="w-full px-4 py-3.5 border-2 border-border rounded-xl text-primary-dark focus:outline-none focus:ring-2 focus:ring-accent focus:border-accent transition-all">
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-sm font-semibold text-primary-dark mb-2">
+                                        <i class="ri-map-pin-2-line text-accent mr-2"></i>Location
+                                    </label>
+                                    <input id="quick-location" type="text" placeholder="Enter location" class="w-full px-4 py-3.5 border-2 border-border rounded-xl text-primary-dark focus:outline-none focus:ring-2 focus:ring-accent focus:border-accent transition-all">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-semibold text-primary-dark mb-2">
+                                        <i class="ri-phone-line text-accent mr-2"></i>Number
+                                    </label>
+                                    <input id="quick-number" type="tel" placeholder="+1 XXX XXX XXXX" class="w-full px-4 py-3.5 border-2 border-border rounded-xl text-primary-dark focus:outline-none focus:ring-2 focus:ring-accent focus:border-accent transition-all">
+                                </div>
+                            </div>
+                            <button type="submit" class="w-full btn-primary px-6 py-4 text-white rounded-xl font-bold text-lg flex items-center justify-center">
+                                <span>Submit</span>
+                                <i class="ri-arrow-right-line ml-2"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-full z-20 px-4 sm:px-6 lg:px-8">
+            <div class="max-w-6xl mx-auto brand-marquee-shell">
+                <div class="brand-marquee-track">
+                    <div class="brand-marquee-row">
+                        <a href="car-listing.html" class="brand-logo-item">
+                            <div class="brand-logo-circle"><img src="images/brands/ferrari.svg" alt="Ferrari logo" loading="lazy"></div>
+                            <p class="brand-logo-name">Ferrari</p>
+                        </a>
+                        <a href="car-listing.html" class="brand-logo-item">
+                            <div class="brand-logo-circle"><img src="images/brands/tesla.svg" alt="Tesla logo" loading="lazy"></div>
+                            <p class="brand-logo-name">Tesla</p>
+                        </a>
+                        <a href="car-listing.html" class="brand-logo-item">
+                            <div class="brand-logo-circle"><img src="images/brands/bmw.svg" alt="BMW logo" loading="lazy"></div>
+                            <p class="brand-logo-name">BMW</p>
+                        </a>
+                        <a href="car-listing.html" class="brand-logo-item">
+                            <div class="brand-logo-circle"><img src="images/brands/honda.svg" alt="Honda logo" loading="lazy"></div>
+                            <p class="brand-logo-name">Honda</p>
+                        </a>
+                        <a href="car-listing.html" class="brand-logo-item">
+                            <div class="brand-logo-circle"><img src="images/brands/lamborghini.svg" alt="Lamborghini logo" loading="lazy"></div>
+                            <p class="brand-logo-name">Lambo</p>
+                        </a>
+                        <a href="car-listing.html" class="brand-logo-item">
+                            <div class="brand-logo-circle"><img src="images/brands/audi.svg" alt="Audi logo" loading="lazy"></div>
+                            <p class="brand-logo-name">Audi</p>
+                        </a>
+                        <a href="car-listing.html" class="brand-logo-item">
+                            <div class="brand-logo-circle"><img src="images/brands/mercedes-benz.svg" alt="Mercedes logo" loading="lazy"></div>
+                            <p class="brand-logo-name">Mercedes</p>
+                        </a>
+                        <a href="car-listing.html" class="brand-logo-item">
+                            <div class="brand-logo-circle"><img src="images/brands/kia.svg" alt="Kia logo" loading="lazy"></div>
+                            <p class="brand-logo-name">Kia</p>
+                        </a>
+                        <a href="car-listing.html" class="brand-logo-item">
+                            <div class="brand-logo-circle"><img src="images/brands/toyota.svg" alt="Toyota logo" loading="lazy"></div>
+                            <p class="brand-logo-name">Toyota</p>
+                        </a>
+                        <a href="car-listing.html" class="brand-logo-item">
+                            <div class="brand-logo-circle"><img src="images/brands/hyundai.svg" alt="Hyundai logo" loading="lazy"></div>
+                            <p class="brand-logo-name">Hyundai</p>
+                        </a>
+                        <a href="car-listing.html" class="brand-logo-item">
+                            <div class="brand-logo-circle"><img src="images/brands/mahindra.svg" alt="Mahindra logo" loading="lazy"></div>
+                            <p class="brand-logo-name">Mahindra</p>
+                        </a>
+                        <a href="car-listing.html" class="brand-logo-item">
+                            <div class="brand-logo-circle"><img src="images/brands/tata.svg" alt="Tata logo" loading="lazy"></div>
+                            <p class="brand-logo-name">Tata</p>
+                        </a>
+                        <a href="car-listing.html" class="brand-logo-item">
+                            <div class="brand-logo-circle"><img src="images/brands/ford.svg" alt="Ford logo" loading="lazy"></div>
+                            <p class="brand-logo-name">Ford</p>
+                        </a>
+                        <a href="car-listing.html" class="brand-logo-item">
+                            <div class="brand-logo-circle"><img src="images/brands/nissan.svg" alt="Nissan logo" loading="lazy"></div>
+                            <p class="brand-logo-name">Nissan</p>
+                        </a>
+                        <a href="car-listing.html" class="brand-logo-item">
+                            <div class="brand-logo-circle"><img src="images/brands/volkswagen.svg" alt="Volkswagen logo" loading="lazy"></div>
+                            <p class="brand-logo-name">VW</p>
+                        </a>
+                        <a href="car-listing.html" class="brand-logo-item">
+                            <div class="brand-logo-circle"><img src="images/brands/skoda.svg" alt="Skoda logo" loading="lazy"></div>
+                            <p class="brand-logo-name">Skoda</p>
+                        </a>
+                        <a href="car-listing.html" class="brand-logo-item">
+                            <div class="brand-logo-circle"><img src="images/brands/renault.svg" alt="Renault logo" loading="lazy"></div>
+                            <p class="brand-logo-name">Renault</p>
+                        </a>
+                        <a href="car-listing.html" class="brand-logo-item">
+                            <div class="brand-logo-circle"><img src="images/brands/jeep.svg" alt="Jeep logo" loading="lazy"></div>
+                            <p class="brand-logo-name">Jeep</p>
+                        </a>
+                        <a href="car-listing.html" class="brand-logo-item">
+                            <div class="brand-logo-circle"><img src="images/brands/porsche.svg" alt="Porsche logo" loading="lazy"></div>
+                            <p class="brand-logo-name">Porsche</p>
+                        </a>
+                        <a href="car-listing.html" class="brand-logo-item">
+                            <div class="brand-logo-circle"><img src="images/brands/rolls-royce.svg" alt="Rolls-Royce logo" loading="lazy"></div>
+                            <p class="brand-logo-name">Rolls</p>
+                        </a>
+                        <a href="car-listing.html" class="brand-logo-item">
+                            <div class="brand-logo-circle"><img src="images/brands/bentley.svg" alt="Bentley logo" loading="lazy"></div>
+                            <p class="brand-logo-name">Bentley</p>
+                        </a>
+                        <a href="car-listing.html" class="brand-logo-item">
+                            <div class="brand-logo-circle"><img src="images/brands/volvo.svg" alt="Volvo logo" loading="lazy"></div>
+                            <p class="brand-logo-name">Volvo</p>
+                        </a>
+                        <a href="car-listing.html" class="brand-logo-item">
+                            <div class="brand-logo-circle"><img src="images/brands/mg.svg" alt="MG logo" loading="lazy"></div>
+                            <p class="brand-logo-name">MG</p>
+                        </a>
+                        <a href="car-listing.html" class="brand-logo-item">
+                            <div class="brand-logo-circle"><img src="images/brands/jaguar.png" alt="Jaguar logo" loading="lazy"></div>
+                            <p class="brand-logo-name">Jaguar</p>
+                        </a>
+                        <a href="car-listing.html" class="brand-logo-item">
+                            <div class="brand-logo-circle"><img src="images/brands/land-rover.png" alt="Land Rover logo" loading="lazy"></div>
+                            <p class="brand-logo-name">Land Rover</p>
+                        </a>
+                        <a href="car-listing.html" class="brand-logo-item">
+                            <div class="brand-logo-circle"><img src="images/brands/lexus.png" alt="Lexus logo" loading="lazy"></div>
+                            <p class="brand-logo-name">Lexus</p>
+                        </a>
+                        <a href="car-listing.html" class="brand-logo-item">
+                            <div class="brand-logo-circle"><img src="images/brands/subaru.svg" alt="Subaru logo" loading="lazy"></div>
+                            <p class="brand-logo-name">Subaru</p>
+                        </a>
+                        <a href="car-listing.html" class="brand-logo-item">
+                            <div class="brand-logo-circle"><img src="images/brands/mitsubishi.svg" alt="Mitsubishi logo" loading="lazy"></div>
+                            <p class="brand-logo-name">Mitsubishi</p>
+                        </a>
+                    </div>
+                    <div class="brand-marquee-row" aria-hidden="true">
+                        <a href="car-listing.html" class="brand-logo-item">
+                            <div class="brand-logo-circle"><img src="images/brands/ferrari.svg" alt="Ferrari logo" loading="lazy"></div>
+                            <p class="brand-logo-name">Ferrari</p>
+                        </a>
+                        <a href="car-listing.html" class="brand-logo-item">
+                            <div class="brand-logo-circle"><img src="images/brands/tesla.svg" alt="Tesla logo" loading="lazy"></div>
+                            <p class="brand-logo-name">Tesla</p>
+                        </a>
+                        <a href="car-listing.html" class="brand-logo-item">
+                            <div class="brand-logo-circle"><img src="images/brands/bmw.svg" alt="BMW logo" loading="lazy"></div>
+                            <p class="brand-logo-name">BMW</p>
+                        </a>
+                        <a href="car-listing.html" class="brand-logo-item">
+                            <div class="brand-logo-circle"><img src="images/brands/honda.svg" alt="Honda logo" loading="lazy"></div>
+                            <p class="brand-logo-name">Honda</p>
+                        </a>
+                        <a href="car-listing.html" class="brand-logo-item">
+                            <div class="brand-logo-circle"><img src="images/brands/lamborghini.svg" alt="Lamborghini logo" loading="lazy"></div>
+                            <p class="brand-logo-name">Lambo</p>
+                        </a>
+                        <a href="car-listing.html" class="brand-logo-item">
+                            <div class="brand-logo-circle"><img src="images/brands/audi.svg" alt="Audi logo" loading="lazy"></div>
+                            <p class="brand-logo-name">Audi</p>
+                        </a>
+                        <a href="car-listing.html" class="brand-logo-item">
+                            <div class="brand-logo-circle"><img src="images/brands/mercedes-benz.svg" alt="Mercedes logo" loading="lazy"></div>
+                            <p class="brand-logo-name">Mercedes</p>
+                        </a>
+                        <a href="car-listing.html" class="brand-logo-item">
+                            <div class="brand-logo-circle"><img src="images/brands/kia.svg" alt="Kia logo" loading="lazy"></div>
+                            <p class="brand-logo-name">Kia</p>
+                        </a>
+                        <a href="car-listing.html" class="brand-logo-item">
+                            <div class="brand-logo-circle"><img src="images/brands/toyota.svg" alt="Toyota logo" loading="lazy"></div>
+                            <p class="brand-logo-name">Toyota</p>
+                        </a>
+                        <a href="car-listing.html" class="brand-logo-item">
+                            <div class="brand-logo-circle"><img src="images/brands/hyundai.svg" alt="Hyundai logo" loading="lazy"></div>
+                            <p class="brand-logo-name">Hyundai</p>
+                        </a>
+                        <a href="car-listing.html" class="brand-logo-item">
+                            <div class="brand-logo-circle"><img src="images/brands/mahindra.svg" alt="Mahindra logo" loading="lazy"></div>
+                            <p class="brand-logo-name">Mahindra</p>
+                        </a>
+                        <a href="car-listing.html" class="brand-logo-item">
+                            <div class="brand-logo-circle"><img src="images/brands/tata.svg" alt="Tata logo" loading="lazy"></div>
+                            <p class="brand-logo-name">Tata</p>
+                        </a>
+                        <a href="car-listing.html" class="brand-logo-item">
+                            <div class="brand-logo-circle"><img src="images/brands/ford.svg" alt="Ford logo" loading="lazy"></div>
+                            <p class="brand-logo-name">Ford</p>
+                        </a>
+                        <a href="car-listing.html" class="brand-logo-item">
+                            <div class="brand-logo-circle"><img src="images/brands/nissan.svg" alt="Nissan logo" loading="lazy"></div>
+                            <p class="brand-logo-name">Nissan</p>
+                        </a>
+                        <a href="car-listing.html" class="brand-logo-item">
+                            <div class="brand-logo-circle"><img src="images/brands/volkswagen.svg" alt="Volkswagen logo" loading="lazy"></div>
+                            <p class="brand-logo-name">VW</p>
+                        </a>
+                        <a href="car-listing.html" class="brand-logo-item">
+                            <div class="brand-logo-circle"><img src="images/brands/skoda.svg" alt="Skoda logo" loading="lazy"></div>
+                            <p class="brand-logo-name">Skoda</p>
+                        </a>
+                        <a href="car-listing.html" class="brand-logo-item">
+                            <div class="brand-logo-circle"><img src="images/brands/renault.svg" alt="Renault logo" loading="lazy"></div>
+                            <p class="brand-logo-name">Renault</p>
+                        </a>
+                        <a href="car-listing.html" class="brand-logo-item">
+                            <div class="brand-logo-circle"><img src="images/brands/jeep.svg" alt="Jeep logo" loading="lazy"></div>
+                            <p class="brand-logo-name">Jeep</p>
+                        </a>
+                        <a href="car-listing.html" class="brand-logo-item">
+                            <div class="brand-logo-circle"><img src="images/brands/porsche.svg" alt="Porsche logo" loading="lazy"></div>
+                            <p class="brand-logo-name">Porsche</p>
+                        </a>
+                        <a href="car-listing.html" class="brand-logo-item">
+                            <div class="brand-logo-circle"><img src="images/brands/rolls-royce.svg" alt="Rolls-Royce logo" loading="lazy"></div>
+                            <p class="brand-logo-name">Rolls</p>
+                        </a>
+                        <a href="car-listing.html" class="brand-logo-item">
+                            <div class="brand-logo-circle"><img src="images/brands/bentley.svg" alt="Bentley logo" loading="lazy"></div>
+                            <p class="brand-logo-name">Bentley</p>
+                        </a>
+                        <a href="car-listing.html" class="brand-logo-item">
+                            <div class="brand-logo-circle"><img src="images/brands/volvo.svg" alt="Volvo logo" loading="lazy"></div>
+                            <p class="brand-logo-name">Volvo</p>
+                        </a>
+                        <a href="car-listing.html" class="brand-logo-item">
+                            <div class="brand-logo-circle"><img src="images/brands/mg.svg" alt="MG logo" loading="lazy"></div>
+                            <p class="brand-logo-name">MG</p>
+                        </a>
+                        <a href="car-listing.html" class="brand-logo-item">
+                            <div class="brand-logo-circle"><img src="images/brands/jaguar.png" alt="Jaguar logo" loading="lazy"></div>
+                            <p class="brand-logo-name">Jaguar</p>
+                        </a>
+                        <a href="car-listing.html" class="brand-logo-item">
+                            <div class="brand-logo-circle"><img src="images/brands/land-rover.png" alt="Land Rover logo" loading="lazy"></div>
+                            <p class="brand-logo-name">Land Rover</p>
+                        </a>
+                        <a href="car-listing.html" class="brand-logo-item">
+                            <div class="brand-logo-circle"><img src="images/brands/lexus.png" alt="Lexus logo" loading="lazy"></div>
+                            <p class="brand-logo-name">Lexus</p>
+                        </a>
+                        <a href="car-listing.html" class="brand-logo-item">
+                            <div class="brand-logo-circle"><img src="images/brands/subaru.svg" alt="Subaru logo" loading="lazy"></div>
+                            <p class="brand-logo-name">Subaru</p>
+                        </a>
+                        <a href="car-listing.html" class="brand-logo-item">
+                            <div class="brand-logo-circle"><img src="images/brands/mitsubishi.svg" alt="Mitsubishi logo" loading="lazy"></div>
+                            <p class="brand-logo-name">Mitsubishi</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Cars Section -->
+    <section id="popular-vehicles" class="pt-36 pb-20 bg-gradient-to-b from-bg-light via-white to-bg-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-12">
+                <div>
+                    <span class="inline-flex items-center px-4 py-2 rounded-full bg-accent/10 text-accent font-semibold text-sm mb-4">
+                        <i class="ri-fire-line mr-2"></i>Trending Fleet
+                    </span>
+                    <h2 class="text-4xl md:text-5xl font-extrabold text-primary-dark">Most Popular Vehicles</h2>
+                    <p class="text-text-secondary text-lg mt-3 max-w-2xl">Top booked transportation options for airport, cruise, theme park and corporate travel.</p>
+                </div>
+                <div class="grid grid-cols-2 gap-3">
+                    <div class="px-5 py-4 bg-white border border-border rounded-2xl shadow-sm text-center">
+                        <p class="text-2xl font-extrabold text-primary-dark">12K+</p>
+                        <p class="text-xs text-text-secondary font-semibold uppercase tracking-wide">Bookings</p>
+                    </div>
+                    <div class="px-5 py-4 bg-white border border-border rounded-2xl shadow-sm text-center">
+                        <p class="text-2xl font-extrabold text-primary-dark">4.9</p>
+                        <p class="text-xs text-text-secondary font-semibold uppercase tracking-wide">User Rating</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="relative">
+                <button id="popular-prev" type="button" aria-label="Previous vehicles" class="absolute -left-3 md:-left-5 top-1/2 -translate-y-1/2 z-10 w-10 h-10 md:w-11 md:h-11 rounded-full bg-white border border-border shadow-md text-primary-dark hover:bg-accent hover:text-white transition">
+                    <i class="ri-arrow-left-s-line text-sm"></i>
+                </button>
+                <button id="popular-next" type="button" aria-label="Next vehicles" class="absolute -right-3 md:-right-5 top-1/2 -translate-y-1/2 z-10 w-10 h-10 md:w-11 md:h-11 rounded-full bg-white border border-border shadow-md text-primary-dark hover:bg-accent hover:text-white transition">
+                    <i class="ri-arrow-right-s-line text-sm"></i>
+                </button>
+
+                <div id="popular-cars" class="popular-cars-track flex gap-2 md:gap-3 overflow-x-auto scroll-smooth pb-2 px-1 no-scrollbar">
+                    <!-- Popular cars will be loaded here -->
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <a href="car-listing.html" class="btn-primary px-8 py-4 text-white rounded-xl font-bold text-lg inline-flex items-center justify-center">
+                    <span>Explore Full Fleet</span>
+                    <i class="ri-arrow-right-line ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Services Section -->
+    <section id="our-services" class="py-20 bg-white relative overflow-hidden">
+        <div class="absolute inset-0 pointer-events-none">
+            <div class="absolute -top-24 left-1/2 -translate-x-1/2 w-[620px] h-[620px] rounded-full bg-accent/10 blur-3xl"></div>
+            <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(245,158,11,0.10)_0%,_rgba(248,250,252,0.95)_60%)]"></div>
+        </div>
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-14">
+                <span class="inline-flex items-center px-4 py-2 rounded-full border border-accent/30 bg-accent/10 text-accent font-semibold text-sm mb-4">
+                    <i class="ri-service-line mr-2"></i>Our Services
+                </span>
+                <h2 class="text-4xl md:text-5xl font-extrabold text-primary-dark">Transportation Services For Every Need</h2>
+                <p class="text-text-secondary text-lg mt-3 max-w-2xl mx-auto">Hover on any service card and it will come to front, just like your design style.</p>
+            </div>
+
+            <div class="services-neon-stage">
+                <a href="service.html#detail-airport-pickup-drop" class="services-neon-card is-far-left group">
+                    <div>
+                        <div class="services-neon-thumb">
+                            <img src="images/1.jpg" alt="Orlando airport transportation">
+                        </div>
+                        <i class="ri-road-map-line text-accent text-xl"></i>
+                        <h3 class="mt-3 text-primary-dark font-bold text-lg">Orlando Airport</h3>
+                        <p class="services-neon-text">On-time airport pickups with luggage-friendly vehicles.</p>
+                        <div class="services-neon-meta">
+                            <span>Manual/Auto</span>
+                            <span>Daily Plans</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="service.html#detail-with-driver-car" class="services-neon-card is-left group">
+                    <div>
+                        <div class="services-neon-thumb">
+                            <img src="images/2.jpg" alt="Walt Disney World transportation">
+                        </div>
+                        <i class="ri-user-star-line text-accent text-2xl"></i>
+                        <h3 class="mt-4 text-primary-dark font-bold text-xl">Walt Disney World</h3>
+                        <p class="services-neon-text">Theme park transfers with professional chauffeur support.</p>
+                        <div class="services-neon-meta">
+                            <span>Verified Driver</span>
+                            <span>Safe Ride</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="service.html#detail-family-car-options" class="services-neon-card is-center group">
+                    <div>
+                        <div class="services-neon-thumb">
+                            <img src="images/3.jpg" alt="Universal Orlando transportation">
+                        </div>
+                        <i class="ri-plane-line text-accent text-3xl"></i>
+                        <h3 class="mt-4 text-primary-dark font-extrabold text-2xl">Universal Orlando</h3>
+                        <p class="services-neon-text mt-2">Theme park and hotel transfers with punctual chauffeur service.</p>
+                        <div class="services-neon-meta">
+                            <span>On-Time</span>
+                            <span>24/7 Support</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="service.html#detail-corporate-rentals" class="services-neon-card is-right group">
+                    <div>
+                        <div class="services-neon-thumb">
+                            <img src="images/4.jpg" alt="Corporate transportation">
+                        </div>
+                        <i class="ri-team-line text-accent text-2xl"></i>
+                        <h3 class="mt-4 text-primary-dark font-bold text-xl">Corporate Transportation</h3>
+                        <p class="services-neon-text">Executive and team transfers with schedule-first dispatch.</p>
+                        <div class="services-neon-meta">
+                            <span>Business Class</span>
+                            <span>Invoice Ready</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="service.html#detail-daily-car-rental" class="services-neon-card is-far-right group">
+                    <div>
+                        <div class="services-neon-thumb">
+                            <img src="images/5.jpg" alt="Port Canaveral cruise transportation">
+                        </div>
+                        <i class="ri-gemini-line text-accent text-xl"></i>
+                        <h3 class="mt-3 text-primary-dark font-bold text-lg">Port Canaveral</h3>
+                        <p class="services-neon-text">Reliable cruise transfers with punctual pickup and baggage support.</p>
+                        <div class="services-neon-meta">
+                            <span>Cruise Ready</span>
+                            <span>On-Time Pickup</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="text-center mt-10">
+                <a href="service.html" class="services-explore-btn inline-flex items-center justify-center">
+                    Explore Services
+                    <i class="ri-arrow-right-up-line ml-2 text-xs"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Car Categories Section -->
+    <section class="py-20 bg-gradient-to-b from-bg-light to-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="inline-block px-4 py-2 bg-accent/10 rounded-full text-accent font-semibold mb-4">Our Fleet</span>
+                <h2 class="text-4xl md:text-5xl font-extrabold text-primary-dark mb-4">Choose Your Perfect Ride</h2>
+                <p class="text-text-secondary text-lg max-w-2xl mx-auto">From standard sedans to executive SUVs, we have the right transportation vehicle for every occasion</p>
+            </div>
+
+            <div class="ride-carousel-shell">
+                <button id="ride-prev" type="button" class="ride-nav-btn ride-nav-btn--edge ride-nav-btn--left" aria-label="Scroll left">
+                    <i class="ri-arrow-left-s-line"></i>
+                </button>
+                <div id="ride-track" class="ride-grid ride-grid-carousel no-scrollbar">
+                <article class="ride-card">
+                    <div class="ride-media">
+                        <img src="images/3.jpg" alt="Executive sedan transportation">
+                    </div>
+                    <h3>Executive Sedan</h3>
+                    <p>Smooth and punctual transportation for airport rides and business appointments.</p>
+                    <div class="ride-meta">
+                        <span><i class="ri-group-line"></i>3 Passengers</span>
+                        <span><i class="ri-armchair-line"></i>3 Seats</span>
+                        <span><i class="ri-suitcase-3-line"></i>2 Luggage</span>
+                        <span><i class="ri-gas-station-line"></i>Gasoline</span>
+                    </div>
+                    <div class="ride-footer">
+                        <strong>From $85 / trip</strong>
+                    </div>
+                </article>
+
+                <article class="ride-card">
+                    <div class="ride-media">
+                        <img src="images/5.jpg" alt="Family suv transportation">
+                    </div>
+                    <h3>Family SUV</h3>
+                    <p>Comfort-focused option for Disney routes, city tours, and long-distance transfers.</p>
+                    <div class="ride-meta">
+                        <span><i class="ri-group-line"></i>6 Passengers</span>
+                        <span><i class="ri-armchair-line"></i>6 Seats</span>
+                        <span><i class="ri-suitcase-3-line"></i>4 Luggage</span>
+                        <span><i class="ri-gas-station-line"></i>Hybrid</span>
+                    </div>
+                    <div class="ride-footer">
+                        <strong>From $130 / trip</strong>
+                    </div>
+                </article>
+
+                <article class="ride-card">
+                    <div class="ride-media">
+                        <img src="images/2.jpg" alt="Premium van transportation">
+                    </div>
+                    <h3>Premium Van</h3>
+                    <p>Ideal for group transportation with extra cabin space and luggage capacity.</p>
+                    <div class="ride-meta">
+                        <span><i class="ri-group-line"></i>10 Passengers</span>
+                        <span><i class="ri-armchair-line"></i>10 Seats</span>
+                        <span><i class="ri-suitcase-3-line"></i>8 Luggage</span>
+                        <span><i class="ri-gas-station-line"></i>Diesel</span>
+                    </div>
+                    <div class="ride-footer">
+                        <strong>From $180 / trip</strong>
+                    </div>
+                </article>
+
+                <article class="ride-card">
+                    <div class="ride-media">
+                        <img src="images/8.jpg" alt="Luxury black car transportation">
+                    </div>
+                    <h3>Luxury Black Car</h3>
+                    <p>Private chauffeur transportation for VIP meetings, events, and executive travel.</p>
+                    <div class="ride-meta">
+                        <span><i class="ri-group-line"></i>3 Passengers</span>
+                        <span><i class="ri-armchair-line"></i>3 Seats</span>
+                        <span><i class="ri-suitcase-3-line"></i>2 Luggage</span>
+                        <span><i class="ri-gas-station-line"></i>Premium Gasoline</span>
+                    </div>
+                    <div class="ride-footer">
+                        <strong>From $240 / trip</strong>
+                    </div>
+                </article>
+                </div>
+                <button id="ride-next" type="button" class="ride-nav-btn ride-nav-btn--edge ride-nav-btn--right" aria-label="Scroll right">
+                    <i class="ri-arrow-right-s-line"></i>
+                </button>
+            </div>
+
+            <div class="text-center mt-12">
+                <a href="car-listing.html" class="btn-primary px-8 py-4 text-white rounded-xl font-bold text-lg flex items-center justify-center mx-auto max-w-xs">
+                    <span>View Full Fleet</span>
+                    <i class="ri-arrow-right-line ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- How It Works Section -->
+    <section class="how-works-tree py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="inline-block px-4 py-2 rounded-full text-sm font-bold tracking-wide bg-white/70 text-accent border border-orange-200">Journey Tree</span>
+                <h2 class="text-4xl md:text-5xl font-extrabold text-primary-dark mt-4 mb-4">How It Works</h2>
+                <p class="text-text-secondary text-lg max-w-2xl mx-auto">Follow the journey from service selection to confirmed transportation.</p>
+            </div>
+
+            <div class="journey-tree">
+                <div class="tree-trunk" aria-hidden="true"></div>
+                <div class="tree-grid">
+                    <article class="tree-step is-left">
+                        <div class="tree-connector" aria-hidden="true"></div>
+                        <div class="tree-node" aria-hidden="true"></div>
+                        <div class="tree-card">
+                            <span class="tree-label">Step 01</span>
+                            <div class="tree-icon"><i class="ri-search-line"></i></div>
+                            <h3>Choose Your Car</h3>
+                            <p>Browse options by budget, category, fuel and comfort to shortlist the perfect ride.</p>
+                        </div>
+                    </article>
+
+                    <article class="tree-step is-right">
+                        <div class="tree-connector" aria-hidden="true"></div>
+                        <div class="tree-node" aria-hidden="true"></div>
+                        <div class="tree-card">
+                            <span class="tree-label">Step 02</span>
+                            <div class="tree-icon"><i class="ri-calendar-check-line"></i></div>
+                            <h3>Book & Confirm</h3>
+                            <p>Pick date and pickup point, complete details and get instant confirmation.</p>
+                        </div>
+                    </article>
+
+                    <article class="tree-step is-left">
+                        <div class="tree-connector" aria-hidden="true"></div>
+                        <div class="tree-node" aria-hidden="true"></div>
+                        <div class="tree-card">
+                            <span class="tree-label">Step 03</span>
+                            <div class="tree-icon"><i class="ri-roadster-line"></i></div>
+                            <h3>Start Your Journey</h3>
+                            <p>Meet your driver and travel confidently with full trip support.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Stats Section -->
+    <section class="py-8 bg-gradient-to-r from-slate-900 via-orange-700 to-amber-500 text-white relative overflow-hidden">
+        <div class="absolute inset-0 pointer-events-none">
+            <img src="images/1.jpg" alt="" class="absolute -top-8 -left-10 w-44 h-44 object-cover rounded-3xl opacity-15 blur-[1px] rotate-[-10deg] hidden sm:block">
+            <img src="images/2.jpg" alt="" class="absolute top-1/2 -translate-y-1/2 left-[20%] w-28 h-28 object-cover rounded-2xl opacity-10 blur-[1px] hidden md:block">
+            <img src="images/8.jpg" alt="" class="absolute -bottom-8 right-6 w-44 h-44 object-cover rounded-3xl opacity-15 blur-[1px] rotate-[8deg] hidden sm:block">
+            <div class="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,_rgba(255,255,255,0.22)_0%,_rgba(255,255,255,0.02)_50%),radial-gradient(circle_at_80%_80%,_rgba(251,191,36,0.2)_0%,_rgba(251,191,36,0.02)_55%)]"></div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-5 relative z-10">
+                <div class="rounded-2xl bg-gradient-to-br from-white/25 to-white/10 border border-white/25 backdrop-blur-sm p-3 md:p-4 text-center">
+                    <div class="w-10 h-10 mx-auto mb-2 rounded-xl bg-white/20 flex items-center justify-center">
+                        <i class="ri-roadster-line text-sm"></i>
+                    </div>
+                    <div class="text-3xl md:text-4xl font-extrabold leading-none">
+                        <span class="stats-counter" data-target="500" data-suffix="+">0</span>
+                    </div>
+                    <p class="text-orange-100 text-xs md:text-sm font-semibold mt-1">Vehicles In Fleet</p>
+                </div>
+                <div class="rounded-2xl bg-gradient-to-br from-white/25 to-white/10 border border-white/25 backdrop-blur-sm p-3 md:p-4 text-center">
+                    <div class="w-10 h-10 mx-auto mb-2 rounded-xl bg-white/20 flex items-center justify-center">
+                        <i class="ri-route-line text-sm"></i>
+                    </div>
+                    <div class="text-3xl md:text-4xl font-extrabold leading-none">
+                        <span class="stats-counter" data-target="98" data-suffix="%">0</span>
+                    </div>
+                    <p class="text-orange-100 text-xs md:text-sm font-semibold mt-1">On-Time Trips</p>
+                </div>
+                <div class="rounded-2xl bg-gradient-to-br from-white/25 to-white/10 border border-white/25 backdrop-blur-sm p-3 md:p-4 text-center">
+                    <div class="w-10 h-10 mx-auto mb-2 rounded-xl bg-white/20 flex items-center justify-center">
+                        <i class="ri-group-line text-sm"></i>
+                    </div>
+                    <div class="text-3xl md:text-4xl font-extrabold leading-none">
+                        <span class="stats-counter" data-target="10" data-suffix="K+">0</span>
+                    </div>
+                    <p class="text-orange-100 text-xs md:text-sm font-semibold mt-1">Happy Customers</p>
+                </div>
+                <div class="rounded-2xl bg-gradient-to-br from-white/25 to-white/10 border border-white/25 backdrop-blur-sm p-3 md:p-4 text-center">
+                    <div class="w-10 h-10 mx-auto mb-2 rounded-xl bg-white/20 flex items-center justify-center">
+                        <i class="ri-headphone-line text-sm"></i>
+                    </div>
+                    <div class="text-3xl md:text-4xl font-extrabold leading-none">
+                        <span class="stats-counter" data-target="24" data-suffix="/7">0</span>
+                    </div>
+                    <p class="text-orange-100 text-xs md:text-sm font-semibold mt-1">Support Available</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Section -->
+    <section class="py-20 bg-gradient-to-b from-white to-bg-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="rounded-3xl overflow-hidden border border-border bg-white shadow-xl">
+                <div class="grid grid-cols-1 lg:grid-cols-12">
+                    <div class="lg:col-span-5 bg-primary-dark text-white p-8 md:p-10">
+                        <p class="inline-flex items-center px-3 py-1.5 rounded-full bg-white/10 border border-white/20 text-xs font-semibold tracking-[0.2em] uppercase text-orange-200">
+                            Why Choose Us
+                        </p>
+                        <h2 class="mt-5 text-3xl md:text-4xl font-extrabold leading-tight">Why Choose Luxury fleet services For Orlando Car Services</h2>
+                        <p class="mt-4 text-slate-200 leading-relaxed">
+                            Reliability, Comfort, and Class - The LUXURY FLEET SERVICES Promise Your journey is our priority. Here's why travelers choose us for their Orlando car service needs:
+                        </p>
+                    </div>
+                    <div class="lg:col-span-7 p-8 md:p-10 bg-gradient-to-br from-white to-orange-50/40">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <article class="rounded-2xl border border-border bg-white p-5 shadow-sm">
+                                <div class="w-11 h-11 rounded-xl bg-accent/15 text-accent flex items-center justify-center mb-3"><i class="ri-map-pin-2-line"></i></div>
+                                <h3 class="text-lg font-bold text-primary-dark">Trusted Local Expertise</h3>
+                                <p class="mt-2 text-sm text-text-secondary">Navigate Orlando with a car service company that knows every corner of the city. We specialize in providing top-notch transportation services from Orlando Airport (MCO) directly to your hotel, Disney, Universal, Port Canaveral, and beyond.</p>
+                            </article>
+                            <article class="rounded-2xl border border-border bg-white p-5 shadow-sm">
+                                <div class="w-11 h-11 rounded-xl bg-accent/15 text-accent flex items-center justify-center mb-3"><i class="ri-shield-check-line"></i></div>
+                                <h3 class="text-lg font-bold text-primary-dark">Impeccable Safety Standards</h3>
+                                <p class="mt-2 text-sm text-text-secondary">Your safety is paramount. As a fully licensed and insured executive car service provider, we offer the peace of mind you deserve.</p>
+                            </article>
+                            <article class="rounded-2xl border border-border bg-white p-5 shadow-sm">
+                                <div class="w-11 h-11 rounded-xl bg-accent/15 text-accent flex items-center justify-center mb-3"><i class="ri-roadster-line"></i></div>
+                                <h3 class="text-lg font-bold text-primary-dark">Luxurious Fleet Choices</h3>
+                                <p class="mt-2 text-sm text-text-secondary">Indulge in the comfort of our selection of five premium cars and two spacious 14-seater vans, ensuring a perfect fit for both individual travelers and larger groups.</p>
+                            </article>
+                            <article class="rounded-2xl border border-border bg-white p-5 shadow-sm">
+                                <div class="w-11 h-11 rounded-xl bg-accent/15 text-accent flex items-center justify-center mb-3"><i class="ri-user-star-line"></i></div>
+                                <h3 class="text-lg font-bold text-primary-dark">Professionalism Personified</h3>
+                                <p class="mt-2 text-sm text-text-secondary">Our uniformed drivers are not just drivers; they're courteous professionals, rigorously vetted for their expertise and commitment to service excellence.</p>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Premium Service Enquiry Section -->
+    <section id="premium-service-enquiry" class="py-20 relative overflow-hidden js-parallax-section">
+        <img src="images/9.jpg" alt="Premium booking background" class="absolute inset-0 w-full h-full object-cover parallax-media js-parallax-bg">
+        <div class="absolute inset-0 bg-gradient-to-r from-black/75 via-black/65 to-black/70"></div>
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-8">
+                <span class="inline-flex items-center px-4 py-2 rounded-full bg-white/10 border border-white/20 text-orange-200 font-semibold text-sm mb-4">
+                    <i class="ri-star-fill mr-2"></i>Experience Premium Service
+                </span>
+                <h2 class="text-4xl md:text-5xl font-extrabold text-white">Quick Booking Form</h2>
+                <p class="mt-3 text-slate-200 text-lg max-w-3xl mx-auto">Quick contact details and live location with a simple 2-column booking form.</p>
+            </div>
+
+            <div class="rounded-3xl border border-white/25 bg-transparent shadow-xl">
+                <div class="rounded-3xl bg-transparent p-4 md:p-5">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-4">
+                        <aside class="lg:col-span-5 space-y-3">
+                            <div class="rounded-2xl border border-white/30 bg-white/10 backdrop-blur-sm p-3.5">
+                                <h3 class="text-base font-bold text-white mb-2.5">Quick Contact</h3>
+                                <div class="space-y-2 text-xs">
+                                    <a href="tel:+14073414310" class="flex items-center text-slate-100 hover:text-orange-200 transition">
+                                        <span class="w-7 h-7 rounded-full bg-white/20 text-orange-200 flex items-center justify-center mr-2"><i class="ri-phone-fill text-[10px]"></i></span>
+                                        +1-4073414310
+                                    </a>
+                                    <a href="mailto:support@luxuryfleetservices.com" class="flex items-center text-slate-100 hover:text-orange-200 transition">
+                                        <span class="w-7 h-7 rounded-full bg-white/20 text-orange-200 flex items-center justify-center mr-2"><i class="ri-mail-line text-[10px]"></i></span>
+                                        support@luxuryfleetservices.com
+                                    </a>
+                                    <a href="https://wa.me/14073414310" target="_blank" rel="noopener noreferrer" class="flex items-center text-slate-100 hover:text-orange-200 transition">
+                                        <span class="w-7 h-7 rounded-full bg-white/20 text-orange-200 flex items-center justify-center mr-2"><i class="ri-whatsapp-line text-[10px]"></i></span>
+                                        WhatsApp Instant Help
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="rounded-2xl border border-white/30 overflow-hidden bg-white/10 backdrop-blur-sm">
+                                <div class="px-3 py-2.5 border-b border-white/20 bg-white/10">
+                                    <h4 class="text-xs font-bold text-white"><i class="ri-map-2-line text-orange-200 mr-2"></i>Our Location</h4>
+                                </div>
+                                <iframe
+                                    title="Luxury Fleet Services location map"
+                                    src="https://www.google.com/maps?q=New+Delhi+India&output=embed"
+                                    loading="lazy"
+                                    referrerpolicy="no-referrer-when-downgrade"
+                                    class="w-full h-64 border-0">
+                                </iframe>
+                            </div>
+
+                            <div class="rounded-2xl border border-white/30 bg-white/10 backdrop-blur-sm p-3.5">
+                                <h4 class="text-xs font-bold text-white mb-2.5"><i class="ri-share-circle-line text-orange-200 mr-2"></i>Follow Us</h4>
+                                <div class="flex items-center gap-2.5">
+                                    <a href="#" aria-label="Facebook" class="w-8 h-8 rounded-full border border-white/30 text-slate-100 hover:bg-accent hover:border-accent hover:text-white flex items-center justify-center transition">
+                                        <i class="ri-facebook-fill text-xs"></i>
+                                    </a>
+                                    <a href="#" aria-label="Instagram" class="w-8 h-8 rounded-full border border-white/30 text-slate-100 hover:bg-accent hover:border-accent hover:text-white flex items-center justify-center transition">
+                                        <i class="ri-instagram-line text-xs"></i>
+                                    </a>
+                                    <a href="#" aria-label="X" class="w-8 h-8 rounded-full border border-white/30 text-slate-100 hover:bg-accent hover:border-accent hover:text-white flex items-center justify-center transition">
+                                        <i class="ri-twitter-x-line text-xs"></i>
+                                    </a>
+                                    <a href="#" aria-label="YouTube" class="w-8 h-8 rounded-full border border-white/30 text-slate-100 hover:bg-accent hover:border-accent hover:text-white flex items-center justify-center transition">
+                                        <i class="ri-youtube-fill text-xs"></i>
+                                    </a>
+                                    <a href="https://wa.me/14073414310" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" class="w-8 h-8 rounded-full border border-white/30 text-slate-100 hover:bg-accent hover:border-accent hover:text-white flex items-center justify-center transition">
+                                        <i class="ri-whatsapp-line text-xs"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </aside>
+
+                        <div class="lg:col-span-7 rounded-2xl border border-white/30 bg-transparent p-3 md:p-4">
+                            <form id="home-premium-enquiry-form" class="space-y-4">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                                    <div>
+                                        <label for="home-name" class="block text-xs font-semibold text-white mb-1.5"><i class="ri-user-3-line text-orange-200 mr-1.5"></i>Name</label>
+                                        <input id="home-name" name="name" type="text" required placeholder="Enter full name" class="w-full px-3 py-2.5 text-sm border border-white/30 bg-white/90 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent/70 focus:border-accent text-primary-dark placeholder:text-slate-500">
+                                    </div>
+                                    <div>
+                                        <label for="home-email" class="block text-xs font-semibold text-white mb-1.5"><i class="ri-mail-line text-orange-200 mr-1.5"></i>Email</label>
+                                        <input id="home-email" name="email" type="email" required placeholder="Enter email address" class="w-full px-3 py-2.5 text-sm border border-white/30 bg-white/90 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent/70 focus:border-accent text-primary-dark placeholder:text-slate-500">
+                                    </div>
+                                    <div>
+                                        <label for="home-phone" class="block text-xs font-semibold text-white mb-1.5"><i class="ri-phone-line text-orange-200 mr-1.5"></i>Phone</label>
+                                        <input id="home-phone" name="phone" type="tel" required placeholder="Enter phone number" class="w-full px-3 py-2.5 text-sm border border-white/30 bg-white/90 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent/70 focus:border-accent text-primary-dark placeholder:text-slate-500">
+                                    </div>
+                                    <div>
+                                        <label for="home-choose-car" class="block text-xs font-semibold text-white mb-1.5"><i class="ri-roadster-line text-orange-200 mr-1.5"></i>Choose Car</label>
+                                        <select id="home-choose-car" name="choose_car" required class="w-full px-3 py-2.5 text-sm border border-white/30 bg-white/90 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent/70 focus:border-accent text-primary-dark">
+                                            <option value="" selected disabled>Select car</option>
+                                            <option>Sedan</option>
+                                            <option>SUV</option>
+                                            <option>Hatchback</option>
+                                            <option>Luxury</option>
+                                            <option>MUV</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                                    <div>
+                                        <label class="block text-xs font-semibold text-white mb-1.5"><i class="ri-calendar-line text-orange-200 mr-1.5"></i>Pickup Date</label>
+                                        <input name="pickup_date" type="date" required class="w-full px-3 py-2.5 text-sm border border-white/30 bg-white/90 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent/70 focus:border-accent text-primary-dark">
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs font-semibold text-white mb-1.5"><i class="ri-time-line text-orange-200 mr-1.5"></i>Pickup Time</label>
+                                        <input name="pickup_time" type="time" required class="w-full px-3 py-2.5 text-sm border border-white/30 bg-white/90 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent/70 focus:border-accent text-primary-dark">
+                                    </div>
+                                    <div class="md:col-span-2">
+                                        <label class="block text-xs font-semibold text-white mb-1.5"><i class="ri-map-pin-line text-orange-200 mr-1.5"></i>Pickup Location</label>
+                                        <input name="pickup_location" type="text" required placeholder="Pickup location" class="w-full px-3 py-2.5 text-sm border border-white/30 bg-white/90 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent/70 focus:border-accent text-primary-dark placeholder:text-slate-500">
+                                    </div>
+                                </div>
+
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                                    <div>
+                                        <label class="block text-xs font-semibold text-white mb-1.5"><i class="ri-calendar-line text-orange-200 mr-1.5"></i>Return Date</label>
+                                        <input name="return_date" type="date" required class="w-full px-3 py-2.5 text-sm border border-white/30 bg-white/90 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent/70 focus:border-accent text-primary-dark">
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs font-semibold text-white mb-1.5"><i class="ri-time-line text-orange-200 mr-1.5"></i>Return Time</label>
+                                        <input name="return_time" type="time" required class="w-full px-3 py-2.5 text-sm border border-white/30 bg-white/90 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent/70 focus:border-accent text-primary-dark">
+                                    </div>
+                                    <div class="md:col-span-2">
+                                        <label class="block text-xs font-semibold text-white mb-1.5"><i class="ri-navigation-line text-orange-200 mr-1.5"></i>Return Location</label>
+                                        <input name="return_location" type="text" required placeholder="Return location" class="w-full px-3 py-2.5 text-sm border border-white/30 bg-white/90 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent/70 focus:border-accent text-primary-dark placeholder:text-slate-500">
+                                    </div>
+                                </div>
+
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                                    <div>
+                                        <label for="home-service-type" class="block text-xs font-semibold text-white mb-1.5"><i class="ri-service-line text-orange-200 mr-1.5"></i>Service Type</label>
+                                        <select id="home-service-type" name="service_type" required class="w-full px-3 py-2.5 text-sm border border-white/30 bg-white/90 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent/70 focus:border-accent text-primary-dark">
+                                            <option value="" selected disabled>Select service type</option>
+                                            <option>Orlando Airport Transportation</option>
+                                            <option>Walt Disney World Transportation</option>
+                                            <option>Universal Orlando Transportation</option>
+                                            <option>Port Canaveral Cruise Transportation</option>
+                                            <option>Corporate Transportation</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label for="home-passengers" class="block text-xs font-semibold text-white mb-1.5"><i class="ri-group-line text-orange-200 mr-1.5"></i>Passengers</label>
+                                        <select id="home-passengers" name="passengers" required class="w-full px-3 py-2.5 text-sm border border-white/30 bg-white/90 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent/70 focus:border-accent text-primary-dark">
+                                            <option value="" selected disabled>Select passengers</option>
+                                            <option>1-2</option>
+                                            <option>3-4</option>
+                                            <option>5-6</option>
+                                            <option>7-8</option>
+                                            <option>9+</option>
+                                        </select>
+                                    </div>
+                                    <div class="md:col-span-2">
+                                        <label for="home-subject" class="block text-xs font-semibold text-white mb-1.5"><i class="ri-price-tag-3-line text-orange-200 mr-1.5"></i>Subject</label>
+                                        <input id="home-subject" name="subject" type="text" required placeholder="Ex: Airport transfer on 12 March" class="w-full px-3 py-2.5 text-sm border border-white/30 bg-white/90 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent/70 focus:border-accent text-primary-dark placeholder:text-slate-500">
+                                    </div>
+                                    <div class="md:col-span-2">
+                                        <label for="home-message" class="block text-xs font-semibold text-white mb-1.5"><i class="ri-chat-3-line text-orange-200 mr-1.5"></i>Message</label>
+                                        <textarea id="home-message" name="message" rows="3" required placeholder="Write your requirement..." class="w-full px-3 py-2.5 text-sm border border-white/30 bg-white/90 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent/70 focus:border-accent text-primary-dark placeholder:text-slate-500"></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2.5">
+                                    <p class="text-xs text-slate-200"><i class="ri-information-line text-orange-200 mr-1.5"></i>All fields are required.</p>
+                                    <button type="submit" class="inline-flex items-center justify-center px-6 py-2.5 rounded-lg bg-gradient-to-r from-accent to-orange-500 text-sm text-white font-bold hover:shadow-lg transition-all">
+                                        <i class="ri-send-plane-fill mr-2"></i>Submit Request
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <section class="cta-pro-section">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="cta-pro-card">
+                <div class="cta-pro-orb cta-pro-orb-left" aria-hidden="true"></div>
+                <div class="cta-pro-orb cta-pro-orb-right" aria-hidden="true"></div>
+                <div class="cta-pro-content">
+                    <p class="cta-pro-kicker">Ready To Ride</p>
+                    <h2>Book Your Transportation In Minutes</h2>
+                    <p>Share your trip details and get the best transportation option with transparent pricing and quick confirmation.</p>
+                    <div class="cta-pro-actions">
+                        <a href="car-listing.html" class="cta-pro-btn cta-pro-btn-primary"><i class="ri-roadster-line"></i><span>Browse Fleet</span></a>
+                        <a href="contact.html#enquiry-form" class="cta-pro-btn cta-pro-btn-secondary"><i class="ri-phone-fill"></i><span>Talk To Expert</span></a>
+                    </div>
+                    <div class="cta-pro-meta">
+                        <span><i class="ri-flashlight-line"></i>Instant Confirmation</span>
+                        <span><i class="ri-shield-check-line"></i>Trusted Service</span>
+                        <span><i class="ri-headphone-line"></i>24/7 Support</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="relative overflow-hidden bg-slate-950 text-slate-200 py-10">
+        <div class="absolute inset-0 pointer-events-none">
+            <div class="absolute -top-20 -left-20 w-72 h-72 bg-accent/15 rounded-full blur-3xl"></div>
+            <div class="absolute -bottom-24 right-0 w-80 h-80 bg-orange-500/10 rounded-full blur-3xl"></div>
+        </div>
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="rounded-3xl border border-white/10 bg-white/5 backdrop-blur-sm p-4 sm:p-5 mb-8 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+                <div>
+                    <p class="text-xs uppercase tracking-[0.25em] text-orange-200 font-semibold">Drive Today</p>
+                    <h3 class="text-2xl font-extrabold text-white mt-1">Need Transportation Right Now?</h3>
+                    <p class="text-slate-300 text-sm mt-1">Talk to our booking team and get instant availability.</p>
+                </div>
+                <div class="flex flex-wrap gap-3">
+                    <a href="tel:+14073414310" class="inline-flex items-center px-5 py-2.5 rounded-xl bg-white text-primary-dark font-bold hover:bg-accent hover:text-white transition">
+                        <i class="ri-phone-fill mr-2 text-xs"></i>Call Now
+                    </a>
+                    <a href="contact.html#enquiry-form" class="inline-flex items-center px-5 py-2.5 rounded-xl border border-white/30 text-white font-bold hover:bg-white hover:text-primary-dark transition">
+                        <i class="ri-mail-line mr-2 text-xs"></i>Quick Enquiry
+                    </a>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
+                <div>
+                    <a href="index.html" class="inline-flex items-center space-x-3">
+                        <span class="w-10 h-10 rounded-xl bg-white/10 border border-white/20 flex items-center justify-center overflow-hidden shadow-lg">
+                            <img src="images/logo.png" alt="Luxury Fleet Services logo" class="w-8 h-8 object-contain">
+                        </span>
+                        <span>
+                            <span class="block text-xl font-extrabold text-white">PrimeTransit</span>
+                            <span class="block text-xs font-semibold -mt-0.5 bg-gradient-to-r from-[#FFD700] via-[#C9A227] to-black bg-clip-text text-transparent">Luxury Fleet Services</span>
+                        </span>
+                    </a>
+                    <p class="text-slate-300 text-sm mt-4 leading-relaxed">Reliable transportation solutions for airport rides, cruise transfers, corporate travel, and family trips across major routes.</p>
+                    <div class="flex items-center gap-3 mt-5">
+                        <a href="#" aria-label="Facebook" class="w-9 h-9 rounded-full border border-white/20 text-slate-200 hover:bg-accent hover:border-accent hover:text-white flex items-center justify-center transition"><i class="ri-facebook-fill text-sm"></i></a>
+                        <a href="#" aria-label="Instagram" class="w-9 h-9 rounded-full border border-white/20 text-slate-200 hover:bg-accent hover:border-accent hover:text-white flex items-center justify-center transition"><i class="ri-instagram-line text-sm"></i></a>
+                        <a href="#" aria-label="X" class="w-9 h-9 rounded-full border border-white/20 text-slate-200 hover:bg-accent hover:border-accent hover:text-white flex items-center justify-center transition"><i class="ri-twitter-x-line text-sm"></i></a>
+                        <a href="#" aria-label="YouTube" class="w-9 h-9 rounded-full border border-white/20 text-slate-200 hover:bg-accent hover:border-accent hover:text-white flex items-center justify-center transition"><i class="ri-youtube-fill text-sm"></i></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="index.html" class="text-slate-300 hover:text-accent transition">Home</a></li>
+                        <li><a href="car-listing.html" class="text-slate-300 hover:text-accent transition">Fleet</a></li>
+                        <li><a href="service.html" class="text-slate-300 hover:text-accent transition">Services</a></li>
+                        <li><a href="about.html" class="text-slate-300 hover:text-accent transition">About Us</a></li>
+                        <li><a href="contact.html" class="text-slate-300 hover:text-accent transition">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-4">Popular Services</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="service.html#detail-airport-pickup-drop" class="text-slate-300 hover:text-accent transition">Orlando Airport Transportation</a></li>
+                        <li><a href="service.html#detail-with-driver-car" class="text-slate-300 hover:text-accent transition">Walt Disney World Transportation</a></li>
+                        <li><a href="service.html#detail-family-car-options" class="text-slate-300 hover:text-accent transition">Universal Orlando Transportation</a></li>
+                        <li><a href="service.html#detail-daily-car-rental" class="text-slate-300 hover:text-accent transition">Port Canaveral Cruise Transportation</a></li>
+                        <li><a href="service.html#detail-corporate-rentals" class="text-slate-300 hover:text-accent transition">Corporate Transportation</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-4">Contact Info</h4>
+                    <div class="space-y-2 text-sm text-slate-300 mb-4">
+                        <p><i class="ri-phone-fill text-accent mr-2"></i><a href="tel:+14073414310" class="hover:text-accent transition">+1-4073414310</a></p>
+                        <p><i class="ri-mail-line text-accent mr-2"></i><a href="mailto:support@luxuryfleetservices.com" class="hover:text-accent transition">support@luxuryfleetservices.com</a></p>
+                        <p><i class="ri-map-pin-line text-accent mr-2"></i>5549 Bay Lagoo Cir, Orlando FL 32819</p>
+                    </div>
+                    <form class="footer-newsletter-form flex gap-2" action="#" method="post">
+                        <input type="email" required placeholder="Your email" class="w-full px-3 py-2 rounded-lg bg-white/10 border border-white/20 text-white placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-accent">
+                        <button type="submit" class="px-4 py-2 rounded-lg bg-accent text-white font-semibold hover:bg-orange-500 transition">Join</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="mt-8 pt-5 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-slate-400">
+                <p>&copy; 2026 PrimeTransit. All rights reserved.</p>
+                <div class="flex items-center gap-4">
+                    <a href="about.html" class="hover:text-accent transition">Company</a>
+                    <a href="service.html" class="hover:text-accent transition">Services</a>
+                    <a href="contact.html" class="hover:text-accent transition">Support</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Enquiry Modal -->
+    <div id="enquiry-modal" class="fixed inset-0 bg-black bg-opacity-60 backdrop-blur-sm hidden z-50 flex items-center justify-center p-4 animate-fade-in">
+        <div class="bg-white rounded-3xl shadow-2xl max-w-lg w-full transform transition-all duration-300 scale-100 animate-modal-appear">
+            <!-- Header -->
+            <div class="relative bg-gradient-to-r from-accent to-orange-500 rounded-t-3xl p-4 text-white">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 bg-white bg-opacity-20 rounded-xl flex items-center justify-center">
+                            <i class="ri-mail-line text-white text-lg"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold">Get In Touch</h3>
+                            <p class="text-orange-100 text-xs">We'd love to hear from you</p>
+                        </div>
+                    </div>
+                    <button id="close-modal" class="w-7 h-7 bg-white bg-opacity-20 rounded-full flex items-center justify-center hover:bg-opacity-30 transition-all">
+                        <i class="ri-close-line text-white text-sm"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Form -->
+            <div class="p-4">
+                <form id="enquiry-form" class="space-y-3">
+                    <div class="relative">
+                        <label class="block text-sm font-semibold text-primary-dark mb-1">
+                            <i class="ri-user-3-line text-accent mr-1"></i>Full Name
+                        </label>
+                        <input type="text" required class="w-full px-3 py-2 pl-8 border-2 border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-accent transition-all bg-bg-light text-sm" placeholder="Enter your name">
+                        <i class="ri-user-3-line absolute left-2 top-7 text-text-secondary text-sm"></i>
+                    </div>
+
+                    <div class="relative">
+                        <label class="block text-sm font-semibold text-primary-dark mb-1">
+                            <i class="ri-mail-line text-accent mr-1"></i>Email Address
+                        </label>
+                        <input type="email" required class="w-full px-3 py-2 pl-8 border-2 border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-accent transition-all bg-bg-light text-sm" placeholder="your@email.com">
+                        <i class="ri-mail-line absolute left-2 top-7 text-text-secondary text-sm"></i>
+                    </div>
+
+                    <div class="relative">
+                        <label class="block text-sm font-semibold text-primary-dark mb-1">
+                            <i class="ri-phone-line text-accent mr-1"></i>Phone Number
+                        </label>
+                        <input type="tel" required class="w-full px-3 py-2 pl-8 border-2 border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-accent transition-all bg-bg-light text-sm" placeholder="+1 XXX XXX XXXX">
+                        <i class="ri-phone-line absolute left-2 top-7 text-text-secondary text-sm"></i>
+                    </div>
+
+                    <div class="relative">
+                        <label class="block text-sm font-semibold text-primary-dark mb-1">
+                            <i class="ri-chat-1-line text-accent mr-1"></i>Message
+                        </label>
+                        <textarea rows="2" required class="w-full px-3 py-2 pl-8 border-2 border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-accent transition-all bg-bg-light resize-none text-sm" placeholder="Tell us about your requirements..."></textarea>
+                        <i class="ri-chat-1-line absolute left-2 top-7 text-text-secondary text-sm"></i>
+                    </div>
+
+                    <button type="submit" class="w-full px-4 py-2.5 bg-gradient-to-r from-accent to-orange-500 text-white rounded-lg font-bold hover:shadow-lg hover:scale-105 transition-all duration-300 flex items-center justify-center">
+                        <span>Send Enquiry</span>
+                        <i class="ri-send-plane-fill ml-1"></i>
+                    </button>
+                </form>
+
+                <!-- Contact Info -->
+                <div class="mt-3 pt-3 border-t border-border">
+                    <div class="flex items-center justify-center space-x-3 text-xs text-text-secondary">
+                        <div class="flex items-center">
+                            <i class="ri-time-line text-accent mr-1"></i>
+                            <span>24/7 Support</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="ri-phone-line text-accent mr-1"></i>
+                            <span>Quick Response</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/data.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/home.js"></script>
+    <script>
+        // Enquiry Modal Functionality
+        const enquiryBtn = document.getElementById('enquiry-btn');
+        const enquiryModal = document.getElementById('enquiry-modal');
+        const closeModal = document.getElementById('close-modal');
+        const enquiryForm = document.getElementById('enquiry-form');
+
+        enquiryBtn.addEventListener('click', () => {
+            enquiryModal.classList.remove('hidden');
+        });
+
+        closeModal.addEventListener('click', () => {
+            enquiryModal.classList.add('hidden');
+        });
+
+        enquiryModal.addEventListener('click', (e) => {
+            if (e.target === enquiryModal) {
+                enquiryModal.classList.add('hidden');
+            }
+        });
+
+        enquiryForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            // Handle form submission here
+            alert('Thank you for your enquiry! We will get back to you soon.');
+            enquiryModal.classList.add('hidden');
+            enquiryForm.reset();
+        });
+    </script>
+    <script src="js/footer.js"></script></body>
+</html>
+

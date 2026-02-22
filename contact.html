@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - PrimeTransit</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-dark': '#000000',
+                        'accent': '#FFD700',
+                        'secondary': '#000000',
+                        orange: {
+                            50: '#fffbe6',
+                            100: '#fff4b5',
+                            200: '#ffe978',
+                            300: '#ffde3d',
+                            400: '#FFD700',
+                            500: '#000000',
+                            600: '#000000',
+                            700: '#000000',
+                            800: '#000000',
+                            900: '#000000',
+                            950: '#000000'
+                        },
+                        'bg-light': '#F8FAFC',
+                        'card': '#FFFFFF',
+                        'primary': '#111827',
+                        'text-secondary': '#6B7280',
+                        'border': '#E5E7EB',
+                        'success': '#16A34A',
+                        'danger': '#DC2626',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-bg-light">
+    <!-- Premium Navbar -->
+    <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-500">
+        <!-- Top Contact Bar -->
+        <div id="site-topbar" class="relative z-20 h-10 bg-gradient-to-r from-white/70 via-orange-50/70 to-orange-300/70 backdrop-blur-md border-b border-orange-200/60">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center justify-between text-[10px] sm:text-xs text-slate-800">
+                <div class="flex items-center gap-2 sm:gap-5">
+                    <a href="tel:+14073414310" class="hidden sm:inline-flex items-center gap-1.5 hover:text-accent transition-colors">
+                        <i class="ri-phone-line text-[10px]"></i>
+                        <span>+1-4073414310</span>
+                    </a>
+                    <a href="mailto:support@luxuryfleetservices.com" class="inline-flex items-center gap-1.5 hover:text-accent transition-colors">
+                        <i class="ri-mail-line text-[10px]"></i>
+                        <span class="max-w-[130px] sm:max-w-none truncate">support@luxuryfleetservices.com</span>
+                    </a>
+                </div>
+                <div class="flex items-center gap-2">
+                    <a href="#" aria-label="Facebook" class="w-6 h-6 rounded-full bg-orange-100 hover:bg-accent hover:text-white flex items-center justify-center transition-colors">
+                        <i class="ri-facebook-fill text-[10px]"></i>
+                    </a>
+                    <a href="#" aria-label="Instagram" class="w-6 h-6 rounded-full bg-orange-100 hover:bg-accent hover:text-white flex items-center justify-center transition-colors">
+                        <i class="ri-instagram-line text-[10px]"></i>
+                    </a>
+                    <a href="#" aria-label="X" class="w-6 h-6 rounded-full bg-orange-100 hover:bg-accent hover:text-white flex items-center justify-center transition-colors">
+                        <i class="ri-twitter-x-line text-[10px]"></i>
+                    </a>
+                    <a href="#" aria-label="YouTube" class="w-6 h-6 rounded-full bg-orange-100 hover:bg-accent hover:text-white flex items-center justify-center transition-colors">
+                        <i class="ri-youtube-fill text-[10px]"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-r from-orange-300/45 via-orange-50/45 to-white/45 backdrop-blur-xl border-b border-orange-200/40"></div>
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="index.html" class="flex items-center space-x-3 group">
+                    <div class="relative">
+                        <img src="images/logo.png" alt="Luxury Fleet Services logo" class="w-10 h-10 object-contain drop-shadow-md transition-transform group-hover:scale-105">
+                    </div>
+                    <div>
+                        <span class="text-xl font-extrabold bg-gradient-to-r from-primary-dark to-primary bg-clip-text text-transparent">PrimeTransit</span>
+                        <div class="text-xs font-semibold -mt-1 bg-gradient-to-r from-[#FFD700] via-[#C9A227] to-black bg-clip-text text-transparent">Luxury Fleet Services</div>
+                    </div>
+                </a>
+                <div class="hidden lg:flex items-center space-x-1">
+                    <a href="index.html" class="nav-link px-4 py-1.5 rounded-xl font-semibold text-sm transition-all">
+                        <i class="ri-home-5-line mr-2"></i>Home
+                    </a>
+                    <div class="relative services-nav-group">
+    <a href="service.html" class="nav-link px-4 py-1.5 rounded-xl font-semibold text-sm transition-all inline-flex items-center"><i class="ri-service-line mr-2"></i>Services <i class="ri-arrow-down-s-line ml-2 text-[10px]"></i></a>
+    <div class="services-mega-dropdown">
+    <div class="services-dropdown-cover">
+        <img src="images/6.jpg" alt="Transportation service menu" loading="lazy">
+    </div>
+    <div class="services-mega-grid">
+        <a href="service.html#detail-airport-pickup-drop" class="services-mega-link">Orlando Airport Transportation</a>
+        <a href="service.html#detail-with-driver-car" class="services-mega-link">Walt Disney World Transportation</a>
+        <a href="service.html#detail-family-car-options" class="services-mega-link">Universal Orlando Transportation</a>
+        <a href="service.html#detail-daily-car-rental" class="services-mega-link">Port Canaveral Cruise Transportation</a>
+        <a href="service.html#detail-corporate-rentals" class="services-mega-link">Corporate Transportation</a>
+    </div>
+</div>
+</div>
+                    <a href="car-listing.html" class="nav-link px-4 py-1.5 rounded-xl font-semibold text-sm transition-all group relative">
+                        <i class="ri-car-line mr-2"></i>Cars</a>
+                    <a href="about.html" class="nav-link px-4 py-1.5 rounded-xl font-semibold text-sm transition-all">
+                        <i class="ri-information-line mr-2"></i>About
+                    </a>
+                    <a href="contact.html" class="nav-link active px-4 py-1.5 rounded-xl font-semibold text-sm transition-all">
+                        <i class="ri-phone-line mr-2"></i>Contact
+                    </a>
+                </div>
+                <div class="hidden lg:flex items-center space-x-3">
+                    <a href="#enquiry-form" class="btn-primary px-6 py-2 text-white rounded-xl font-bold">
+                        Enquiry Form
+                    </a>
+                </div>
+                                <div class="lg:hidden flex items-center gap-2">
+                    <a href="#enquiry-form" aria-label="Enquiry" class="inline-flex items-center px-3 h-9 rounded-lg btn-primary text-white text-xs font-bold shadow-sm">
+                        <i class="ri-mail-line mr-1.5 text-[11px]"></i>Enquiry
+                    </a>
+                    <a href="tel:+14073414310" aria-label="Call" class="w-9 h-9 flex items-center justify-center rounded-lg bg-white/75 backdrop-blur-sm border border-white/70 text-primary-dark hover:bg-accent hover:text-white transition-all shadow-sm">
+                        <i class="ri-phone-line text-sm"></i>
+                    </a>
+                    <button id="mobile-menu-btn" class="w-9 h-9 flex items-center justify-center rounded-xl hover:bg-bg-light text-primary-dark transition-all">
+                        <i class="ri-menu-line text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="lg:hidden absolute top-full left-0 right-0 bg-white border-b border-border shadow-xl transform -translate-y-full opacity-0 invisible transition-all duration-300">
+            <div class="px-4 py-6 space-y-2">
+                <a href="index.html" class="flex items-center px-4 py-3 rounded-xl font-medium text-text-secondary hover:bg-bg-light hover:text-accent transition">
+                    <i class="ri-home-5-line mr-3"></i>Home
+                </a>
+                <a href="service.html" class="flex items-center px-4 py-3 rounded-xl font-medium text-text-secondary hover:bg-bg-light hover:text-accent transition">
+                    <i class="ri-service-line mr-3"></i>Services
+                </a>
+                <a href="car-listing.html" class="flex items-center px-4 py-3 rounded-xl font-medium text-text-secondary hover:bg-bg-light hover:text-accent transition">
+                    <i class="ri-car-line mr-3"></i>Cars</a>
+                <a href="about.html" class="flex items-center px-4 py-3 rounded-xl font-medium text-text-secondary hover:bg-bg-light hover:text-accent transition">
+                    <i class="ri-information-line mr-3"></i>About
+                </a>
+                <a href="contact.html" class="flex items-center px-4 py-3 rounded-xl font-semibold text-primary-dark bg-bg-light">
+                    <i class="ri-phone-line mr-3 text-accent"></i>Contact
+                </a>
+                <div class="pt-4 border-t border-border space-y-2">
+                    <a href="#enquiry-form" class="w-full inline-flex items-center justify-center px-4 py-3 btn-primary text-white rounded-xl font-bold">
+                        <i class="ri-mail-line mr-2"></i>Enquiry Form
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contact Hero -->
+    <section class="pt-[104px] h-[420px] relative overflow-hidden">
+        <img src="images/5.jpg" alt="Contact banner" class="absolute inset-0 w-full h-full object-cover">
+        <div class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/55 to-black/55"></div>
+        <div class="relative h-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center">
+            <div class="max-w-2xl text-white">
+                <h1 class="text-4xl md:text-5xl font-extrabold">Connect With PrimeTransit Booking Experts</h1>
+                <p class="mt-3 text-slate-200 text-lg">Need airport, cruise, theme park, or corporate transportation? Our team responds quickly.</p>
+                <a href="#enquiry-form" class="mt-7 inline-flex items-center px-7 py-3 rounded-xl btn-primary text-white font-bold">Send Enquiry <i class="ri-arrow-right-line ml-2 text-xs"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Channels -->
+    <section class="-mt-8 pb-12 relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4">
+                <a href="tel:+14073414310" class="bg-white rounded-2xl border border-border shadow-sm p-5 hover:shadow-lg hover:-translate-y-1 transition-all">
+                    <div class="w-11 h-11 rounded-xl bg-accent/15 text-accent flex items-center justify-center mb-3"><i class="ri-phone-line"></i></div>
+                    <h3 class="text-lg font-bold text-primary-dark">Call Sales</h3>
+                    <p class="text-sm text-text-secondary mt-1">+1-4073414310</p>
+                </a>
+                <a href="mailto:support@luxuryfleetservices.com" class="bg-white rounded-2xl border border-border shadow-sm p-5 hover:shadow-lg hover:-translate-y-1 transition-all">
+                    <div class="w-11 h-11 rounded-xl bg-accent/15 text-accent flex items-center justify-center mb-3"><i class="ri-mail-open-line"></i></div>
+                    <h3 class="text-lg font-bold text-primary-dark">Email Support</h3>
+                    <p class="text-sm text-text-secondary mt-1">support@luxuryfleetservices.com</p>
+                </a>
+                <a href="https://wa.me/14073414310" target="_blank" rel="noopener noreferrer" class="bg-white rounded-2xl border border-border shadow-sm p-5 hover:shadow-lg hover:-translate-y-1 transition-all">
+                    <div class="w-11 h-11 rounded-xl bg-accent/15 text-accent flex items-center justify-center mb-3"><i class="ri-whatsapp-line"></i></div>
+                    <h3 class="text-lg font-bold text-primary-dark">WhatsApp</h3>
+                    <p class="text-sm text-text-secondary mt-1">Instant booking help</p>
+                </a>
+                <a href="https://maps.google.com/?q=5549+Bay+Lagoo+Cir,+Orlando+FL+32819" target="_blank" rel="noopener noreferrer" class="bg-white rounded-2xl border border-border shadow-sm p-5 hover:shadow-lg hover:-translate-y-1 transition-all">
+                    <div class="w-11 h-11 rounded-xl bg-accent/15 text-accent flex items-center justify-center mb-3"><i class="ri-map-pin-2-line"></i></div>
+                    <h3 class="text-lg font-bold text-primary-dark">Office Address</h3>
+                    <p class="text-sm text-text-secondary mt-1">5549 Bay Lagoo Cir, Orlando FL 32819</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Main -->
+    <section id="enquiry-form" class="pb-16 relative overflow-hidden js-parallax-section">
+        <img src="images/4.jpg" alt="Contact booking background" class="absolute inset-0 w-full h-full object-cover parallax-media js-parallax-bg">
+        <div class="absolute inset-0 bg-gradient-to-r from-black/75 via-black/65 to-black/70"></div>
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="text-center mb-8">
+                <span class="inline-flex items-center px-4 py-2 rounded-full bg-white/10 border border-white/20 text-orange-200 font-semibold text-sm mb-4">
+                    <i class="ri-star-fill mr-2"></i>Experience Premium Service
+                </span>
+                <h2 class="text-4xl md:text-5xl font-extrabold text-white">Quick Booking Form</h2>
+                <p class="mt-3 text-slate-200 text-lg max-w-3xl mx-auto">Quick contact details and live location with a simple 2-column booking form.</p>
+            </div>
+
+            <div class="rounded-3xl border border-white/25 bg-transparent shadow-xl">
+                <div class="rounded-3xl bg-transparent p-4 md:p-5">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-4">
+                        <aside class="lg:col-span-5 space-y-3">
+                            <div class="rounded-2xl border border-white/30 bg-white/10 backdrop-blur-sm p-3.5">
+                                <h3 class="text-base font-bold text-white mb-2.5">Quick Contact</h3>
+                                <div class="space-y-2 text-xs">
+                                    <a href="tel:+14073414310" class="flex items-center text-slate-100 hover:text-orange-200 transition">
+                                        <span class="w-7 h-7 rounded-full bg-white/20 text-orange-200 flex items-center justify-center mr-2"><i class="ri-phone-fill text-[10px]"></i></span>
+                                        +1-4073414310
+                                    </a>
+                                    <a href="mailto:support@luxuryfleetservices.com" class="flex items-center text-slate-100 hover:text-orange-200 transition">
+                                        <span class="w-7 h-7 rounded-full bg-white/20 text-orange-200 flex items-center justify-center mr-2"><i class="ri-mail-line text-[10px]"></i></span>
+                                        support@luxuryfleetservices.com
+                                    </a>
+                                    <span class="flex items-center text-slate-100">
+                                        <span class="w-7 h-7 rounded-full bg-white/20 text-orange-200 flex items-center justify-center mr-2"><i class="ri-map-pin-line text-[10px]"></i></span>
+                                        5549 Bay Lagoo Cir, Orlando FL 32819
+                                    </span>
+                                    <a href="https://wa.me/14073414310" target="_blank" rel="noopener noreferrer" class="flex items-center text-slate-100 hover:text-orange-200 transition">
+                                        <span class="w-7 h-7 rounded-full bg-white/20 text-orange-200 flex items-center justify-center mr-2"><i class="ri-whatsapp-line text-[10px]"></i></span>
+                                        WhatsApp Instant Help
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="rounded-2xl border border-white/30 overflow-hidden bg-white/10 backdrop-blur-sm">
+                                <div class="px-3 py-2.5 border-b border-white/20 bg-white/10">
+                                    <h4 class="text-xs font-bold text-white"><i class="ri-map-2-line text-orange-200 mr-2"></i>Our Location</h4>
+                                </div>
+                                <iframe
+                                    title="Luxury Fleet Services location map"
+                                    src="https://www.google.com/maps?q=5549+Bay+Lagoo+Cir,+Orlando+FL+32819&output=embed"
+                                    loading="lazy"
+                                    referrerpolicy="no-referrer-when-downgrade"
+                                    class="w-full h-64 border-0">
+                                </iframe>
+                            </div>
+
+                            <div class="rounded-2xl border border-white/30 bg-white/10 backdrop-blur-sm p-3.5">
+                                <h4 class="text-xs font-bold text-white mb-2.5"><i class="ri-share-circle-line text-orange-200 mr-2"></i>Follow Us</h4>
+                                <div class="flex items-center gap-2.5">
+                                    <a href="#" aria-label="Facebook" class="w-8 h-8 rounded-full border border-white/30 text-slate-100 hover:bg-accent hover:border-accent hover:text-white flex items-center justify-center transition">
+                                        <i class="ri-facebook-fill text-xs"></i>
+                                    </a>
+                                    <a href="#" aria-label="Instagram" class="w-8 h-8 rounded-full border border-white/30 text-slate-100 hover:bg-accent hover:border-accent hover:text-white flex items-center justify-center transition">
+                                        <i class="ri-instagram-line text-xs"></i>
+                                    </a>
+                                    <a href="#" aria-label="X" class="w-8 h-8 rounded-full border border-white/30 text-slate-100 hover:bg-accent hover:border-accent hover:text-white flex items-center justify-center transition">
+                                        <i class="ri-twitter-x-line text-xs"></i>
+                                    </a>
+                                    <a href="#" aria-label="YouTube" class="w-8 h-8 rounded-full border border-white/30 text-slate-100 hover:bg-accent hover:border-accent hover:text-white flex items-center justify-center transition">
+                                        <i class="ri-youtube-fill text-xs"></i>
+                                    </a>
+                                    <a href="https://wa.me/14073414310" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" class="w-8 h-8 rounded-full border border-white/30 text-slate-100 hover:bg-accent hover:border-accent hover:text-white flex items-center justify-center transition">
+                                        <i class="ri-whatsapp-line text-xs"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </aside>
+
+                        <div class="lg:col-span-7 rounded-2xl border border-white/30 bg-transparent p-3 md:p-4">
+                            <form id="contact-form" class="space-y-4">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                                    <div>
+                                        <label for="contact-name" class="block text-xs font-semibold text-white mb-1.5"><i class="ri-user-3-line text-orange-200 mr-1.5"></i>Name</label>
+                                        <input id="contact-name" name="name" type="text" required placeholder="Enter full name" class="w-full px-3 py-2.5 text-sm border border-white/30 bg-white/90 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent/70 focus:border-accent text-primary-dark placeholder:text-slate-500">
+                                    </div>
+                                    <div>
+                                        <label for="contact-email" class="block text-xs font-semibold text-white mb-1.5"><i class="ri-mail-line text-orange-200 mr-1.5"></i>Email</label>
+                                        <input id="contact-email" name="email" type="email" required placeholder="Enter email address" class="w-full px-3 py-2.5 text-sm border border-white/30 bg-white/90 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent/70 focus:border-accent text-primary-dark placeholder:text-slate-500">
+                                    </div>
+                                    <div>
+                                        <label for="contact-phone" class="block text-xs font-semibold text-white mb-1.5"><i class="ri-phone-line text-orange-200 mr-1.5"></i>Phone</label>
+                                        <input id="contact-phone" name="phone" type="tel" required placeholder="Enter phone number" class="w-full px-3 py-2.5 text-sm border border-white/30 bg-white/90 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent/70 focus:border-accent text-primary-dark placeholder:text-slate-500">
+                                    </div>
+                                    <div>
+                                        <label for="contact-choose-car" class="block text-xs font-semibold text-white mb-1.5"><i class="ri-roadster-line text-orange-200 mr-1.5"></i>Choose Car</label>
+                                        <select id="contact-choose-car" name="choose_car" required class="w-full px-3 py-2.5 text-sm border border-white/30 bg-white/90 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent/70 focus:border-accent text-primary-dark">
+                                            <option value="" selected disabled>Select car</option>
+                                            <option>Sedan</option>
+                                            <option>SUV</option>
+                                            <option>Hatchback</option>
+                                            <option>Luxury</option>
+                                            <option>MUV</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                                    <div>
+                                        <label for="contact-pickup-date" class="block text-xs font-semibold text-white mb-1.5"><i class="ri-calendar-line text-orange-200 mr-1.5"></i>Pickup Date</label>
+                                        <input id="contact-pickup-date" name="pickup_date" type="date" required class="w-full px-3 py-2.5 text-sm border border-white/30 bg-white/90 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent/70 focus:border-accent text-primary-dark">
+                                    </div>
+                                    <div>
+                                        <label for="contact-pickup-time" class="block text-xs font-semibold text-white mb-1.5"><i class="ri-time-line text-orange-200 mr-1.5"></i>Pickup Time</label>
+                                        <input id="contact-pickup-time" name="pickup_time" type="time" required class="w-full px-3 py-2.5 text-sm border border-white/30 bg-white/90 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent/70 focus:border-accent text-primary-dark">
+                                    </div>
+                                    <div class="md:col-span-2">
+                                        <label for="contact-pickup-location" class="block text-xs font-semibold text-white mb-1.5"><i class="ri-map-pin-line text-orange-200 mr-1.5"></i>Pickup Location</label>
+                                        <input id="contact-pickup-location" name="pickup_location" type="text" required placeholder="Pickup location" class="w-full px-3 py-2.5 text-sm border border-white/30 bg-white/90 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent/70 focus:border-accent text-primary-dark placeholder:text-slate-500">
+                                    </div>
+                                </div>
+
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                                    <div>
+                                        <label for="contact-return-date" class="block text-xs font-semibold text-white mb-1.5"><i class="ri-calendar-line text-orange-200 mr-1.5"></i>Return Date</label>
+                                        <input id="contact-return-date" name="return_date" type="date" required class="w-full px-3 py-2.5 text-sm border border-white/30 bg-white/90 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent/70 focus:border-accent text-primary-dark">
+                                    </div>
+                                    <div>
+                                        <label for="contact-return-time" class="block text-xs font-semibold text-white mb-1.5"><i class="ri-time-line text-orange-200 mr-1.5"></i>Return Time</label>
+                                        <input id="contact-return-time" name="return_time" type="time" required class="w-full px-3 py-2.5 text-sm border border-white/30 bg-white/90 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent/70 focus:border-accent text-primary-dark">
+                                    </div>
+                                    <div class="md:col-span-2">
+                                        <label for="contact-return-location" class="block text-xs font-semibold text-white mb-1.5"><i class="ri-navigation-line text-orange-200 mr-1.5"></i>Return Location</label>
+                                        <input id="contact-return-location" name="return_location" type="text" required placeholder="Return location" class="w-full px-3 py-2.5 text-sm border border-white/30 bg-white/90 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent/70 focus:border-accent text-primary-dark placeholder:text-slate-500">
+                                    </div>
+                                </div>
+
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                                    <div>
+                                        <label for="contact-service-type" class="block text-xs font-semibold text-white mb-1.5"><i class="ri-service-line text-orange-200 mr-1.5"></i>Service Type</label>
+                                        <select id="contact-service-type" name="service_type" required class="w-full px-3 py-2.5 text-sm border border-white/30 bg-white/90 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent/70 focus:border-accent text-primary-dark">
+                                            <option value="" selected disabled>Select service type</option>
+                                            <option>Orlando Airport Transportation</option>
+                                            <option>Walt Disney World Transportation</option>
+                                            <option>Universal Orlando Transportation</option>
+                                            <option>Port Canaveral Cruise Transportation</option>
+                                            <option>Corporate Transportation</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label for="contact-passengers" class="block text-xs font-semibold text-white mb-1.5"><i class="ri-group-line text-orange-200 mr-1.5"></i>Passengers</label>
+                                        <select id="contact-passengers" name="passengers" required class="w-full px-3 py-2.5 text-sm border border-white/30 bg-white/90 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent/70 focus:border-accent text-primary-dark">
+                                            <option value="" selected disabled>Select passengers</option>
+                                            <option>1-2</option>
+                                            <option>3-4</option>
+                                            <option>5-6</option>
+                                            <option>7-8</option>
+                                            <option>9+</option>
+                                        </select>
+                                    </div>
+                                    <div class="md:col-span-2">
+                                        <label for="contact-subject" class="block text-xs font-semibold text-white mb-1.5"><i class="ri-price-tag-3-line text-orange-200 mr-1.5"></i>Subject</label>
+                                        <input id="contact-subject" name="subject" type="text" required placeholder="Ex: Airport transfer on 12 March" class="w-full px-3 py-2.5 text-sm border border-white/30 bg-white/90 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent/70 focus:border-accent text-primary-dark placeholder:text-slate-500">
+                                    </div>
+                                    <div class="md:col-span-2">
+                                        <label for="contact-message" class="block text-xs font-semibold text-white mb-1.5"><i class="ri-chat-3-line text-orange-200 mr-1.5"></i>Message</label>
+                                        <textarea id="contact-message" name="message" rows="3" required placeholder="Write your requirement..." class="w-full px-3 py-2.5 text-sm border border-white/30 bg-white/90 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent/70 focus:border-accent text-primary-dark placeholder:text-slate-500"></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2.5">
+                                    <p class="text-xs text-slate-200"><i class="ri-information-line text-orange-200 mr-1.5"></i>All fields are required.</p>
+                                    <button type="submit" class="inline-flex items-center justify-center px-6 py-2.5 rounded-lg bg-gradient-to-r from-accent to-orange-500 text-sm text-white font-bold hover:shadow-lg transition-all">
+                                        <i class="ri-send-plane-fill mr-2"></i>Submit Request
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <section class="cta-pro-section">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="cta-pro-card">
+                <div class="cta-pro-orb cta-pro-orb-left" aria-hidden="true"></div>
+                <div class="cta-pro-orb cta-pro-orb-right" aria-hidden="true"></div>
+                <div class="cta-pro-content">
+                    <p class="cta-pro-kicker">Ready To Ride</p>
+                    <h2>Book Your Transportation In Minutes</h2>
+                    <p>Share your trip details and get the best transportation option with transparent pricing and quick confirmation.</p>
+                    <div class="cta-pro-actions">
+                        <a href="car-listing.html" class="cta-pro-btn cta-pro-btn-primary"><i class="ri-roadster-line"></i><span>Browse Fleet</span></a>
+                        <a href="contact.html#enquiry-form" class="cta-pro-btn cta-pro-btn-secondary"><i class="ri-phone-fill"></i><span>Talk To Expert</span></a>
+                    </div>
+                    <div class="cta-pro-meta">
+                        <span><i class="ri-flashlight-line"></i>Instant Confirmation</span>
+                        <span><i class="ri-shield-check-line"></i>Trusted Service</span>
+                        <span><i class="ri-headphone-line"></i>24/7 Support</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="relative overflow-hidden bg-slate-950 text-slate-200 py-10">
+        <div class="absolute inset-0 pointer-events-none">
+            <div class="absolute -top-20 -left-20 w-72 h-72 bg-accent/15 rounded-full blur-3xl"></div>
+            <div class="absolute -bottom-24 right-0 w-80 h-80 bg-orange-500/10 rounded-full blur-3xl"></div>
+        </div>
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="rounded-3xl border border-white/10 bg-white/5 backdrop-blur-sm p-4 sm:p-5 mb-8 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+                <div>
+                    <p class="text-xs uppercase tracking-[0.25em] text-orange-200 font-semibold">Drive Today</p>
+                    <h3 class="text-2xl font-extrabold text-white mt-1">Need Transportation Right Now?</h3>
+                    <p class="text-slate-300 text-sm mt-1">Talk to our booking team and get instant availability.</p>
+                </div>
+                <div class="flex flex-wrap gap-3">
+                    <a href="tel:+14073414310" class="inline-flex items-center px-5 py-2.5 rounded-xl bg-white text-primary-dark font-bold hover:bg-accent hover:text-white transition">
+                        <i class="ri-phone-fill mr-2 text-xs"></i>Call Now
+                    </a>
+                    <a href="contact.html#enquiry-form" class="inline-flex items-center px-5 py-2.5 rounded-xl border border-white/30 text-white font-bold hover:bg-white hover:text-primary-dark transition">
+                        <i class="ri-mail-line mr-2 text-xs"></i>Quick Enquiry
+                    </a>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
+                <div>
+                    <a href="index.html" class="inline-flex items-center space-x-3">
+                        <span class="w-10 h-10 rounded-xl bg-white/10 border border-white/20 flex items-center justify-center overflow-hidden shadow-lg">
+                            <img src="images/logo.png" alt="Luxury Fleet Services logo" class="w-8 h-8 object-contain">
+                        </span>
+                        <span>
+                            <span class="block text-xl font-extrabold text-white">PrimeTransit</span>
+                            <span class="block text-xs font-semibold -mt-0.5 bg-gradient-to-r from-[#FFD700] via-[#C9A227] to-black bg-clip-text text-transparent">Luxury Fleet Services</span>
+                        </span>
+                    </a>
+                    <p class="text-slate-300 text-sm mt-4 leading-relaxed">Reliable transportation solutions for airport rides, cruise transfers, corporate travel, and family trips across major routes.</p>
+                    <div class="flex items-center gap-3 mt-5">
+                        <a href="#" aria-label="Facebook" class="w-9 h-9 rounded-full border border-white/20 text-slate-200 hover:bg-accent hover:border-accent hover:text-white flex items-center justify-center transition"><i class="ri-facebook-fill text-sm"></i></a>
+                        <a href="#" aria-label="Instagram" class="w-9 h-9 rounded-full border border-white/20 text-slate-200 hover:bg-accent hover:border-accent hover:text-white flex items-center justify-center transition"><i class="ri-instagram-line text-sm"></i></a>
+                        <a href="#" aria-label="X" class="w-9 h-9 rounded-full border border-white/20 text-slate-200 hover:bg-accent hover:border-accent hover:text-white flex items-center justify-center transition"><i class="ri-twitter-x-line text-sm"></i></a>
+                        <a href="#" aria-label="YouTube" class="w-9 h-9 rounded-full border border-white/20 text-slate-200 hover:bg-accent hover:border-accent hover:text-white flex items-center justify-center transition"><i class="ri-youtube-fill text-sm"></i></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="index.html" class="text-slate-300 hover:text-accent transition">Home</a></li>
+                        <li><a href="car-listing.html" class="text-slate-300 hover:text-accent transition">Fleet</a></li>
+                        <li><a href="service.html" class="text-slate-300 hover:text-accent transition">Services</a></li>
+                        <li><a href="about.html" class="text-slate-300 hover:text-accent transition">About Us</a></li>
+                        <li><a href="contact.html" class="text-slate-300 hover:text-accent transition">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-4">Popular Services</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="service.html#detail-airport-pickup-drop" class="text-slate-300 hover:text-accent transition">Orlando Airport Transportation</a></li>
+                        <li><a href="service.html#detail-with-driver-car" class="text-slate-300 hover:text-accent transition">Walt Disney World Transportation</a></li>
+                        <li><a href="service.html#detail-family-car-options" class="text-slate-300 hover:text-accent transition">Universal Orlando Transportation</a></li>
+                        <li><a href="service.html#detail-daily-car-rental" class="text-slate-300 hover:text-accent transition">Port Canaveral Cruise Transportation</a></li>
+                        <li><a href="service.html#detail-corporate-rentals" class="text-slate-300 hover:text-accent transition">Corporate Transportation</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-4">Contact Info</h4>
+                    <div class="space-y-2 text-sm text-slate-300 mb-4">
+                        <p><i class="ri-phone-fill text-accent mr-2"></i><a href="tel:+14073414310" class="hover:text-accent transition">+1-4073414310</a></p>
+                        <p><i class="ri-mail-line text-accent mr-2"></i><a href="mailto:support@luxuryfleetservices.com" class="hover:text-accent transition">support@luxuryfleetservices.com</a></p>
+                        <p><i class="ri-map-pin-line text-accent mr-2"></i>5549 Bay Lagoo Cir, Orlando FL 32819</p>
+                    </div>
+                    <form class="footer-newsletter-form flex gap-2" action="#" method="post">
+                        <input type="email" required placeholder="Your email" class="w-full px-3 py-2 rounded-lg bg-white/10 border border-white/20 text-white placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-accent">
+                        <button type="submit" class="px-4 py-2 rounded-lg bg-accent text-white font-semibold hover:bg-orange-500 transition">Join</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="mt-8 pt-5 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-slate-400">
+                <p>&copy; 2026 PrimeTransit. All rights reserved.</p>
+                <div class="flex items-center gap-4">
+                    <a href="about.html" class="hover:text-accent transition">Company</a>
+                    <a href="service.html" class="hover:text-accent transition">Services</a>
+                    <a href="contact.html" class="hover:text-accent transition">Support</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/navbar.js"></script>
+    <script src="js/contact.js"></script>
+    <script src="js/footer.js"></script>
+</body>
+</html>
+
+

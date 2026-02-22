@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dropdown | Admin</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        adminBg: '#F8FAF8',
+                        adminWhite: '#FFFFFF',
+                        adminGreen: '#000000',
+                        adminGreenSoft: '#e5e7eb',
+                        adminGold: '#FFD700',
+                        adminGoldSoft: '#fff7bf',
+                        adminText: '#1F2937',
+                        adminMuted: '#6B7280',
+                        adminBorder: '#111111'
+                    }
+                }
+            }
+        };
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body class="bg-adminBg text-adminText min-h-screen">
+<header class="sticky top-0 z-30 border-b border-adminBorder bg-adminWhite/95 backdrop-blur">
+    <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+            <div class="w-11 h-11 rounded-xl bg-adminGold text-white flex items-center justify-center shadow-md">
+                <i class="fas fa-gauge-high"></i>
+            </div>
+            <div>
+                <h1 class="text-xl font-extrabold">Admin Dashboard</h1>
+                <p class="text-sm text-adminMuted">Dropdown</p>
+            </div>
+        </div>
+        <a href="../index.html" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-adminGreen text-white font-semibold hover:brightness-110 transition">
+            <i class="fas fa-house"></i>
+            Back To Site
+        </a>
+    </div>
+</header>
+<div id="sidebar-overlay" class="sidebar-overlay lg:hidden"></div>
+
+<main class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div class="lg:hidden mb-4">
+        <button id="sidebar-toggle" type="button" class="sidebar-toggle-btn">
+            <i class="fas fa-bars"></i>
+            <span>Menu</span>
+        </button>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+        <aside id="admin-sidebar" class="admin-sidebar lg:col-span-3 xl:col-span-2 panel p-4 h-max lg:sticky lg:top-24">
+            <div class="lg:hidden flex items-center justify-between mb-4 pb-3 border-b border-adminBorder">
+                <p class="text-sm font-extrabold text-adminMuted">Admin Menu</p>
+                <button id="sidebar-close" type="button" class="w-9 h-9 rounded-full border border-adminBorder bg-white text-adminText">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <nav class="space-y-1"></nav>
+        </aside>
+
+        <section class="lg:col-span-9 xl:col-span-10 space-y-6">
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <article class="panel p-4">
+                    <p class="text-sm text-adminMuted">Total Dropdown Sections</p>
+                    <p id="dd-total" class="mt-2 text-3xl font-extrabold">0</p>
+                </article>
+                <article class="panel p-4">
+                    <p class="text-sm text-adminMuted">Linked Bios</p>
+                    <p id="dd-linked" class="mt-2 text-3xl font-extrabold text-adminGreen">0</p>
+                </article>
+                <article class="panel p-4">
+                    <p class="text-sm text-adminMuted">Most Used</p>
+                    <p id="dd-top" class="mt-2 text-xl font-extrabold text-amber-700">-</p>
+                </article>
+            </div>
+
+            <div class="panel p-6">
+                <h2 class="text-2xl font-extrabold">Manage Dropdown Options</h2>
+                <p class="text-sm text-adminMuted mt-1">These options will appear in Services page popup under "kis section mai drop down karna".</p>
+                <form id="dropdown-form" class="mt-4 grid grid-cols-1 md:grid-cols-3 gap-3">
+                    <input id="dropdown-name" placeholder="Section name (e.g. Wedding & Events)" class="px-4 py-2.5 rounded-lg border border-adminBorder">
+                    <input id="dropdown-anchor" placeholder="Optional anchor (e.g. detail-wedding-events)" class="px-4 py-2.5 rounded-lg border border-adminBorder">
+                    <button class="px-5 py-2.5 rounded-lg bg-adminGreen text-white font-bold" type="submit">
+                        <i class="fas fa-plus mr-1"></i>Add Dropdown Option
+                    </button>
+                </form>
+                <p id="dropdown-msg" class="mt-3 text-sm font-bold text-adminMuted"></p>
+            </div>
+
+            <div class="panel p-6">
+                <h3 class="text-xl font-extrabold mb-4">Dropdown Table</h3>
+                <div class="overflow-x-auto">
+                    <table class="min-w-full text-sm">
+                        <thead>
+                            <tr class="border-b border-adminBorder text-adminMuted text-left">
+                                <th class="py-3 pr-4">Section</th>
+                                <th class="py-3 pr-4">Anchor</th>
+                                <th class="py-3 pr-4">Linked Bios</th>
+                                <th class="py-3 pr-4">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="dropdown-table"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="panel p-6">
+                <h3 class="text-xl font-extrabold mb-4">Mega Dropdown Preview</h3>
+                <div id="dropdown-chips" class="flex flex-wrap gap-2"></div>
+            </div>
+        </section>
+    </div>
+</main>
+
+<script src="js/admin-sidebar.js"></script>
+<script>
+    const OPTION_STORAGE_KEY = 'adminServiceDropdownOptions';
+    const BIO_STORAGE_KEY = 'adminServiceBios';
+
+    const defaultOptions = [
+        { id: 'detail-self-drive-rentals', name: 'Self-Drive Rentals', anchor: '#detail-self-drive-rentals' },
+        { id: 'detail-with-driver-car', name: 'With Driver Car', anchor: '#detail-with-driver-car' },
+        { id: 'detail-family-car-options', name: 'Family Car Options', anchor: '#detail-family-car-options' },
+        { id: 'detail-daily-car-rental', name: 'Daily Car Rental', anchor: '#detail-daily-car-rental' },
+        { id: 'detail-weekend-trips', name: 'Weekend Trips', anchor: '#detail-weekend-trips' },
+        { id: 'detail-wedding-events', name: 'Wedding & Events', anchor: '#detail-wedding-events' },
+        { id: 'detail-airport-pickup-drop', name: 'Airport Pickup & Drop', anchor: '#detail-airport-pickup-drop' },
+        { id: 'detail-corporate-rentals', name: 'Corporate Rentals', anchor: '#detail-corporate-rentals' },
+        { id: 'detail-hourly-rental', name: 'Hourly Rental', anchor: '#detail-hourly-rental' },
+        { id: 'detail-luxury-car-service', name: 'Luxury Car Service', anchor: '#detail-luxury-car-service' }
+    ];
+
+    function escapeHtml(text) {
+        return String(text || '')
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#39;');
+    }
+
+    function toTitleCase(value) {
+        return String(value || '')
+            .trim()
+            .split(/\s+/)
+            .filter(Boolean)
+            .map(function (word) {
+                return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+            })
+            .join(' ');
+    }
+
+    function slugify(value) {
+        return String(value || '')
+            .toLowerCase()
+            .trim()
+            .replace(/[^a-z0-9]+/g, '-')
+            .replace(/^-+|-+$/g, '');
+    }
+
+    function normalizeAnchor(raw) {
+        const base = String(raw || '').replace(/^#/, '').trim();
+        if (!base) return '';
+        return '#' + slugify(base);
+    }
+
+    function loadOptions() {
+        try {
+            const raw = localStorage.getItem(OPTION_STORAGE_KEY);
+            if (raw === null) {
+                return defaultOptions.slice();
+            }
+            const parsed = JSON.parse(raw);
+            if (Array.isArray(parsed)) {
+                return parsed;
+            }
+        } catch (error) {}
+        return defaultOptions.slice();
+    }
+
+    function saveOptions(list) {
+        localStorage.setItem(OPTION_STORAGE_KEY, JSON.stringify(list || []));
+    }
+
+    function loadBios() {
+        try {
+            const parsed = JSON.parse(localStorage.getItem(BIO_STORAGE_KEY) || '[]');
+            return Array.isArray(parsed) ? parsed : [];
+        } catch (error) {
+            return [];
+        }
+    }
+
+    function getLinkedCount(sectionId, bios) {
+        return bios.filter(function (item) {
+            return String(item.sectionId || '') === String(sectionId || '');
+        }).length;
+    }
+
+    function render() {
+        const options = loadOptions();
+        const bios = loadBios();
+
+        const usageRows = options.map(function (option) {
+            return {
+                id: option.id,
+                name: option.name,
+                anchor: option.anchor,
+                linked: getLinkedCount(option.id, bios)
+            };
+        });
+
+        const top = usageRows.slice().sort(function (a, b) {
+            return b.linked - a.linked;
+        })[0];
+
+        document.getElementById('dd-total').textContent = options.length;
+        document.getElementById('dd-linked').textContent = bios.length;
+        document.getElementById('dd-top').textContent = top && top.linked > 0 ? top.name : '-';
+
+        document.getElementById('dropdown-table').innerHTML = usageRows.map(function (row) {
+            return '<tr class="table-row border-b border-adminBorder/70">' +
+                '<td class="py-3 pr-4 font-semibold">' + escapeHtml(row.name) + '</td>' +
+                '<td class="py-3 pr-4 text-adminMuted">' + escapeHtml(row.anchor) + '</td>' +
+                '<td class="py-3 pr-4">' + row.linked + '</td>' +
+                '<td class="py-3 pr-4">' +
+                    '<button class="delete-option px-3 py-1 rounded-lg text-xs font-bold bg-red-100 text-red-700" data-id="' + escapeHtml(row.id) + '">' +
+                        '<i class="fas fa-trash mr-1"></i>Delete' +
+                    '</button>' +
+                '</td>' +
+            '</tr>';
+        }).join('');
+
+        document.getElementById('dropdown-chips').innerHTML = options.map(function (option) {
+            return '<span class="pill bg-slate-100 text-slate-700 border border-adminBorder">' +
+                escapeHtml(option.name) +
+            '</span>';
+        }).join('');
+    }
+
+    document.getElementById('dropdown-form').addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        const nameInput = document.getElementById('dropdown-name');
+        const anchorInput = document.getElementById('dropdown-anchor');
+        const msg = document.getElementById('dropdown-msg');
+
+        const sectionName = toTitleCase(nameInput.value);
+        const rawAnchor = anchorInput.value.trim();
+
+        if (!sectionName) {
+            msg.textContent = 'Please enter section name.';
+            msg.className = 'mt-3 text-sm font-bold text-red-700';
+            return;
+        }
+
+        const normalizedAnchor = normalizeAnchor(rawAnchor || ('detail-' + slugify(sectionName)));
+        const sectionId = normalizedAnchor.replace(/^#/, '');
+
+        if (!sectionId) {
+            msg.textContent = 'Please provide a valid anchor.';
+            msg.className = 'mt-3 text-sm font-bold text-red-700';
+            return;
+        }
+
+        const options = loadOptions();
+        const alreadyExists = options.some(function (item) {
+            return String(item.id || '').toLowerCase() === sectionId.toLowerCase();
+        });
+
+        if (alreadyExists) {
+            msg.textContent = 'This dropdown anchor already exists.';
+            msg.className = 'mt-3 text-sm font-bold text-amber-700';
+            return;
+        }
+
+        options.push({
+            id: sectionId,
+            name: sectionName,
+            anchor: normalizedAnchor
+        });
+        saveOptions(options);
+
+        nameInput.value = '';
+        anchorInput.value = '';
+        msg.textContent = 'Dropdown option added successfully.';
+        msg.className = 'mt-3 text-sm font-bold text-adminGreen';
+        render();
+    });
+
+    document.getElementById('dropdown-table').addEventListener('click', function (event) {
+        const deleteBtn = event.target.closest('.delete-option');
+        if (!deleteBtn) return;
+
+        const id = deleteBtn.dataset.id;
+        const options = loadOptions().filter(function (item) {
+            return String(item.id) !== String(id);
+        });
+        saveOptions(options);
+        render();
+    });
+
+    render();
+</script>
+</body>
+</html>
+
+
+
+
+

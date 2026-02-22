@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Images Gallery - PrimeTransit</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-dark': '#000000',
+                        'accent': '#FFD700',
+                        'secondary': '#000000',
+                        orange: {
+                            50: '#fffbe6',
+                            100: '#fff4b5',
+                            200: '#ffe978',
+                            300: '#ffde3d',
+                            400: '#FFD700',
+                            500: '#000000',
+                            600: '#000000',
+                            700: '#000000',
+                            800: '#000000',
+                            900: '#000000',
+                            950: '#000000'
+                        },
+                        'bg-light': '#F8FAFC',
+                        'card': '#FFFFFF',
+                        'primary': '#111827',
+                        'text-secondary': '#6B7280',
+                        'border': '#E5E7EB'
+                    }
+                }
+            }
+        };
+    </script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-bg-light">
+    <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-500">
+        <div id="site-topbar" class="relative z-20 h-10 bg-gradient-to-r from-white/70 via-orange-50/70 to-orange-300/70 backdrop-blur-md border-b border-orange-200/60">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center justify-between text-[10px] sm:text-xs text-slate-800">
+                <div class="flex items-center gap-2 sm:gap-5">
+                    <a href="tel:+14073414310" class="hidden sm:inline-flex items-center gap-1.5 hover:text-accent transition-colors"><i class="ri-phone-line text-[10px]"></i><span>+1-4073414310</span></a>
+                    <a href="mailto:support@luxuryfleetservices.com" class="inline-flex items-center gap-1.5 hover:text-accent transition-colors"><i class="ri-mail-line text-[10px]"></i><span class="max-w-[130px] sm:max-w-none truncate">support@luxuryfleetservices.com</span></a>
+                </div>
+                <div class="flex items-center gap-2">
+                    <a href="#" aria-label="Facebook" class="w-6 h-6 rounded-full bg-orange-100 hover:bg-accent hover:text-white flex items-center justify-center transition-colors"><i class="ri-facebook-fill text-[10px]"></i></a>
+                    <a href="#" aria-label="Instagram" class="w-6 h-6 rounded-full bg-orange-100 hover:bg-accent hover:text-white flex items-center justify-center transition-colors"><i class="ri-instagram-line text-[10px]"></i></a>
+                    <a href="#" aria-label="X" class="w-6 h-6 rounded-full bg-orange-100 hover:bg-accent hover:text-white flex items-center justify-center transition-colors"><i class="ri-twitter-x-line text-[10px]"></i></a>
+                    <a href="#" aria-label="YouTube" class="w-6 h-6 rounded-full bg-orange-100 hover:bg-accent hover:text-white flex items-center justify-center transition-colors"><i class="ri-youtube-fill text-[10px]"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-r from-orange-300/45 via-orange-50/45 to-white/45 backdrop-blur-xl border-b border-orange-200/40"></div>
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="index.html" class="flex items-center space-x-3 group">
+                    <div class="relative">
+                        <img src="images/logo.png" alt="Luxury Fleet Services logo" class="w-10 h-10 object-contain drop-shadow-md transition-transform group-hover:scale-105">
+                    </div>
+                    <div>
+                        <span class="text-xl font-extrabold bg-gradient-to-r from-primary-dark to-primary bg-clip-text text-transparent">PrimeTransit</span>
+                        <div class="text-xs font-semibold -mt-1 bg-gradient-to-r from-[#FFD700] via-[#C9A227] to-black bg-clip-text text-transparent">Luxury Fleet Services</div>
+                    </div>
+                </a>
+                <div class="hidden lg:flex items-center space-x-1">
+                    <a href="index.html" class="nav-link px-4 py-1.5 rounded-xl font-semibold text-sm transition-all"><i class="ri-home-5-line mr-2"></i>Home</a>
+                    <div class="relative services-nav-group">
+                        <a href="service.html" class="nav-link px-4 py-1.5 rounded-xl font-semibold text-sm transition-all inline-flex items-center"><i class="ri-service-line mr-2"></i>Services <i class="ri-arrow-down-s-line ml-2 text-[10px]"></i></a>
+                        <div class="services-mega-dropdown">
+    <div class="services-dropdown-cover">
+        <img src="images/6.jpg" alt="Transportation service menu" loading="lazy">
+    </div>
+    <div class="services-mega-grid">
+        <a href="service.html#detail-airport-pickup-drop" class="services-mega-link">Orlando Airport Transportation</a>
+        <a href="service.html#detail-with-driver-car" class="services-mega-link">Walt Disney World Transportation</a>
+        <a href="service.html#detail-family-car-options" class="services-mega-link">Universal Orlando Transportation</a>
+        <a href="service.html#detail-daily-car-rental" class="services-mega-link">Port Canaveral Cruise Transportation</a>
+        <a href="service.html#detail-corporate-rentals" class="services-mega-link">Corporate Transportation</a>
+    </div>
+</div>
+                    </div>
+                    <a href="car-listing.html" class="nav-link px-4 py-1.5 rounded-xl font-semibold text-sm transition-all"><i class="ri-car-line mr-2"></i>Cars</a>
+                    <a href="about.html" class="nav-link px-4 py-1.5 rounded-xl font-semibold text-sm transition-all"><i class="ri-information-line mr-2"></i>About</a>
+                    <a href="contact.html" class="nav-link px-4 py-1.5 rounded-xl font-semibold text-sm transition-all"><i class="ri-phone-line mr-2"></i>Contact</a>
+                </div>
+                <div class="hidden lg:flex items-center space-x-3">
+                    <a href="contact.html#enquiry-form" class="btn-primary px-6 py-2 text-white rounded-xl font-bold">Enquiry Form</a>
+                </div>
+                <div class="lg:hidden flex items-center gap-2">
+                    <a href="contact.html#enquiry-form" aria-label="Enquiry" class="inline-flex items-center px-3 h-9 rounded-lg btn-primary text-white text-xs font-bold shadow-sm"><i class="ri-mail-line mr-1.5 text-[11px]"></i>Enquiry</a>
+                    <a href="tel:+14073414310" aria-label="Call" class="w-9 h-9 flex items-center justify-center rounded-lg bg-white/75 backdrop-blur-sm border border-white/70 text-primary-dark hover:bg-accent hover:text-white transition-all shadow-sm"><i class="ri-phone-line text-sm"></i></a>
+                    <button id="mobile-menu-btn" class="w-9 h-9 flex items-center justify-center rounded-xl hover:bg-bg-light text-primary-dark transition-all"><i class="ri-menu-line text-xl"></i></button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="lg:hidden absolute top-full left-0 right-0 bg-white border-b border-border shadow-xl transform -translate-y-full opacity-0 invisible transition-all duration-300">
+            <div class="px-4 py-6 space-y-2">
+                <a href="index.html" class="flex items-center px-4 py-3 rounded-xl font-medium text-text-secondary hover:bg-bg-light hover:text-accent transition"><i class="ri-home-5-line mr-3"></i>Home</a>
+                <a href="service.html" class="flex items-center px-4 py-3 rounded-xl font-medium text-text-secondary hover:bg-bg-light hover:text-accent transition"><i class="ri-service-line mr-3"></i>Services</a>
+                <a href="car-listing.html" class="flex items-center px-4 py-3 rounded-xl font-medium text-text-secondary hover:bg-bg-light hover:text-accent transition"><i class="ri-car-line mr-3"></i>Cars</a>
+                <a href="about.html" class="flex items-center px-4 py-3 rounded-xl font-medium text-text-secondary hover:bg-bg-light hover:text-accent transition"><i class="ri-information-line mr-3"></i>About</a>
+                <a href="contact.html" class="flex items-center px-4 py-3 rounded-xl font-medium text-text-secondary hover:bg-bg-light hover:text-accent transition"><i class="ri-phone-line mr-3"></i>Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="pt-[104px] h-[360px] relative overflow-hidden">
+        <img src="images/5.jpg" alt="Gallery banner" class="absolute inset-0 w-full h-full object-cover">
+        <div class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/55 to-black/55"></div>
+        <div class="relative h-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center">
+            <div class="max-w-2xl text-white">
+                <p class="text-xs uppercase tracking-[0.22em] text-orange-200 font-semibold">Visual Gallery</p>
+                <h1 class="mt-2 text-4xl md:text-5xl font-extrabold">PrimeTransit Images Page</h1>
+                <p class="mt-3 text-slate-200 text-lg">Browse our fleet photos, transportation highlights, and featured travel moments.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-wrap gap-2 mb-8" id="gallery-filters">
+                <button type="button" class="gallery-filter-btn px-4 py-2 rounded-full border border-accent bg-accent/10 text-primary-dark font-semibold text-sm" data-filter="all">All Images</button>
+                <button type="button" class="gallery-filter-btn px-4 py-2 rounded-full border border-border bg-white text-text-secondary font-semibold text-sm" data-filter="fleet">Fleet</button>
+                <button type="button" class="gallery-filter-btn px-4 py-2 rounded-full border border-border bg-white text-text-secondary font-semibold text-sm" data-filter="service">Service</button>
+                <button type="button" class="gallery-filter-btn px-4 py-2 rounded-full border border-border bg-white text-text-secondary font-semibold text-sm" data-filter="premium">Premium</button>
+                <button type="button" class="gallery-filter-btn px-4 py-2 rounded-full border border-border bg-white text-text-secondary font-semibold text-sm" data-filter="event">Event</button>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="gallery-grid">
+                <article class="gallery-item rounded-2xl overflow-hidden border border-border bg-white shadow-sm" data-category="fleet">
+                    <img src="images/2.jpg" alt="SUV fleet image" class="w-full h-56 object-cover">
+                    <div class="p-4"><p class="font-bold text-primary-dark">SUV Fleet Collection</p><p class="text-sm text-text-secondary mt-1">Category: Fleet</p></div>
+                </article>
+                <article class="gallery-item rounded-2xl overflow-hidden border border-border bg-white shadow-sm" data-category="fleet">
+                    <img src="images/3.jpg" alt="Hatchback lineup image" class="w-full h-56 object-cover">
+                    <div class="p-4"><p class="font-bold text-primary-dark">Hatchback Lineup</p><p class="text-sm text-text-secondary mt-1">Category: Fleet</p></div>
+                </article>
+                <article class="gallery-item rounded-2xl overflow-hidden border border-border bg-white shadow-sm" data-category="service">
+                    <img src="images/4.jpg" alt="Customer pickup image" class="w-full h-56 object-cover">
+                    <div class="p-4"><p class="font-bold text-primary-dark">Customer Pickup</p><p class="text-sm text-text-secondary mt-1">Category: Service</p></div>
+                </article>
+                <article class="gallery-item rounded-2xl overflow-hidden border border-border bg-white shadow-sm" data-category="premium">
+                    <img src="images/5.jpg" alt="Luxury car hero image" class="w-full h-56 object-cover">
+                    <div class="p-4"><p class="font-bold text-primary-dark">Luxury Showcase</p><p class="text-sm text-text-secondary mt-1">Category: Premium</p></div>
+                </article>
+                <article class="gallery-item rounded-2xl overflow-hidden border border-border bg-white shadow-sm" data-category="premium">
+                    <img src="images/6.jpg" alt="Premium interior image" class="w-full h-56 object-cover">
+                    <div class="p-4"><p class="font-bold text-primary-dark">Premium Interior</p><p class="text-sm text-text-secondary mt-1">Category: Premium</p></div>
+                </article>
+                <article class="gallery-item rounded-2xl overflow-hidden border border-border bg-white shadow-sm" data-category="service">
+                    <img src="images/8.jpg" alt="Road trip image" class="w-full h-56 object-cover">
+                    <div class="p-4"><p class="font-bold text-primary-dark">Road Trip Ready</p><p class="text-sm text-text-secondary mt-1">Category: Service</p></div>
+                </article>
+                <article class="gallery-item rounded-2xl overflow-hidden border border-border bg-white shadow-sm" data-category="event">
+                    <img src="images/9.jpg" alt="Wedding transportation image" class="w-full h-56 object-cover">
+                    <div class="p-4"><p class="font-bold text-primary-dark">Wedding Event Ride</p><p class="text-sm text-text-secondary mt-1">Category: Event</p></div>
+                </article>
+                <article class="gallery-item rounded-2xl overflow-hidden border border-border bg-white shadow-sm" data-category="event">
+                    <img src="images/2.jpg" alt="Corporate transportation image" class="w-full h-56 object-cover">
+                    <div class="p-4"><p class="font-bold text-primary-dark">Corporate Travel Set</p><p class="text-sm text-text-secondary mt-1">Category: Event</p></div>
+                </article>
+                <article class="gallery-item rounded-2xl overflow-hidden border border-border bg-white shadow-sm" data-category="fleet">
+                    <img src="images/3.jpg" alt="City ride collection image" class="w-full h-56 object-cover">
+                    <div class="p-4"><p class="font-bold text-primary-dark">City Ride Collection</p><p class="text-sm text-text-secondary mt-1">Category: Fleet</p></div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const filterButtons = document.querySelectorAll('.gallery-filter-btn');
+            const items = document.querySelectorAll('.gallery-item');
+
+            filterButtons.forEach(function (button) {
+                button.addEventListener('click', function () {
+                    const filter = button.dataset.filter;
+
+                    filterButtons.forEach(function (btn) {
+                        btn.classList.remove('border-accent', 'bg-accent/10', 'text-primary-dark');
+                        btn.classList.add('border-border', 'bg-white', 'text-text-secondary');
+                    });
+
+                    button.classList.remove('border-border', 'bg-white', 'text-text-secondary');
+                    button.classList.add('border-accent', 'bg-accent/10', 'text-primary-dark');
+
+                    items.forEach(function (item) {
+                        const category = item.dataset.category;
+                        const visible = filter === 'all' || filter === category;
+                        item.classList.toggle('hidden', !visible);
+                    });
+                });
+            });
+        });
+    </script>
+    <script src="js/navbar.js"></script>
+    <script src="js/footer.js"></script>
+</body>
+</html>

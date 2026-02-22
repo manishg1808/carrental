@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car List | Admin</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        adminBg: '#F8FAF8',
+                        adminWhite: '#FFFFFF',
+                        adminGreen: '#000000',
+                        adminGreenSoft: '#e5e7eb',
+                        adminGold: '#FFD700',
+                        adminGoldSoft: '#fff7bf',
+                        adminText: '#1F2937',
+                        adminMuted: '#6B7280',
+                        adminBorder: '#111111'
+                    }
+                }
+            }
+        };
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body class="bg-adminBg text-adminText min-h-screen">
+<header class="sticky top-0 z-30 border-b border-adminBorder bg-adminWhite/95 backdrop-blur">
+    <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+            <div class="w-11 h-11 rounded-xl bg-adminGold text-white flex items-center justify-center shadow-md">
+                <i class="fas fa-gauge-high"></i>
+            </div>
+            <div>
+                <h1 class="text-xl font-extrabold">Admin Dashboard</h1>
+                <p class="text-sm text-adminMuted">Car List</p>
+            </div>
+        </div>
+        <a href="../index.html" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-adminGreen text-white font-semibold hover:brightness-110 transition">
+            <i class="fas fa-house"></i>
+            Back To Site
+        </a>
+    </div>
+</header>
+<div id="sidebar-overlay" class="sidebar-overlay lg:hidden"></div>
+
+<main class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div class="lg:hidden mb-4">
+        <button id="sidebar-toggle" type="button" class="sidebar-toggle-btn">
+            <i class="fas fa-bars"></i>
+            <span>Menu</span>
+        </button>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+        <aside id="admin-sidebar" class="admin-sidebar lg:col-span-3 xl:col-span-2 panel p-4 h-max lg:sticky lg:top-24">
+            <div class="lg:hidden flex items-center justify-between mb-4 pb-3 border-b border-adminBorder">
+                <p class="text-sm font-extrabold text-adminMuted">Admin Menu</p>
+                <button id="sidebar-close" type="button" class="w-9 h-9 rounded-full border border-adminBorder bg-white text-adminText">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <nav class="space-y-1"></nav>
+        </aside>
+
+        <section class="lg:col-span-9 xl:col-span-10 space-y-6">
+            <div class="grid grid-cols-1 gap-4">
+                <a href="images.html" class="panel p-4 hover:bg-slate-50">
+                    <p class="text-sm text-adminMuted">Quick Access</p>
+                    <p class="mt-2 text-xl font-extrabold flex items-center gap-2"><i class="fas fa-images text-adminGreen"></i><span>Images</span></p>
+                </a>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4">
+                <article class="panel p-4">
+                    <p class="text-sm text-adminMuted">Total Cars</p>
+                    <p id="total-cars" class="mt-2 text-3xl font-extrabold">0</p>
+                </article>
+                <article class="panel p-4">
+                    <p class="text-sm text-adminMuted">Available</p>
+                    <p id="available-cars" class="mt-2 text-3xl font-extrabold text-adminGreen">0</p>
+                </article>
+                <article class="panel p-4">
+                    <p class="text-sm text-adminMuted">Categories</p>
+                    <p id="total-categories" class="mt-2 text-3xl font-extrabold">0</p>
+                </article>
+                <article class="panel p-4">
+                    <p class="text-sm text-adminMuted">Brands</p>
+                    <p id="total-brands" class="mt-2 text-3xl font-extrabold text-amber-700">0</p>
+                </article>
+            </div>
+
+            <div class="panel p-6">
+                <div class="flex flex-col lg:flex-row gap-4 lg:items-center lg:justify-between mb-5">
+                    <div>
+                        <h2 class="text-2xl font-extrabold">Manage Cars</h2>
+                        <p class="text-sm text-adminMuted">Add, update and maintain car inventory with category and brand tracking.</p>
+                    </div>
+                    <div class="flex flex-col sm:flex-row gap-3">
+                        <input id="search" placeholder="Search by name, brand, category..." class="w-full sm:w-80 px-4 py-2.5 rounded-lg border border-adminBorder focus:outline-none focus:ring-2 focus:ring-adminGreen">
+                        <button id="open-create-modal" class="px-4 py-2.5 rounded-lg bg-adminGold text-white font-bold whitespace-nowrap">
+                            <i class="fas fa-plus mr-2"></i>Create Car
+                        </button>
+                    </div>
+                </div>
+
+                <div class="overflow-x-auto">
+                    <table class="min-w-full text-sm">
+                        <thead>
+                            <tr class="border-b border-adminBorder text-adminMuted text-left">
+                                <th class="py-3 pr-4">Car</th>
+                                <th class="py-3 pr-4">Brand</th>
+                                <th class="py-3 pr-4">Category</th>
+                                <th class="py-3 pr-4">Type</th>
+                                <th class="py-3 pr-4">Fuel</th>
+                                <th class="py-3 pr-4">Price</th>
+                                <th class="py-3 pr-4">Status</th>
+                                <th class="py-3 pr-4">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbody"></tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>
+
+<div id="create-modal" class="fixed inset-0 bg-black/55 hidden items-center justify-center p-4 z-50">
+    <div class="w-full max-w-5xl rounded-2xl shadow-xl border border-adminBorder max-h-[92vh] overflow-y-auto">
+        <div class="p-5 border-b border-adminBorder flex items-center justify-between sticky top-0 bg-white/95 backdrop-blur z-10">
+            <h3 class="text-xl font-extrabold">Create New Car</h3>
+            <button id="close-create-modal" class="w-9 h-9 rounded-full hover:bg-gray-100"><i class="fas fa-times"></i></button>
+        </div>
+
+        <form id="create-car-form" class="p-5 grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+                <label class="text-sm font-bold text-adminText mb-1.5 block">Car Name *</label>
+                <input required name="name" placeholder="Ex: Toyota Camry" class="px-4 py-2.5 rounded-lg border border-adminBorder">
+            </div>
+            <div>
+                <label class="text-sm font-bold text-adminText mb-1.5 block">Brand *</label>
+                <select required name="brand" id="car-brand" class="px-4 py-2.5 rounded-lg border border-adminBorder"></select>
+            </div>
+            <div>
+                <label class="text-sm font-bold text-adminText mb-1.5 block">Category *</label>
+                <select required name="category" id="car-category" class="px-4 py-2.5 rounded-lg border border-adminBorder"></select>
+            </div>
+            <div>
+                <label class="text-sm font-bold text-adminText mb-1.5 block">Type *</label>
+                <input required name="type" placeholder="Ex: SUV, Sedan, Hatchback" class="px-4 py-2.5 rounded-lg border border-adminBorder">
+            </div>
+            <div>
+                <label class="text-sm font-bold text-adminText mb-1.5 block">Fuel *</label>
+                <select required name="fuel" class="px-4 py-2.5 rounded-lg border border-adminBorder">
+                    <option value="">Select fuel</option>
+                    <option>Petrol</option>
+                    <option>Diesel</option>
+                    <option>Electric</option>
+                    <option>Hybrid</option>
+                    <option>CNG</option>
+                </select>
+            </div>
+            <div>
+                <label class="text-sm font-bold text-adminText mb-1.5 block">Price / Day *</label>
+                <input required type="number" min="1" name="price" placeholder="Ex: 3500" class="px-4 py-2.5 rounded-lg border border-adminBorder">
+            </div>
+            <div>
+                <label class="text-sm font-bold text-adminText mb-1.5 block">URL Slug</label>
+                <input name="slug" placeholder="Optional SEO slug" class="px-4 py-2.5 rounded-lg border border-adminBorder">
+            </div>
+
+            <div class="md:col-span-2 grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="md:col-span-2">
+                    <label class="text-sm font-bold text-adminText mb-1.5 block">Meta Title</label>
+                    <input name="metaTitle" placeholder="Meta title for SEO" class="px-4 py-2.5 rounded-lg border border-adminBorder">
+                </div>
+                <div>
+                    <label class="text-sm font-bold text-adminText mb-1.5 block">Meta Keywords</label>
+                    <input name="metaKeywords" placeholder="comma, separated, keywords" class="px-4 py-2.5 rounded-lg border border-adminBorder">
+                </div>
+            </div>
+
+            <div class="md:col-span-2">
+                <label class="text-sm font-bold text-adminText mb-1.5 block">Meta Description</label>
+                <textarea name="metaDescription" placeholder="Meta description" class="px-4 py-2.5 rounded-lg border border-adminBorder min-h-[80px]"></textarea>
+            </div>
+
+            <div class="md:col-span-2">
+                <label class="text-sm font-bold text-adminText mb-1.5 block">Specifications</label>
+                <textarea name="specifications" placeholder="One per line: Key: Value" class="px-4 py-2.5 rounded-lg border border-adminBorder min-h-[90px]"></textarea>
+            </div>
+
+            <div class="md:col-span-2">
+                <label class="text-sm font-bold text-adminText mb-1.5 block">Features</label>
+                <textarea name="features" placeholder="Comma separated features" class="px-4 py-2.5 rounded-lg border border-adminBorder min-h-[80px]"></textarea>
+            </div>
+
+            <div class="md:col-span-2">
+                <label class="text-sm font-bold text-adminText mb-1.5 block">Description</label>
+                <textarea name="description" placeholder="Car description" class="px-4 py-2.5 rounded-lg border border-adminBorder min-h-[90px]"></textarea>
+            </div>
+
+            <div class="md:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="rounded-lg border border-dashed border-adminBorder p-4 bg-white/70">
+                    <label class="block text-sm font-semibold mb-2">Upload Image</label>
+                    <input id="image-file" type="file" accept="image/*" class="w-full text-sm">
+                    <p class="text-xs text-adminMuted mt-2">Tip: Use a clean landscape image for best dashboard cards.</p>
+                </div>
+                <div class="rounded-lg border border-adminBorder p-4 flex items-center justify-center bg-white/70">
+                    <img id="image-preview" src="../images/5.jpg" alt="Preview" class="h-32 w-full object-cover rounded-lg">
+                </div>
+            </div>
+
+            <div class="md:col-span-2 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                <div class="flex flex-col sm:flex-row gap-3">
+                    <label class="inline-flex items-center gap-2 text-sm font-semibold">
+                        <input name="available" type="checkbox" checked>
+                        Available now
+                    </label>
+                    <label class="inline-flex items-center gap-2 text-sm font-semibold">
+                        <input name="popularOnHome" type="checkbox">
+                        Popular car on home page
+                    </label>
+                </div>
+                <button class="px-6 py-2.5 rounded-lg bg-adminGreen text-white font-bold">Save Car</button>
+            </div>
+            <p id="form-msg" class="md:col-span-2 text-sm font-bold"></p>
+        </form>
+    </div>
+</div>
+
+<script src="../js/data.js"></script>
+<script src="js/admin-shared.js"></script>
+<script src="js/admin-sidebar.js"></script>
+<script>
+    let cars = AdminData.loadCars();
+    let uploadedImageData = '';
+
+    const tbody = document.getElementById('tbody');
+    const searchInput = document.getElementById('search');
+    const createModal = document.getElementById('create-modal');
+    const createForm = document.getElementById('create-car-form');
+    const categorySelect = document.getElementById('car-category');
+    const brandSelect = document.getElementById('car-brand');
+
+    function escapeHtml(text) {
+        return String(text || '')
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#39;');
+    }
+
+    function renderSelectOptions(selectEl, list, placeholder) {
+        const current = selectEl.value;
+        const options = ['<option value="">' + placeholder + '</option>']
+            .concat(list.map(function (item) {
+                const safe = escapeHtml(item);
+                return '<option value="' + safe + '">' + safe + '</option>';
+            }));
+
+        selectEl.innerHTML = options.join('');
+
+        if (current && list.some(function (item) {
+            return item.toLowerCase() === String(current).toLowerCase();
+        })) {
+            selectEl.value = current;
+        }
+    }
+
+    function populateMetaSelects() {
+        renderSelectOptions(categorySelect, AdminData.loadCategories(cars), 'Select category');
+        renderSelectOptions(brandSelect, AdminData.loadBrands(cars), 'Select brand');
+    }
+
+    function renderSummary() {
+        const stats = AdminData.getStats(cars);
+        document.getElementById('total-cars').textContent = stats.total;
+        document.getElementById('available-cars').textContent = stats.available;
+        document.getElementById('total-categories').textContent = AdminData.loadCategories(cars).length;
+        document.getElementById('total-brands').textContent = AdminData.loadBrands(cars).length;
+    }
+
+    function renderTable() {
+        const query = (searchInput.value || '').toLowerCase().trim();
+        const list = cars.filter(function (car) {
+            if (!query) return true;
+            const hay = [car.name, car.brand, car.category, car.type, car.fuel, car.transmission]
+                .join(' ')
+                .toLowerCase();
+            return hay.includes(query);
+        });
+
+        tbody.innerHTML = list.map(function (car) {
+            return '<tr class="table-row border-b border-adminBorder/80">' +
+                '<td class="py-3 pr-4">' +
+                    '<div class="flex items-center gap-3 min-w-[220px]">' +
+                        '<img src="' + AdminData.resolveImageSrc(car.image) + '" alt="' + escapeHtml(car.name) + '" class="w-14 h-11 rounded-lg object-cover border border-adminBorder" onerror="this.src=\'../images/5.jpg\'">' +
+                        '<div>' +
+                            '<p class="font-bold">' + escapeHtml(car.name) + '</p>' +
+                            '<p class="text-xs text-adminMuted">' + (car.popularOnHome ? 'Popular on Home' : 'Standard') + '</p>' +
+                        '</div>' +
+                    '</div>' +
+                '</td>' +
+                '<td class="py-3 pr-4"><span class="pill bg-slate-100 text-slate-700">' + escapeHtml(car.brand || '-') + '</span></td>' +
+                '<td class="py-3 pr-4"><span class="pill bg-adminGoldSoft text-amber-700">' + escapeHtml(car.category || '-') + '</span></td>' +
+                '<td class="py-3 pr-4">' + escapeHtml(car.type || '-') + '</td>' +
+                '<td class="py-3 pr-4">' + escapeHtml(car.fuel || '-') + '</td>' +
+                '<td class="py-3 pr-4 font-bold">' + AdminData.formatRupee(car.price) + '</td>' +
+                '<td class="py-3 pr-4">' +
+                    (car.available
+                        ? '<span class="pill bg-adminGreenSoft text-adminGreen">Available</span>'
+                        : '<span class="pill bg-adminGoldSoft text-amber-700">Unavailable</span>') +
+                '</td>' +
+                '<td class="py-3 pr-4">' +
+                    '<div class="flex gap-2">' +
+                        '<button class="toggle px-2.5 py-1 text-xs rounded-lg bg-adminGreenSoft text-adminGreen font-bold" data-id="' + car.id + '"><i class="fas fa-power-off mr-1"></i>Toggle</button>' +
+                        '<button class="delete px-2.5 py-1 text-xs rounded-lg bg-red-100 text-red-700 font-bold" data-id="' + car.id + '"><i class="fas fa-trash-alt mr-1"></i>Delete</button>' +
+                    '</div>' +
+                '</td>' +
+            '</tr>';
+        }).join('');
+    }
+
+    function render() {
+        renderSummary();
+        renderTable();
+        populateMetaSelects();
+    }
+
+    function openModal() {
+        populateMetaSelects();
+        createModal.classList.remove('hidden');
+        createModal.classList.add('flex');
+    }
+
+    function closeModal() {
+        createModal.classList.add('hidden');
+        createModal.classList.remove('flex');
+    }
+
+    searchInput.addEventListener('input', renderTable);
+    document.getElementById('open-create-modal').addEventListener('click', openModal);
+    document.getElementById('close-create-modal').addEventListener('click', closeModal);
+    createModal.addEventListener('click', function (e) {
+        if (e.target.id === 'create-modal') closeModal();
+    });
+
+    document.getElementById('image-file').addEventListener('change', async function (e) {
+        const file = e.target.files[0];
+        uploadedImageData = await AdminData.fileToDataUrl(file);
+        if (uploadedImageData) {
+            document.getElementById('image-preview').src = uploadedImageData;
+        }
+    });
+
+    tbody.addEventListener('click', function (e) {
+        const toggleBtn = e.target.closest('.toggle');
+        const deleteBtn = e.target.closest('.delete');
+
+        if (toggleBtn) {
+            const id = Number(toggleBtn.dataset.id);
+            cars = cars.map(function (car) {
+                return car.id === id ? Object.assign({}, car, { available: !car.available }) : car;
+            });
+            AdminData.saveCars(cars);
+            render();
+        }
+
+        if (deleteBtn) {
+            const id = Number(deleteBtn.dataset.id);
+            cars = cars.filter(function (car) {
+                return car.id !== id;
+            });
+            AdminData.saveCars(cars);
+            render();
+        }
+    });
+
+    createForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        const form = e.target;
+
+        const features = form.features.value
+            .split(',')
+            .map(function (item) { return item.trim(); })
+            .filter(Boolean);
+
+        const specs = {};
+        form.specifications.value
+            .split('\n')
+            .map(function (line) { return line.trim(); })
+            .filter(Boolean)
+            .forEach(function (line) {
+                const idx = line.indexOf(':');
+                if (idx > 0) {
+                    const key = line.slice(0, idx).trim();
+                    const value = line.slice(idx + 1).trim();
+                    if (key && value) specs[key] = value;
+                }
+            });
+
+        const newCar = {
+            id: Date.now(),
+            name: form.name.value.trim(),
+            brand: AdminData.toTitleCase(form.brand.value.trim()),
+            category: AdminData.toTitleCase(form.category.value.trim()),
+            type: AdminData.toTitleCase(form.type.value.trim()),
+            fuel: form.fuel.value.trim(),
+            transmission: 'Automatic',
+            price: Number(form.price.value),
+            image: uploadedImageData || 'images/5.jpg',
+            available: form.available.checked,
+            popularOnHome: form.popularOnHome.checked,
+            description: form.description.value.trim(),
+            slug: form.slug.value.trim(),
+            seo: {
+                metaTitle: form.metaTitle.value.trim(),
+                metaKeywords: form.metaKeywords.value.trim(),
+                metaDescription: form.metaDescription.value.trim()
+            },
+            specs: specs,
+            features: features
+        };
+
+        if (!newCar.name || !newCar.brand || !newCar.category || !newCar.type || !newCar.fuel || !newCar.price) {
+            const msg = document.getElementById('form-msg');
+            msg.textContent = 'Please fill all required fields.';
+            msg.className = 'md:col-span-2 text-sm font-bold text-red-700';
+            return;
+        }
+
+        cars.unshift(newCar);
+        AdminData.saveCars(cars);
+
+        const categories = AdminData.loadCategories(cars);
+        if (!categories.some(function (item) { return item.toLowerCase() === newCar.category.toLowerCase(); })) {
+            AdminData.saveCategories(categories.concat([newCar.category]));
+        }
+
+        const brands = AdminData.loadBrands(cars);
+        if (!brands.some(function (item) { return item.toLowerCase() === newCar.brand.toLowerCase(); })) {
+            AdminData.saveBrands(brands.concat([newCar.brand]));
+        }
+
+        const msg = document.getElementById('form-msg');
+        msg.textContent = 'Car created successfully.';
+        msg.className = 'md:col-span-2 text-sm font-bold text-adminGreen';
+
+        form.reset();
+        uploadedImageData = '';
+        document.getElementById('image-preview').src = '../images/5.jpg';
+        render();
+        setTimeout(closeModal, 550);
+    });
+
+    render();
+</script>
+</body>
+</html>
+
+
+
+

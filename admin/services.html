@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services | Admin</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        adminBg: '#F8FAF8',
+                        adminWhite: '#FFFFFF',
+                        adminGreen: '#000000',
+                        adminGreenSoft: '#e5e7eb',
+                        adminGold: '#FFD700',
+                        adminGoldSoft: '#fff7bf',
+                        adminText: '#1F2937',
+                        adminMuted: '#6B7280',
+                        adminBorder: '#111111'
+                    }
+                }
+            }
+        };
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body class="bg-adminBg text-adminText min-h-screen">
+<header class="sticky top-0 z-30 border-b border-adminBorder bg-adminWhite/95 backdrop-blur">
+    <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+            <div class="w-11 h-11 rounded-xl bg-adminGold text-white flex items-center justify-center shadow-md">
+                <i class="fas fa-gauge-high"></i>
+            </div>
+            <div>
+                <h1 class="text-xl font-extrabold">Admin Dashboard</h1>
+                <p class="text-sm text-adminMuted">Services</p>
+            </div>
+        </div>
+        <a href="../index.html" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-adminGreen text-white font-semibold hover:brightness-110 transition">
+            <i class="fas fa-house"></i>
+            Back To Site
+        </a>
+    </div>
+</header>
+<div id="sidebar-overlay" class="sidebar-overlay lg:hidden"></div>
+
+<main class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div class="lg:hidden mb-4">
+        <button id="sidebar-toggle" type="button" class="sidebar-toggle-btn">
+            <i class="fas fa-bars"></i>
+            <span>Menu</span>
+        </button>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+        <aside id="admin-sidebar" class="admin-sidebar lg:col-span-3 xl:col-span-2 panel p-4 h-max lg:sticky lg:top-24">
+            <div class="lg:hidden flex items-center justify-between mb-4 pb-3 border-b border-adminBorder">
+                <p class="text-sm font-extrabold text-adminMuted">Admin Menu</p>
+                <button id="sidebar-close" type="button" class="w-9 h-9 rounded-full border border-adminBorder bg-white text-adminText">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <nav class="space-y-1"></nav>
+        </aside>
+
+        <section class="lg:col-span-9 xl:col-span-10 space-y-6">
+            <div class="grid grid-cols-1 sm:grid-cols-4 gap-4">
+                <article class="panel p-4">
+                    <p class="text-sm text-adminMuted">Total Service Bios</p>
+                    <p id="srv-total" class="mt-2 text-3xl font-extrabold">0</p>
+                </article>
+                <article class="panel p-4">
+                    <p class="text-sm text-adminMuted">With Image</p>
+                    <p id="srv-image" class="mt-2 text-3xl font-extrabold text-adminGreen">0</p>
+                </article>
+                <article class="panel p-4">
+                    <p class="text-sm text-adminMuted">Sections Used</p>
+                    <p id="srv-sections" class="mt-2 text-3xl font-extrabold text-amber-700">0</p>
+                </article>
+                <article class="panel p-4">
+                    <p class="text-sm text-adminMuted">Latest Added</p>
+                    <p id="srv-latest" class="mt-2 text-sm font-extrabold">-</p>
+                </article>
+            </div>
+
+            <div class="panel p-6">
+                <div class="flex flex-col lg:flex-row gap-4 lg:items-center lg:justify-between mb-5">
+                    <div>
+                        <h2 class="text-2xl font-extrabold">Service Bios</h2>
+                        <p class="text-sm text-adminMuted mt-1">Manage short bios that you can later bind dynamically in service detail sections.</p>
+                    </div>
+                    <button id="open-bio-modal" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-adminGreen text-white font-bold w-max">
+                        <i class="fas fa-plus"></i>
+                        Add Bio
+                    </button>
+                </div>
+                <p id="srv-msg" class="mb-4 text-sm font-bold text-adminMuted"></p>
+                <div id="bio-grid" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4"></div>
+            </div>
+        </section>
+    </div>
+</main>
+
+<div id="bio-modal" class="fixed inset-0 bg-black/55 hidden items-center justify-center p-4 z-50">
+    <div class="w-full max-w-4xl rounded-2xl shadow-xl border border-adminBorder bg-white max-h-[92vh] overflow-y-auto">
+        <div class="p-5 border-b border-adminBorder flex items-center justify-between sticky top-0 bg-white z-10">
+            <h3 class="text-xl font-extrabold">Add Service Bio</h3>
+            <button id="close-bio-modal" class="w-9 h-9 rounded-full hover:bg-gray-100">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+
+        <form id="bio-form" class="p-5 grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+                <label class="text-sm font-bold text-adminText mb-1.5 block">Car Name *</label>
+                <input id="bio-car-name" required placeholder="Ex: Toyota Camry" class="px-4 py-2.5 rounded-lg border border-adminBorder">
+            </div>
+
+            <div>
+                <label class="text-sm font-bold text-adminText mb-1.5 block">Drop Down Section *</label>
+                <select id="bio-section" required class="px-4 py-2.5 rounded-lg border border-adminBorder"></select>
+            </div>
+
+            <div class="md:col-span-2">
+                <label class="text-sm font-bold text-adminText mb-1.5 block">Description *</label>
+                <textarea id="bio-description" required placeholder="Write short service bio..." class="px-4 py-2.5 rounded-lg border border-adminBorder min-h-[100px]"></textarea>
+            </div>
+
+            <div class="md:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="rounded-lg border border-dashed border-adminBorder p-4">
+                    <label class="block text-sm font-semibold mb-2">Image Upload *</label>
+                    <input id="bio-image" type="file" accept="image/*" required class="w-full text-sm">
+                    <p class="text-xs text-adminMuted mt-2">Upload image for this bio card.</p>
+                </div>
+                <div class="rounded-lg border border-adminBorder p-4 flex items-center justify-center">
+                    <img id="bio-image-preview" src="../images/5.jpg" alt="Preview" class="h-32 w-full object-cover rounded-lg">
+                </div>
+            </div>
+
+            <div class="md:col-span-2 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                <p id="bio-form-msg" class="text-sm font-bold text-adminMuted">All fields are required.</p>
+                <div class="flex items-center gap-2">
+                    <button id="cancel-bio-btn" type="button" class="px-5 py-2.5 rounded-lg border border-adminBorder bg-white font-bold">Cancel</button>
+                    <button class="px-6 py-2.5 rounded-lg bg-adminGreen text-white font-bold">Save Bio</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script src="js/admin-sidebar.js"></script>
+<script>
+    const OPTION_STORAGE_KEY = 'adminServiceDropdownOptions';
+    const BIO_STORAGE_KEY = 'adminServiceBios';
+
+    const defaultOptions = [
+        { id: 'detail-self-drive-rentals', name: 'Self-Drive Rentals', anchor: '#detail-self-drive-rentals' },
+        { id: 'detail-with-driver-car', name: 'With Driver Car', anchor: '#detail-with-driver-car' },
+        { id: 'detail-family-car-options', name: 'Family Car Options', anchor: '#detail-family-car-options' },
+        { id: 'detail-daily-car-rental', name: 'Daily Car Rental', anchor: '#detail-daily-car-rental' },
+        { id: 'detail-weekend-trips', name: 'Weekend Trips', anchor: '#detail-weekend-trips' },
+        { id: 'detail-wedding-events', name: 'Wedding & Events', anchor: '#detail-wedding-events' },
+        { id: 'detail-airport-pickup-drop', name: 'Airport Pickup & Drop', anchor: '#detail-airport-pickup-drop' },
+        { id: 'detail-corporate-rentals', name: 'Corporate Rentals', anchor: '#detail-corporate-rentals' },
+        { id: 'detail-hourly-rental', name: 'Hourly Rental', anchor: '#detail-hourly-rental' },
+        { id: 'detail-luxury-car-service', name: 'Luxury Car Service', anchor: '#detail-luxury-car-service' }
+    ];
+
+    const bioGrid = document.getElementById('bio-grid');
+    const bioModal = document.getElementById('bio-modal');
+    const bioForm = document.getElementById('bio-form');
+    const bioSectionSelect = document.getElementById('bio-section');
+    const bioImageInput = document.getElementById('bio-image');
+    const bioImagePreview = document.getElementById('bio-image-preview');
+    const srvMsg = document.getElementById('srv-msg');
+    const bioFormMsg = document.getElementById('bio-form-msg');
+    let uploadedImageData = '';
+
+    function escapeHtml(text) {
+        return String(text || '')
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#39;');
+    }
+
+    function loadOptions() {
+        try {
+            const raw = localStorage.getItem(OPTION_STORAGE_KEY);
+            if (raw === null) return defaultOptions.slice();
+            const parsed = JSON.parse(raw);
+            if (Array.isArray(parsed)) return parsed;
+        } catch (error) {}
+        return defaultOptions.slice();
+    }
+
+    function loadBios() {
+        try {
+            const parsed = JSON.parse(localStorage.getItem(BIO_STORAGE_KEY) || '[]');
+            return Array.isArray(parsed) ? parsed : [];
+        } catch (error) {
+            return [];
+        }
+    }
+
+    function saveBios(list) {
+        localStorage.setItem(BIO_STORAGE_KEY, JSON.stringify(list || []));
+    }
+
+    function fileToDataUrl(file) {
+        return new Promise(function (resolve, reject) {
+            if (!file) {
+                resolve('');
+                return;
+            }
+            const reader = new FileReader();
+            reader.onload = function () { resolve(reader.result); };
+            reader.onerror = function () { reject(new Error('Image read failed')); };
+            reader.readAsDataURL(file);
+        });
+    }
+
+    function populateSectionSelect() {
+        const options = loadOptions();
+        bioSectionSelect.innerHTML = '<option value="">Select section</option>' + options.map(function (item) {
+            return '<option value="' + escapeHtml(item.id) + '">' + escapeHtml(item.name) + '</option>';
+        }).join('');
+    }
+
+    function formatDate(isoDate) {
+        if (!isoDate) return '-';
+        const date = new Date(isoDate);
+        if (isNaN(date.getTime())) return '-';
+        return date.toLocaleDateString();
+    }
+
+    function resetForm() {
+        bioForm.reset();
+        uploadedImageData = '';
+        bioImagePreview.src = '../images/5.jpg';
+        bioFormMsg.textContent = 'All fields are required.';
+        bioFormMsg.className = 'text-sm font-bold text-adminMuted';
+    }
+
+    function openModal() {
+        populateSectionSelect();
+        bioModal.classList.remove('hidden');
+        bioModal.classList.add('flex');
+    }
+
+    function closeModal() {
+        bioModal.classList.add('hidden');
+        bioModal.classList.remove('flex');
+        resetForm();
+    }
+
+    function render() {
+        const bios = loadBios();
+        const sectionsUsed = new Set(bios.map(function (item) { return item.sectionId; }).filter(Boolean));
+
+        document.getElementById('srv-total').textContent = bios.length;
+        document.getElementById('srv-image').textContent = bios.filter(function (item) { return !!item.image; }).length;
+        document.getElementById('srv-sections').textContent = sectionsUsed.size;
+        document.getElementById('srv-latest').textContent = bios.length ? formatDate(bios[0].createdAt) : '-';
+
+        if (!bios.length) {
+            bioGrid.innerHTML = '<article class="rounded-xl border border-adminBorder bg-white p-6 text-center md:col-span-2 xl:col-span-3">' +
+                '<p class="font-bold text-lg">No service bio added yet.</p>' +
+                '<p class="text-sm text-adminMuted mt-1">Click "Add Bio" to create your first entry.</p>' +
+            '</article>';
+            return;
+        }
+
+        bioGrid.innerHTML = bios.map(function (item) {
+            return '<article class="rounded-xl border border-adminBorder bg-white overflow-hidden">' +
+                '<img src="' + escapeHtml(item.image || '../images/5.jpg') + '" alt="' + escapeHtml(item.carName) + '" class="w-full h-40 object-cover" onerror="this.src=\'../images/5.jpg\'">' +
+                '<div class="p-4">' +
+                    '<div class="flex items-center justify-between gap-2">' +
+                        '<h3 class="font-extrabold">' + escapeHtml(item.carName) + '</h3>' +
+                        '<span class="pill bg-slate-100 text-slate-700 border border-adminBorder">' + escapeHtml(item.sectionName || '-') + '</span>' +
+                    '</div>' +
+                    '<p class="mt-2 text-sm text-adminMuted">' + escapeHtml(item.description) + '</p>' +
+                    '<div class="mt-4 flex items-center justify-between">' +
+                        '<span class="text-xs text-adminMuted">Added: ' + escapeHtml(formatDate(item.createdAt)) + '</span>' +
+                        '<button class="delete-bio px-3 py-1 rounded-lg text-xs font-bold bg-red-100 text-red-700" data-id="' + escapeHtml(item.id) + '">' +
+                            '<i class="fas fa-trash mr-1"></i>Delete' +
+                        '</button>' +
+                    '</div>' +
+                '</div>' +
+            '</article>';
+        }).join('');
+    }
+
+    bioImageInput.addEventListener('change', async function (event) {
+        const file = event.target.files[0];
+        try {
+            uploadedImageData = await fileToDataUrl(file);
+            bioImagePreview.src = uploadedImageData || '../images/5.jpg';
+        } catch (error) {
+            uploadedImageData = '';
+            bioImagePreview.src = '../images/5.jpg';
+            bioFormMsg.textContent = 'Image upload failed. Please try another file.';
+            bioFormMsg.className = 'text-sm font-bold text-red-700';
+        }
+    });
+
+    document.getElementById('open-bio-modal').addEventListener('click', openModal);
+    document.getElementById('close-bio-modal').addEventListener('click', closeModal);
+    document.getElementById('cancel-bio-btn').addEventListener('click', closeModal);
+
+    bioModal.addEventListener('click', function (event) {
+        if (event.target.id === 'bio-modal') closeModal();
+    });
+
+    bioForm.addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        const carName = document.getElementById('bio-car-name').value.trim();
+        const description = document.getElementById('bio-description').value.trim();
+        const sectionId = bioSectionSelect.value.trim();
+        const options = loadOptions();
+        const selectedSection = options.find(function (item) {
+            return String(item.id) === String(sectionId);
+        });
+
+        if (!carName || !description || !sectionId || !selectedSection || !uploadedImageData) {
+            bioFormMsg.textContent = 'Please fill all fields and upload image.';
+            bioFormMsg.className = 'text-sm font-bold text-red-700';
+            return;
+        }
+
+        const bios = loadBios();
+        bios.unshift({
+            id: Date.now().toString(),
+            carName: carName,
+            description: description,
+            image: uploadedImageData,
+            sectionId: selectedSection.id,
+            sectionName: selectedSection.name,
+            createdAt: new Date().toISOString()
+        });
+        saveBios(bios);
+
+        closeModal();
+        srvMsg.textContent = 'Service bio added successfully.';
+        srvMsg.className = 'mb-4 text-sm font-bold text-adminGreen';
+        render();
+    });
+
+    bioGrid.addEventListener('click', function (event) {
+        const deleteBtn = event.target.closest('.delete-bio');
+        if (!deleteBtn) return;
+
+        const id = deleteBtn.dataset.id;
+        const bios = loadBios().filter(function (item) {
+            return String(item.id) !== String(id);
+        });
+        saveBios(bios);
+        srvMsg.textContent = 'Service bio removed.';
+        srvMsg.className = 'mb-4 text-sm font-bold text-amber-700';
+        render();
+    });
+
+    resetForm();
+    render();
+</script>
+</body>
+</html>
+
+
+
+
+

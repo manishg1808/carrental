@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - PrimeTransit</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-dark': '#000000',
+                        'accent': '#FFD700',
+                        'secondary': '#000000',
+                        orange: {
+                            50: '#fffbe6',
+                            100: '#fff4b5',
+                            200: '#ffe978',
+                            300: '#ffde3d',
+                            400: '#FFD700',
+                            500: '#000000',
+                            600: '#000000',
+                            700: '#000000',
+                            800: '#000000',
+                            900: '#000000',
+                            950: '#000000'
+                        },
+                        'bg-light': '#F8FAFC',
+                        'card': '#FFFFFF',
+                        'primary': '#111827',
+                        'text-secondary': '#6B7280',
+                        'border': '#E5E7EB'
+                    }
+                }
+            }
+        };
+    </script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-bg-light text-primary">
+    <header class="bg-primary-dark text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex items-center justify-between gap-4">
+            <a href="index.html" class="inline-flex items-center gap-3">
+                <img src="images/logo.png" alt="Luxury Fleet Services logo" class="w-10 h-10 object-contain">
+                <span>
+                    <span class="block font-extrabold text-xl leading-tight">PrimeTransit Blog</span>
+                    <span class="block text-[11px] font-semibold -mt-0.5 bg-gradient-to-r from-[#FFD700] via-[#C9A227] to-black bg-clip-text text-transparent">Luxury Fleet Services</span>
+                </span>
+            </a>
+            <div class="flex items-center gap-3">
+                <a href="images.html" class="btn-primary px-4 py-2 rounded-lg text-sm font-bold">Images</a>
+                <a href="car-listing.html" class="btn-primary px-4 py-2 rounded-lg text-sm font-bold">Cars</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        <div class="mb-8">
+            <p class="text-sm font-bold text-accent uppercase tracking-[0.2em]">Insights</p>
+            <h1 class="text-4xl font-extrabold text-primary-dark mt-2">Luxury Fleet Services Blog</h1>
+            <p class="text-text-secondary mt-2">Practical guides to help you plan airport, cruise, and city transportation with confidence.</p>
+        </div>
+
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+            <article class="bg-white rounded-2xl border border-border shadow-sm p-6">
+                <p class="text-xs font-bold text-accent uppercase tracking-[0.15em]">Transportation</p>
+                <h2 class="text-2xl font-extrabold text-primary-dark mt-2">Private Transportation Planning Tips</h2>
+                <p class="text-text-secondary mt-3">Checklist before pickup, damage inspection method, and return best practices.</p>
+                <a href="#transportation-tips" class="inline-flex items-center gap-2 mt-5 btn-primary px-4 py-2 rounded-lg font-bold text-sm">
+                    Read In This Page
+                    <i class="ri-arrow-down-line"></i>
+                </a>
+            </article>
+
+            <article class="bg-white rounded-2xl border border-border shadow-sm p-6">
+                <p class="text-xs font-bold text-accent uppercase tracking-[0.15em]">Airport Travel</p>
+                <h2 class="text-2xl font-extrabold text-primary-dark mt-2">Airport Pickup And Drop Guide</h2>
+                <p class="text-text-secondary mt-3">Vehicle selection, timing buffer, and coordination tips for on-time airport travel.</p>
+                <a href="#airport-guide" class="inline-flex items-center gap-2 mt-5 btn-primary px-4 py-2 rounded-lg font-bold text-sm">
+                    Read In This Page
+                    <i class="ri-arrow-down-line"></i>
+                </a>
+            </article>
+        </section>
+
+        <section id="transportation-tips" class="bg-white rounded-2xl border border-border shadow-sm p-7 mb-6">
+            <p class="text-xs font-bold text-accent uppercase tracking-[0.2em]">Article 1</p>
+            <h3 class="text-3xl font-extrabold text-primary-dark mt-2">7 Transportation Planning Tips Before You Travel</h3>
+            <div class="mt-5 space-y-3 text-text-secondary leading-relaxed">
+                <p><strong class="text-primary-dark">1. Inspect and record condition:</strong> Capture photos or a short video of body panels, wheels, and windshield at pickup.</p>
+                <p><strong class="text-primary-dark">2. Confirm policy details:</strong> Validate fuel, late return, and outstation usage rules before you leave.</p>
+                <p><strong class="text-primary-dark">3. Keep support number ready:</strong> Save emergency and booking contacts for quick help during the trip.</p>
+                <p><strong class="text-primary-dark">4. Plan route in advance:</strong> Account for tolls, parking, and peak traffic windows.</p>
+                <p><strong class="text-primary-dark">5. Return on time:</strong> Timely return avoids avoidable hourly or daily overage charges.</p>
+            </div>
+        </section>
+
+        <section id="airport-guide" class="bg-white rounded-2xl border border-border shadow-sm p-7">
+            <p class="text-xs font-bold text-accent uppercase tracking-[0.2em]">Article 2</p>
+            <h3 class="text-3xl font-extrabold text-primary-dark mt-2">Airport Pickup And Drop: Quick Planning Guide</h3>
+            <div class="mt-5 space-y-3 text-text-secondary leading-relaxed">
+                <p><strong class="text-primary-dark">1. Choose by passengers plus luggage:</strong> One category up is better than a cramped ride for airport transfers.</p>
+                <p><strong class="text-primary-dark">2. Share precise flight info:</strong> Include terminal, flight number, and expected landing/departure time.</p>
+                <p><strong class="text-primary-dark">3. Keep 30-45 minutes buffer:</strong> It helps absorb traffic or baggage delays.</p>
+                <p><strong class="text-primary-dark">4. Confirm waiting terms:</strong> Know included waiting time and additional charges in advance.</p>
+                <p><strong class="text-primary-dark">5. Reconfirm one day before:</strong> Final confirmation reduces last-minute confusion.</p>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/footer.js"></script>
+</body>
+</html>
