@@ -9,6 +9,7 @@
 
         bindFooterNewsletterForms();
         initFloatingQuickActions();
+        initLeadCapture();
     });
 
     function ensureFooter() {
@@ -232,5 +233,83 @@
                 behavior: 'smooth'
             });
         });
+    }
+
+    function initLeadCapture() {
+        if (window.location.pathname.toLowerCase().indexOf('/admin') === 0) {
+            return;
+        }
+
+        const endpoint = '/backend/api/submit-lead.php';
+        const sentForms = new WeakSet();
+
+        const toSafeString = function (value, maxLen) {
+            const text = String(value == null ? '' : value).trim();
+            return maxLen ? text.slice(0, maxLen) : text;
+        };
+
+        const normalizeLabel = function (text) {
+            return toSafeString(text || '')
+                .replace(/\s+/g, ' ')
+                .trim();
+        };
+
+        const inferValue = function (formData, keys) {
+            for (let i = 0; i < keys.length; i += 1) {
+                const key = keys[i];
+                const value = formData.get(key);
+                if (value != null && String(value).trim() !== '') {
+                    return String(value).trim();
+                }
+            }
+            return '';
+        };
+
+        document.addEventListener('submit', function (event) {
+            const form = event.target;
+            if (!(form instanceof HTMLFormElement)) return;
+            if (sentForms.has(form)) return;
+
+            sentForms.add(form);
+            setTimeout(function () {
+                sentForms.delete(form);
+            }, 3000);
+
+            const fd = new FormData(form);
+            const payload = {};
+            fd.forEach(function (value, key) {
+                if (value instanceof File) return;
+                payload[key] = toSafeString(value, 4000);
+            });
+
+            const formId = toSafeString(form.id || form.getAttribute('name') || form.getAttribute('data-form') || 'website-form', 120);
+            const pageUrl = window.location.pathname + window.location.search;
+            const name = inferValue(fd, ['name', 'full_name', 'fullName']);
+            const email = inferValue(fd, ['email', 'user_email']);
+            const phone = inferValue(fd, ['phone', 'mobile', 'number', 'quick_number']);
+            const subject = inferValue(fd, ['subject', 'service_type', 'choose_car']);
+            const message = inferValue(fd, ['message', 'notes', 'metaDescription']);
+
+            const body = JSON.stringify({
+                source: 'website',
+                page_url: pageUrl,
+                form_id: formId,
+                name: toSafeString(name, 150),
+                email: toSafeString(email, 180),
+                phone: toSafeString(phone, 60),
+                subject: toSafeString(subject, 220),
+                message: toSafeString(message, 5000),
+                payload: payload
+            });
+
+            fetch(endpoint, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: body,
+                keepalive: true
+            }).catch(function () {
+                // Silent fail: form UX should not break on logging issues.
+            });
+        }, true);
     }
 })();

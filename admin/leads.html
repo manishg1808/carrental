@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leads | Admin</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        adminBg: '#F4F5F7',
+                        adminWhite: '#FFFFFF',
+                        adminGreen: '#000000',
+                        adminGreenSoft: '#e5e7eb',
+                        adminGold: '#FFD700',
+                        adminGoldSoft: '#fff7bf',
+                        adminText: '#111827',
+                        adminMuted: '#6B7280',
+                        adminBorder: '#111111'
+                    }
+                }
+            }
+        };
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/admin/css/admin.css">
+</head>
+<body class="bg-adminBg text-adminText min-h-screen">
+<header class="sticky top-0 z-30 border-b border-adminBorder bg-adminWhite/95 backdrop-blur">
+    <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+            <div class="w-11 h-11 rounded-xl bg-adminGold text-white flex items-center justify-center shadow-md">
+                <i class="fas fa-bell"></i>
+            </div>
+            <div>
+                <h1 class="text-xl font-extrabold">Admin Dashboard</h1>
+                <p class="text-sm text-adminMuted">Leads & Notifications</p>
+            </div>
+        </div>
+        <a href="/index.html" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-adminGreen text-white font-semibold hover:brightness-110 transition">
+            <i class="fas fa-house"></i>
+            Back To Site
+        </a>
+    </div>
+</header>
+<div id="sidebar-overlay" class="sidebar-overlay lg:hidden"></div>
+
+<main class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div class="lg:hidden mb-4">
+        <button id="sidebar-toggle" type="button" class="sidebar-toggle-btn">
+            <i class="fas fa-bars"></i>
+            <span>Menu</span>
+        </button>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+        <aside id="admin-sidebar" class="admin-sidebar lg:col-span-3 xl:col-span-2 panel p-4 h-max lg:sticky lg:top-24">
+            <div class="lg:hidden flex items-center justify-between mb-4 pb-3 border-b border-adminBorder">
+                <p class="text-sm font-extrabold text-adminMuted">Admin Menu</p>
+                <button id="sidebar-close" type="button" class="w-9 h-9 rounded-full border border-adminBorder bg-white text-adminText">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <nav class="space-y-1"></nav>
+        </aside>
+
+        <section class="lg:col-span-9 xl:col-span-10 space-y-6">
+            <div class="panel p-5 flex flex-wrap items-center justify-between gap-3">
+                <div>
+                    <p class="text-sm text-adminMuted">Total Leads</p>
+                    <p id="lead-total" class="text-3xl font-extrabold">0</p>
+                </div>
+                <div>
+                    <p class="text-sm text-adminMuted">Unread Leads</p>
+                    <p id="lead-unread" class="text-3xl font-extrabold text-red-600">0</p>
+                </div>
+                <div class="flex items-center gap-2">
+                    <button id="refresh-leads" type="button" class="px-4 py-2 rounded-lg border border-adminBorder bg-white font-semibold">
+                        <i class="fas fa-rotate-right mr-2"></i>Refresh
+                    </button>
+                    <button id="mark-all-read" type="button" class="px-4 py-2 rounded-lg bg-adminGreen text-white font-semibold">
+                        <i class="fas fa-check-double mr-2"></i>Mark All Read
+                    </button>
+                </div>
+            </div>
+
+            <div class="panel p-0 overflow-hidden">
+                <div class="overflow-x-auto">
+                    <table class="min-w-full text-sm">
+                        <thead>
+                            <tr class="border-b border-adminBorder text-adminMuted text-left bg-white">
+                                <th class="py-3 px-4">Status</th>
+                                <th class="py-3 px-4">Name</th>
+                                <th class="py-3 px-4">Contact</th>
+                                <th class="py-3 px-4">Form</th>
+                                <th class="py-3 px-4">Page</th>
+                                <th class="py-3 px-4">Created</th>
+                                <th class="py-3 px-4">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="leads-tbody"></tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>
+
+<div id="lead-modal" class="fixed inset-0 bg-black/55 hidden items-center justify-center p-4 z-50">
+    <div class="w-full max-w-3xl rounded-2xl shadow-xl border border-adminBorder bg-white max-h-[92vh] overflow-y-auto">
+        <div class="p-5 border-b border-adminBorder flex items-center justify-between sticky top-0 bg-white/95 backdrop-blur z-10">
+            <h3 class="text-xl font-extrabold">Lead Details</h3>
+            <button id="close-lead-modal" class="w-9 h-9 rounded-full hover:bg-gray-100"><i class="fas fa-times"></i></button>
+        </div>
+        <div id="lead-detail" class="p-5 space-y-4"></div>
+    </div>
+</div>
+
+<script src="/admin/js/admin-sidebar.js"></script>
+<script>
+    const tbody = document.getElementById('leads-tbody');
+    const totalEl = document.getElementById('lead-total');
+    const unreadEl = document.getElementById('lead-unread');
+    const modal = document.getElementById('lead-modal');
+    const detail = document.getElementById('lead-detail');
+    let leads = [];
+
+    function esc(text) {
+        return String(text || '')
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#39;');
+    }
+
+    function fmtDate(value) {
+        const d = new Date(value);
+        if (isNaN(d.getTime())) return esc(value);
+        return d.toLocaleString();
+    }
+
+    function renderTable() {
+        tbody.innerHTML = leads.map(function (lead) {
+            const status = Number(lead.is_read) === 1
+                ? '<span class="pill bg-adminGreenSoft text-adminGreen border border-adminBorder">Read</span>'
+                : '<span class="pill bg-red-100 text-red-700 border border-red-300">New</span>';
+
+            return '<tr class="border-b border-adminBorder/70">' +
+                '<td class="py-3 px-4">' + status + '</td>' +
+                '<td class="py-3 px-4 font-semibold">' + esc(lead.name || '-') + '</td>' +
+                '<td class="py-3 px-4">' +
+                    '<div>' + esc(lead.email || '-') + '</div>' +
+                    '<div class="text-xs text-adminMuted">' + esc(lead.phone || '-') + '</div>' +
+                '</td>' +
+                '<td class="py-3 px-4">' + esc(lead.form_id || '-') + '</td>' +
+                '<td class="py-3 px-4">' + esc(lead.page_url || '-') + '</td>' +
+                '<td class="py-3 px-4">' + fmtDate(lead.created_at) + '</td>' +
+                '<td class="py-3 px-4">' +
+                    '<button class="view px-2.5 py-1 text-xs rounded-lg bg-adminGreenSoft text-adminGreen font-bold mr-2" data-id="' + lead.id + '">View</button>' +
+                    (Number(lead.is_read) === 0
+                        ? '<button class="mark px-2.5 py-1 text-xs rounded-lg bg-adminGoldSoft text-amber-700 font-bold" data-id="' + lead.id + '">Mark Read</button>'
+                        : '') +
+                '</td>' +
+            '</tr>';
+        }).join('');
+    }
+
+    function renderDetail(lead) {
+        const payloadHtml = Object.keys(lead.payload || {}).map(function (key) {
+            return '<div class="flex justify-between gap-3 border-b border-adminBorder/20 py-2">' +
+                '<span class="text-adminMuted font-semibold">' + esc(key) + '</span>' +
+                '<span class="text-right">' + esc(lead.payload[key]) + '</span>' +
+            '</div>';
+        }).join('');
+
+        detail.innerHTML =
+            '<div class="grid grid-cols-1 md:grid-cols-2 gap-4">' +
+                '<div class="rounded-lg border border-adminBorder p-3"><p class="text-xs text-adminMuted">Name</p><p class="font-bold">' + esc(lead.name || '-') + '</p></div>' +
+                '<div class="rounded-lg border border-adminBorder p-3"><p class="text-xs text-adminMuted">Created</p><p class="font-bold">' + fmtDate(lead.created_at) + '</p></div>' +
+                '<div class="rounded-lg border border-adminBorder p-3"><p class="text-xs text-adminMuted">Email</p><p class="font-bold">' + esc(lead.email || '-') + '</p></div>' +
+                '<div class="rounded-lg border border-adminBorder p-3"><p class="text-xs text-adminMuted">Phone</p><p class="font-bold">' + esc(lead.phone || '-') + '</p></div>' +
+                '<div class="rounded-lg border border-adminBorder p-3 md:col-span-2"><p class="text-xs text-adminMuted">Subject</p><p class="font-bold">' + esc(lead.subject || '-') + '</p></div>' +
+                '<div class="rounded-lg border border-adminBorder p-3 md:col-span-2"><p class="text-xs text-adminMuted">Message</p><p class="whitespace-pre-wrap">' + esc(lead.message || '-') + '</p></div>' +
+                '<div class="rounded-lg border border-adminBorder p-3 md:col-span-2"><p class="text-xs text-adminMuted mb-2">Payload</p>' + (payloadHtml || '<p class="text-adminMuted">No payload</p>') + '</div>' +
+            '</div>';
+    }
+
+    function openModal(lead) {
+        renderDetail(lead);
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+    }
+
+    function closeModal() {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+    }
+
+    async function loadLeads() {
+        const res = await fetch('/backend/api/leads.php?limit=500');
+        const data = await res.json();
+        leads = Array.isArray(data.leads) ? data.leads : [];
+        totalEl.textContent = String((data.summary && data.summary.total) || leads.length);
+        unreadEl.textContent = String((data.summary && data.summary.unread) || 0);
+        renderTable();
+    }
+
+    async function markLeadRead(id) {
+        await fetch('/backend/api/mark-read.php', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ id: id })
+        });
+        await loadLeads();
+    }
+
+    tbody.addEventListener('click', function (e) {
+        const view = e.target.closest('.view');
+        const mark = e.target.closest('.mark');
+
+        if (view) {
+            const id = Number(view.dataset.id);
+            const lead = leads.find(function (l) { return Number(l.id) === id; });
+            if (lead) openModal(lead);
+        }
+
+        if (mark) {
+            const id = Number(mark.dataset.id);
+            markLeadRead(id);
+        }
+    });
+
+    document.getElementById('refresh-leads').addEventListener('click', loadLeads);
+    document.getElementById('mark-all-read').addEventListener('click', async function () {
+        await fetch('/backend/api/mark-read.php', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ all: true })
+        });
+        await loadLeads();
+    });
+
+    document.getElementById('close-lead-modal').addEventListener('click', closeModal);
+    modal.addEventListener('click', function (e) {
+        if (e.target.id === 'lead-modal') closeModal();
+    });
+
+    loadLeads().catch(function (err) {
+        tbody.innerHTML = '<tr><td colspan="7" class="py-4 px-4 text-red-600 font-semibold">Failed to load leads: ' + esc(err.message || 'Unknown error') + '</td></tr>';
+    });
+</script>
+</body>
+</html>
+

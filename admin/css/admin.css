@@ -92,6 +92,48 @@ header > div {
     filter: brightness(1.02);
 }
 
+.admin-bell-btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.62rem 0.95rem;
+    border: 1px solid var(--admin-border);
+    background: #ffffff;
+    color: #0f172a;
+    font-size: 0.9rem;
+    font-weight: 700;
+    border-radius: var(--admin-card-radius);
+    text-decoration: none;
+}
+
+.admin-bell-btn i {
+    color: #0f172a;
+}
+
+.admin-bell-btn:hover {
+    background: #f8fafc;
+}
+
+.admin-bell-badge {
+    position: absolute;
+    top: -7px;
+    right: -7px;
+    min-width: 22px;
+    height: 22px;
+    border-radius: 999px;
+    padding: 0 6px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #dc2626;
+    color: #ffffff;
+    font-size: 0.72rem;
+    font-style: normal;
+    border: 2px solid #ffffff;
+    font-weight: 800;
+}
+
 .panel {
     background: var(--admin-panel) !important;
     border: 1px solid var(--admin-border) !important;
