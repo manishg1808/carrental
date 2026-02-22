@@ -240,7 +240,7 @@
             return;
         }
 
-        const endpoint = '/backend/api/submit-lead.php';
+        const endpoint = getBackendBasePath() + '/backend/api/submit-lead.php';
         const sentForms = new WeakSet();
 
         const toSafeString = function (value, maxLen) {
@@ -311,5 +311,15 @@
                 // Silent fail: form UX should not break on logging issues.
             });
         }, true);
+    }
+
+    function getBackendBasePath() {
+        const path = (window.location.pathname || '').split('?')[0].split('#')[0];
+        const marker = '/cars/';
+        const idx = path.toLowerCase().indexOf(marker);
+        if (idx !== -1) {
+            return path.slice(0, idx + '/cars'.length);
+        }
+        return '';
     }
 })();

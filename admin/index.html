@@ -25,7 +25,7 @@
         };
     </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="/admin/css/admin.css">
+    <link rel="stylesheet" href="css/admin.css">
 </head>
 <body class="bg-adminBg text-adminText min-h-screen">
 <header class="sticky top-0 z-30 border-b border-adminBorder bg-adminWhite/95 backdrop-blur">
@@ -39,7 +39,7 @@
                 <p class="text-sm text-adminMuted">Overview</p>
             </div>
         </div>
-        <a href="/index.html" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-adminGreen text-white font-semibold hover:brightness-110 transition">
+        <a href="../index.html" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-adminGreen text-white font-semibold hover:brightness-110 transition">
             <i class="fas fa-house"></i>
             Back To Site
         </a>
@@ -88,7 +88,7 @@
                     <p class="text-sm text-adminMuted">Brands</p>
                     <p id="s-brands" class="text-3xl font-extrabold mt-2">0</p>
                 </article>
-                <a href="/admin/images.html" class="panel p-5 block hover:bg-slate-50">
+                <a href="images.html" class="panel p-5 block hover:bg-slate-50">
                     <p class="text-sm text-adminMuted">Quick Access</p>
                     <p class="text-xl font-extrabold mt-2 flex items-center gap-2"><i class="fas fa-images text-adminGreen"></i><span>Images</span></p>
                 </a>
@@ -98,7 +98,7 @@
                 <div class="panel p-6">
                     <div class="flex items-center justify-between mb-4">
                         <h2 class="text-2xl font-extrabold">Top Categories</h2>
-                        <a href="/admin/categories.html" class="text-adminGreen font-bold text-sm">Manage Categories</a>
+                        <a href="categories.html" class="text-adminGreen font-bold text-sm">Manage Categories</a>
                     </div>
                     <div id="top-categories" class="space-y-3"></div>
                 </div>
@@ -106,7 +106,7 @@
                 <div class="panel p-6">
                     <div class="flex items-center justify-between mb-4">
                         <h2 class="text-2xl font-extrabold">Top Brands</h2>
-                        <a href="/admin/brands.html" class="text-adminGreen font-bold text-sm">Manage Brands</a>
+                        <a href="brands.html" class="text-adminGreen font-bold text-sm">Manage Brands</a>
                     </div>
                     <div id="top-brands" class="space-y-3"></div>
                 </div>
@@ -115,7 +115,7 @@
             <div class="panel p-6">
                 <div class="flex items-center justify-between mb-4">
                     <h2 class="text-2xl font-extrabold">Recent Cars</h2>
-                    <a href="/admin/car-list.html" class="text-adminGreen font-bold">Manage List</a>
+                    <a href="car-list.html" class="text-adminGreen font-bold">Manage List</a>
                 </div>
                 <div id="recent-cars" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4"></div>
             </div>
@@ -124,9 +124,9 @@
     </div>
 </main>
 
-<script src="/js/data.js"></script>
-<script src="/admin/js/admin-shared.js"></script>
-<script src="/admin/js/admin-sidebar.js"></script>
+<script src="../js/data.js"></script>
+<script src="js/admin-shared.js"></script>
+<script src="js/admin-sidebar.js"></script>
 <script>
     const cars = AdminData.loadCars();
     const stats = AdminData.getStats(cars);
@@ -184,6 +184,7 @@
 </script>
 </body>
 </html>
+
 
 
 

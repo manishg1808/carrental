@@ -25,7 +25,7 @@
         };
     </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="/admin/css/admin.css">
+    <link rel="stylesheet" href="css/admin.css">
 </head>
 <body class="bg-adminBg text-adminText min-h-screen">
 <header class="sticky top-0 z-30 border-b border-adminBorder bg-adminWhite/95 backdrop-blur">
@@ -39,7 +39,7 @@
                 <p class="text-sm text-adminMuted">Leads & Notifications</p>
             </div>
         </div>
-        <a href="/index.html" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-adminGreen text-white font-semibold hover:brightness-110 transition">
+        <a href="../index.html" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-adminGreen text-white font-semibold hover:brightness-110 transition">
             <i class="fas fa-house"></i>
             Back To Site
         </a>
@@ -118,7 +118,7 @@
     </div>
 </div>
 
-<script src="/admin/js/admin-sidebar.js"></script>
+<script src="js/admin-sidebar.js"></script>
 <script>
     const tbody = document.getElementById('leads-tbody');
     const totalEl = document.getElementById('lead-total');
@@ -126,6 +126,12 @@
     const modal = document.getElementById('lead-modal');
     const detail = document.getElementById('lead-detail');
     let leads = [];
+    const API_BASE = (function () {
+        const path = (window.location.pathname || '').split('?')[0].split('#')[0];
+        const adminIndex = path.toLowerCase().lastIndexOf('/admin');
+        if (adminIndex === -1) return '';
+        return path.slice(0, adminIndex);
+    })();
 
     function esc(text) {
         return String(text || '')
@@ -200,7 +206,7 @@
     }
 
     async function loadLeads() {
-        const res = await fetch('/backend/api/leads.php?limit=500');
+        const res = await fetch(API_BASE + '/backend/api/leads.php?limit=500');
         const data = await res.json();
         leads = Array.isArray(data.leads) ? data.leads : [];
         totalEl.textContent = String((data.summary && data.summary.total) || leads.length);
@@ -209,7 +215,7 @@
     }
 
     async function markLeadRead(id) {
-        await fetch('/backend/api/mark-read.php', {
+        await fetch(API_BASE + '/backend/api/mark-read.php', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ id: id })
@@ -235,7 +241,7 @@
 
     document.getElementById('refresh-leads').addEventListener('click', loadLeads);
     document.getElementById('mark-all-read').addEventListener('click', async function () {
-        await fetch('/backend/api/mark-read.php', {
+        await fetch(API_BASE + '/backend/api/mark-read.php', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ all: true })
@@ -254,4 +260,5 @@
 </script>
 </body>
 </html>
+
 

@@ -7,13 +7,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (!sidebar || !openBtn || !overlay) return;
 
+    const basePrefix = getBasePrefix();
+    const adminBase = basePrefix + '/admin';
+
     const items = [
-        { href: '/admin/index.html', page: 'index.html', icon: 'fa-chart-column', label: 'Overview' },
-        { href: '/admin/car-list.html', page: 'car-list.html', icon: 'fa-list', label: 'Car List' },
-        { href: '/admin/categories.html', page: 'categories.html', icon: 'fa-layer-group', label: 'Categories' },
-        { href: '/admin/brands.html', page: 'brands.html', icon: 'fa-tags', label: 'Brands' },
-        { href: '/admin/images.html', page: 'images.html', icon: 'fa-images', label: 'Images' },
-        { href: '/admin/leads.html', page: 'leads.html', icon: 'fa-bell', label: 'Leads' }
+        { href: adminBase + '/index.html', page: 'index.html', icon: 'fa-chart-column', label: 'Overview' },
+        { href: adminBase + '/car-list.html', page: 'car-list.html', icon: 'fa-list', label: 'Car List' },
+        { href: adminBase + '/categories.html', page: 'categories.html', icon: 'fa-layer-group', label: 'Categories' },
+        { href: adminBase + '/brands.html', page: 'brands.html', icon: 'fa-tags', label: 'Brands' },
+        { href: adminBase + '/images.html', page: 'images.html', icon: 'fa-images', label: 'Images' },
+        { href: adminBase + '/leads.html', page: 'leads.html', icon: 'fa-bell', label: 'Leads' }
     ];
 
     function getCurrentPage() {
@@ -24,6 +27,13 @@ document.addEventListener('DOMContentLoaded', function () {
             page = 'index.html';
         }
         return page.toLowerCase();
+    }
+
+    function getBasePrefix() {
+        const path = (window.location.pathname || '').split('?')[0].split('#')[0];
+        const adminIndex = path.toLowerCase().lastIndexOf('/admin');
+        if (adminIndex === -1) return '';
+        return path.slice(0, adminIndex);
     }
 
     function renderNav() {
@@ -89,7 +99,7 @@ document.addEventListener('DOMContentLoaded', function () {
             actions.className = 'admin-header-actions';
 
             const bellLink = document.createElement('a');
-            bellLink.href = '/admin/leads.html';
+            bellLink.href = adminBase + '/leads.html';
             bellLink.className = 'admin-bell-btn';
             bellLink.innerHTML = '<i class="fas fa-bell"></i><span>Notifications</span><em id="admin-lead-badge" class="admin-bell-badge hidden">0</em>';
 
@@ -100,7 +110,7 @@ document.addEventListener('DOMContentLoaded', function () {
             headerBar.classList.add('admin-header-actions-ready');
         }
 
-        fetch('/backend/api/leads.php?summary=1')
+        fetch(basePrefix + '/backend/api/leads.php?summary=1')
             .then(function (res) { return res.json(); })
             .then(function (data) {
                 const unread = data && data.summary ? Number(data.summary.unread || 0) : 0;
