@@ -25,7 +25,7 @@
         };
     </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="/admin/css/admin.css">
 </head>
 <body class="bg-adminBg text-adminText min-h-screen">
 <header class="sticky top-0 z-30 border-b border-adminBorder bg-adminWhite/95 backdrop-blur">
@@ -39,7 +39,7 @@
                 <p class="text-sm text-adminMuted">Services</p>
             </div>
         </div>
-        <a href="../index.html" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-adminGreen text-white font-semibold hover:brightness-110 transition">
+        <a href="/index.html" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-adminGreen text-white font-semibold hover:brightness-110 transition">
             <i class="fas fa-house"></i>
             Back To Site
         </a>
@@ -136,7 +136,7 @@
                     <p class="text-xs text-adminMuted mt-2">Upload image for this bio card.</p>
                 </div>
                 <div class="rounded-lg border border-adminBorder p-4 flex items-center justify-center">
-                    <img id="bio-image-preview" src="../images/5.jpg" alt="Preview" class="h-32 w-full object-cover rounded-lg">
+                    <img id="bio-image-preview" src="/images/5.jpg" alt="Preview" class="h-32 w-full object-cover rounded-lg">
                 </div>
             </div>
 
@@ -151,7 +151,7 @@
     </div>
 </div>
 
-<script src="js/admin-sidebar.js"></script>
+<script src="/admin/js/admin-sidebar.js"></script>
 <script>
     const OPTION_STORAGE_KEY = 'adminServiceDropdownOptions';
     const BIO_STORAGE_KEY = 'adminServiceBios';
@@ -241,7 +241,7 @@
     function resetForm() {
         bioForm.reset();
         uploadedImageData = '';
-        bioImagePreview.src = '../images/5.jpg';
+        bioImagePreview.src = '/images/5.jpg';
         bioFormMsg.textContent = 'All fields are required.';
         bioFormMsg.className = 'text-sm font-bold text-adminMuted';
     }
@@ -277,7 +277,7 @@
 
         bioGrid.innerHTML = bios.map(function (item) {
             return '<article class="rounded-xl border border-adminBorder bg-white overflow-hidden">' +
-                '<img src="' + escapeHtml(item.image || '../images/5.jpg') + '" alt="' + escapeHtml(item.carName) + '" class="w-full h-40 object-cover" onerror="this.src=\'../images/5.jpg\'">' +
+                '<img src="' + escapeHtml(item.image || '/images/5.jpg') + '" alt="' + escapeHtml(item.carName) + '" class="w-full h-40 object-cover" onerror="this.src=\'../images/5.jpg\'">' +
                 '<div class="p-4">' +
                     '<div class="flex items-center justify-between gap-2">' +
                         '<h3 class="font-extrabold">' + escapeHtml(item.carName) + '</h3>' +
@@ -299,10 +299,10 @@
         const file = event.target.files[0];
         try {
             uploadedImageData = await fileToDataUrl(file);
-            bioImagePreview.src = uploadedImageData || '../images/5.jpg';
+            bioImagePreview.src = uploadedImageData || '/images/5.jpg';
         } catch (error) {
             uploadedImageData = '';
-            bioImagePreview.src = '../images/5.jpg';
+            bioImagePreview.src = '/images/5.jpg';
             bioFormMsg.textContent = 'Image upload failed. Please try another file.';
             bioFormMsg.className = 'text-sm font-bold text-red-700';
         }
@@ -370,6 +370,7 @@
 </script>
 </body>
 </html>
+
 
 
 

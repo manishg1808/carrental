@@ -8,17 +8,20 @@ document.addEventListener('DOMContentLoaded', function () {
     if (!sidebar || !openBtn || !overlay) return;
 
     const items = [
-        { href: 'index.html', icon: 'fa-chart-column', label: 'Overview' },
-        { href: 'car-list.html', icon: 'fa-list', label: 'Car List' },
-        { href: 'categories.html', icon: 'fa-layer-group', label: 'Categories' },
-        { href: 'brands.html', icon: 'fa-tags', label: 'Brands' },
-        { href: 'images.html', icon: 'fa-images', label: 'Images' }
+        { href: '/admin/index.html', page: 'index.html', icon: 'fa-chart-column', label: 'Overview' },
+        { href: '/admin/car-list.html', page: 'car-list.html', icon: 'fa-list', label: 'Car List' },
+        { href: '/admin/categories.html', page: 'categories.html', icon: 'fa-layer-group', label: 'Categories' },
+        { href: '/admin/brands.html', page: 'brands.html', icon: 'fa-tags', label: 'Brands' },
+        { href: '/admin/images.html', page: 'images.html', icon: 'fa-images', label: 'Images' }
     ];
 
     function getCurrentPage() {
         const rawPath = window.location.pathname || '';
         const cleanPath = rawPath.split('?')[0].split('#')[0];
-        const page = cleanPath.split('/').pop() || 'index.html';
+        let page = cleanPath.split('/').pop() || 'index.html';
+        if (page.toLowerCase() === 'admin') {
+            page = 'index.html';
+        }
         return page.toLowerCase();
     }
 
@@ -27,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const currentPage = getCurrentPage();
 
         nav.innerHTML = items.map(function (item) {
-            const isActive = currentPage === item.href.toLowerCase();
+            const isActive = currentPage === String(item.page || '').toLowerCase();
             return '<a class="menu-item ' + (isActive ? 'active' : '') + '" href="' + item.href + '">' +
                 '<i class="fas ' + item.icon + '"></i>' +
                 '<span>' + item.label + '</span>' +

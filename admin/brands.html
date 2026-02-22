@@ -25,7 +25,7 @@
         };
     </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="/admin/css/admin.css">
 </head>
 <body class="bg-adminBg text-adminText min-h-screen">
 <header class="sticky top-0 z-30 border-b border-adminBorder bg-adminWhite/95 backdrop-blur">
@@ -39,7 +39,7 @@
                 <p class="text-sm text-adminMuted">Brands</p>
             </div>
         </div>
-        <a href="../index.html" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-adminGreen text-white font-semibold hover:brightness-110 transition">
+        <a href="/index.html" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-adminGreen text-white font-semibold hover:brightness-110 transition">
             <i class="fas fa-house"></i>
             Back To Site
         </a>
@@ -99,7 +99,7 @@
                             <p class="mt-2 text-xs text-adminMuted">If brand already exists, image upload will update the logo.</p>
                         </div>
                         <div class="rounded-lg border border-adminBorder p-3 flex items-center gap-3">
-                            <img id="brand-image-preview" src="../images/5.jpg" alt="Brand logo preview" class="w-12 h-12 rounded-lg object-cover border border-adminBorder">
+                            <img id="brand-image-preview" src="/images/5.jpg" alt="Brand logo preview" class="w-12 h-12 rounded-lg object-cover border border-adminBorder">
                             <div>
                                 <p class="text-sm font-bold">Logo Preview</p>
                                 <p class="text-xs text-adminMuted">Square logo works best.</p>
@@ -133,9 +133,9 @@
     </div>
 </main>
 
-<script src="../js/data.js"></script>
-<script src="js/admin-shared.js"></script>
-<script src="js/admin-sidebar.js"></script>
+<script src="/js/data.js"></script>
+<script src="/admin/js/admin-shared.js"></script>
+<script src="/admin/js/admin-sidebar.js"></script>
 <script>
     const BRAND_IMAGE_STORAGE_KEY = 'adminBrandImages';
     let cars = AdminData.loadCars();
@@ -181,7 +181,7 @@
     function resetImagePreview() {
         uploadedBrandImage = '';
         brandImageInput.value = '';
-        brandImagePreview.src = '../images/5.jpg';
+        brandImagePreview.src = '/images/5.jpg';
     }
 
     function renderLogo(brand, images) {
@@ -284,7 +284,7 @@
     brandImageInput.addEventListener('change', async function (e) {
         const file = e.target.files[0];
         uploadedBrandImage = await AdminData.fileToDataUrl(file);
-        brandImagePreview.src = uploadedBrandImage || '../images/5.jpg';
+        brandImagePreview.src = uploadedBrandImage || '/images/5.jpg';
     });
 
     brandForm.addEventListener('submit', function (e) {
@@ -328,6 +328,7 @@
 </script>
 </body>
 </html>
+
 
 
 

@@ -23,7 +23,7 @@
         };
     </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="/admin/css/admin.css">
 </head>
 <body class="bg-adminBg text-adminText min-h-screen">
 <header class="sticky top-0 z-30 border-b border-adminBorder bg-adminWhite/95 backdrop-blur">
@@ -37,7 +37,7 @@
                 <p class="text-sm text-adminMuted">Images</p>
             </div>
         </div>
-        <a href="../index.html" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-adminGreen text-white font-semibold hover:brightness-110 transition">
+        <a href="/index.html" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-adminGreen text-white font-semibold hover:brightness-110 transition">
             <i class="fas fa-house"></i>
             Back To Site
         </a>
@@ -104,7 +104,7 @@
                 <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-3">
                     <div class="rounded-lg border border-adminBorder p-3">
                         <p class="text-sm font-bold">Preview</p>
-                        <img id="image-preview" src="../images/5.jpg" alt="Preview" class="mt-2 w-full h-40 object-cover rounded-lg border border-adminBorder">
+                        <img id="image-preview" src="/images/5.jpg" alt="Preview" class="mt-2 w-full h-40 object-cover rounded-lg border border-adminBorder">
                     </div>
                     <div class="rounded-lg border border-adminBorder p-3 flex items-center justify-center">
                         <p id="image-msg" class="text-sm font-bold text-adminMuted">All fields are required.</p>
@@ -120,7 +120,7 @@
     </div>
 </main>
 
-<script src="js/admin-sidebar.js"></script>
+<script src="/admin/js/admin-sidebar.js"></script>
 <script>
     const IMAGE_STORAGE_KEY = 'adminGalleryImages';
     const imageForm = document.getElementById('image-form');
@@ -174,7 +174,7 @@
     function resetForm() {
         imageForm.reset();
         uploadedImageData = '';
-        imagePreview.src = '../images/5.jpg';
+        imagePreview.src = '/images/5.jpg';
         imageMsg.textContent = 'All fields are required.';
         imageMsg.className = 'text-sm font-bold text-adminMuted';
     }
@@ -197,7 +197,7 @@
 
         imageGrid.innerHTML = images.map(function (item) {
             return '<article class="rounded-xl border border-adminBorder bg-white overflow-hidden">' +
-                '<img src="' + escapeHtml(item.image || '../images/5.jpg') + '" alt="' + escapeHtml(item.title) + '" class="w-full h-40 object-cover" onerror="this.src=\'../images/5.jpg\'">' +
+                '<img src="' + escapeHtml(item.image || '/images/5.jpg') + '" alt="' + escapeHtml(item.title) + '" class="w-full h-40 object-cover" onerror="this.src=\'../images/5.jpg\'">' +
                 '<div class="p-4">' +
                     '<div class="flex items-center justify-between gap-2">' +
                         '<h4 class="font-extrabold">' + escapeHtml(item.title) + '</h4>' +
@@ -218,10 +218,10 @@
         const file = event.target.files[0];
         try {
             uploadedImageData = await fileToDataUrl(file);
-            imagePreview.src = uploadedImageData || '../images/5.jpg';
+            imagePreview.src = uploadedImageData || '/images/5.jpg';
         } catch (error) {
             uploadedImageData = '';
-            imagePreview.src = '../images/5.jpg';
+            imagePreview.src = '/images/5.jpg';
             imageMsg.textContent = 'Image upload failed. Try another file.';
             imageMsg.className = 'text-sm font-bold text-red-700';
         }
@@ -275,6 +275,7 @@
 </script>
 </body>
 </html>
+
 
 
 

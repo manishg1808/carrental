@@ -129,11 +129,12 @@
     }
 
     function resolveImageSrc(image) {
-        if (!image) return '../images/5.jpg';
+        if (!image) return '/images/5.jpg';
         if (String(image).startsWith('data:')) return image;
         if (String(image).startsWith('http')) return image;
-        if (String(image).startsWith('../')) return image;
-        return '../' + image;
+        if (String(image).startsWith('/')) return image;
+        if (String(image).startsWith('../')) return '/' + String(image).replace(/^(\.\.\/)+/, '');
+        return '/' + String(image).replace(/^\/+/, '');
     }
 
     function getStats(cars) {
@@ -298,4 +299,3 @@
         fileToDataUrl: fileToDataUrl
     };
 })();
-
