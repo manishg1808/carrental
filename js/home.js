@@ -185,6 +185,13 @@ function loadPopularCars() {
         return value ? String(value).trim() : '-';
     };
 
+    const getBrand = (car) => {
+        const value = car.brand || readSpec(car, ['Brand', 'Make']);
+        if (value) return String(value).trim();
+        const name = String(car.name || '').trim();
+        return name ? name.split(/\s+/)[0] : '-';
+    };
+
     let sourceCars = Array.isArray(carsData) ? carsData.slice() : [];
 
     try {
@@ -199,10 +206,12 @@ function loadPopularCars() {
 
     popularCarsContainer.innerHTML = popularCars.map((car) => {
         const safeName = escapeHtml(car.name || 'Vehicle');
+        const brand = escapeHtml(getBrand(car));
         const fuel = escapeHtml(car.fuel || '-');
         const passengers = escapeHtml(getPassengers(car));
         const seats = escapeHtml(getSeats(car));
         const luggage = escapeHtml(getLuggage(car));
+        const availability = !!car.available;
         const rawPrice = Number(car.price || 0);
         const formattedPrice = Number.isFinite(rawPrice) && rawPrice > 0
             ? `Rs. ${rawPrice.toLocaleString()} / day`
@@ -221,15 +230,22 @@ function loadPopularCars() {
 
             <div class="popular-content">
                 <div class="popular-detail">
-                    <span>${safeName}</span>
+                    <h3 class="popular-title">${safeName}</h3>
+                    <p class="popular-brand"><i class="ri-price-tag-3-line"></i>${brand}</p>
                     <div class="popular-mini-specs">
                         <small><i class="ri-group-line"></i>${passengers} Passengers</small>
                         <small><i class="ri-armchair-line"></i>${seats} Seats</small>
                         <small><i class="ri-suitcase-3-line"></i>${luggage} Luggage</small>
                         <small><i class="ri-gas-station-line"></i>${fuel}</small>
                     </div>
-                    <p>${formattedPrice}</p>
-                    <a href="${detailLink}" class="popular-btn">View</a>
+                    <div class="popular-summary">
+                        <small class="popular-availability ${availability ? 'is-available' : 'is-unavailable'}">
+                            <i class="${availability ? 'ri-checkbox-circle-fill' : 'ri-close-circle-fill'}"></i>
+                            ${availability ? 'Available' : 'Unavailable'}
+                        </small>
+                    </div>
+                    <p class="popular-price">${formattedPrice}</p>
+                    <a href="${detailLink}" class="popular-btn">View Details</a>
                 </div>
                 <div class="popular-product-image">
                     <div class="popular-box-image">

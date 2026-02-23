@@ -7,7 +7,6 @@
             enhanceFooterBottomLinks(footer);
         }
 
-        bindFooterNewsletterForms();
         initFloatingQuickActions();
         initLeadCapture();
     });
@@ -79,7 +78,6 @@
                 <div class="flex items-center gap-3 mt-5">
                     <a href="#" aria-label="Facebook" class="w-9 h-9 rounded-full border border-white/20 text-slate-200 hover:bg-accent hover:border-accent hover:text-white flex items-center justify-center transition"><i class="ri-facebook-fill text-sm"></i></a>
                     <a href="#" aria-label="Instagram" class="w-9 h-9 rounded-full border border-white/20 text-slate-200 hover:bg-accent hover:border-accent hover:text-white flex items-center justify-center transition"><i class="ri-instagram-line text-sm"></i></a>
-                    <a href="#" aria-label="X" class="w-9 h-9 rounded-full border border-white/20 text-slate-200 hover:bg-accent hover:border-accent hover:text-white flex items-center justify-center transition"><i class="ri-twitter-x-line text-sm"></i></a>
                     <a href="#" aria-label="YouTube" class="w-9 h-9 rounded-full border border-white/20 text-slate-200 hover:bg-accent hover:border-accent hover:text-white flex items-center justify-center transition"><i class="ri-youtube-fill text-sm"></i></a>
                 </div>
             </div>
@@ -88,7 +86,7 @@
                 <h4 class="text-white font-bold text-lg mb-4">Quick Links</h4>
                 <ul class="space-y-2 text-sm">
                     <li><a href="index.html" class="text-slate-300 hover:text-accent transition">Home</a></li>
-                    <li><a href="car-listing.html" class="text-slate-300 hover:text-accent transition">Fleet</a></li>
+                    <li><a href="car-listing.html" class="text-slate-300 hover:text-accent transition">Cars</a></li>
                     <li><a href="service.html" class="text-slate-300 hover:text-accent transition">Services</a></li>
                     <li><a href="about.html" class="text-slate-300 hover:text-accent transition">About Us</a></li>
                     <li><a href="contact.html" class="text-slate-300 hover:text-accent transition">Contact</a></li>
@@ -109,16 +107,16 @@
             </div>
 
             <div>
-                <h4 class="text-white font-bold text-lg mb-4">Fleet</h4>
+                <h4 class="text-white font-bold text-lg mb-4">Cars</h4>
                 <ul class="space-y-2 text-sm">
-                    <li><a href="car-listing.html" class="text-slate-300 hover:text-accent transition">All Fleet Vehicles</a></li>
-                    <li><a href="car-listing.html?category=SUV" class="text-slate-300 hover:text-accent transition">SUV Fleet</a></li>
-                    <li><a href="car-listing.html?category=Sedan" class="text-slate-300 hover:text-accent transition">Sedan Fleet</a></li>
-                    <li><a href="car-listing.html?category=Hatchback" class="text-slate-300 hover:text-accent transition">Hatchback Fleet</a></li>
-                    <li><a href="car-listing.html?category=MUV" class="text-slate-300 hover:text-accent transition">MUV Fleet</a></li>
-                    <li><a href="car-listing.html?category=Luxury" class="text-slate-300 hover:text-accent transition">Luxury Fleet</a></li>
-                    <li><a href="car-listing.html?fuel=Electric" class="text-slate-300 hover:text-accent transition">Electric Fleet</a></li>
-                    <li><a href="car-listing.html?available=true" class="text-slate-300 hover:text-accent transition">Available Fleet</a></li>
+                    <li><a href="car-listing.html" class="text-slate-300 hover:text-accent transition">All Cars</a></li>
+                    <li><a href="car-listing.html?category=SUV" class="text-slate-300 hover:text-accent transition">SUV Cars</a></li>
+                    <li><a href="car-listing.html?category=Sedan" class="text-slate-300 hover:text-accent transition">Sedan Cars</a></li>
+                    <li><a href="car-listing.html?category=Hatchback" class="text-slate-300 hover:text-accent transition">Hatchback Cars</a></li>
+                    <li><a href="car-listing.html?category=MUV" class="text-slate-300 hover:text-accent transition">MUV Cars</a></li>
+                    <li><a href="car-listing.html?category=Luxury" class="text-slate-300 hover:text-accent transition">Luxury Cars</a></li>
+                    <li><a href="car-listing.html?fuel=Electric" class="text-slate-300 hover:text-accent transition">Electric Cars</a></li>
+                    <li><a href="car-listing.html?available=true" class="text-slate-300 hover:text-accent transition">Available Cars</a></li>
                 </ul>
             </div>
 
@@ -129,10 +127,6 @@
                         <p><i class="ri-mail-line text-accent mr-2"></i><a href="mailto:support@luxuryfleetservices.com" class="hover:text-accent transition">support@luxuryfleetservices.com</a></p>
                         <p><i class="ri-map-pin-line text-accent mr-2"></i>5549 Bay Lagoo Cir, Orlando FL 32819</p>
                     </div>
-                <form class="footer-newsletter-form flex gap-2" action="#" method="post">
-                    <input type="email" required placeholder="Your email" class="w-full px-3 py-2 rounded-lg bg-white/10 border border-white/20 text-white placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-accent">
-                    <button type="submit" class="px-4 py-2 rounded-lg bg-accent text-white font-semibold hover:bg-orange-500 transition">Join</button>
-                </form>
             </div>
         `;
     }
@@ -162,25 +156,6 @@
             <a href="blog.html" class="hover:text-accent transition">Blog</a>
             <a href="contact.html" class="hover:text-accent transition">Support</a>
         `;
-    }
-
-    function bindFooterNewsletterForms() {
-        const forms = document.querySelectorAll('.footer-newsletter-form');
-        forms.forEach(function (form) {
-            form.addEventListener('submit', function (event) {
-                event.preventDefault();
-                const emailInput = form.querySelector('input[type="email"]');
-                const email = emailInput ? emailInput.value.trim() : '';
-
-                if (!email) {
-                    alert('Please enter your email address.');
-                    return;
-                }
-
-                alert('Thanks! You are subscribed for PrimeTransit updates.');
-                form.reset();
-            });
-        });
     }
 
     function initFloatingQuickActions() {

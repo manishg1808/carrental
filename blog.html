@@ -34,82 +34,251 @@
                     }
                 }
             }
-        };
+        }
     </script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css">
     <link rel="stylesheet" href="styles.css">
 </head>
-<body class="bg-bg-light text-primary">
-    <header class="bg-primary-dark text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex items-center justify-between gap-4">
-            <a href="index.html" class="inline-flex items-center gap-3">
-                <img src="images/logo.png" alt="Luxury Fleet Services logo" class="w-10 h-10 object-contain">
-                <span>
-                    <span class="block font-extrabold text-xl leading-tight">PrimeTransit Blog</span>
-                    <span class="block text-[11px] font-semibold -mt-0.5 bg-gradient-to-r from-[#FFD700] via-[#C9A227] to-black bg-clip-text text-transparent">Luxury Fleet Services</span>
-                </span>
-            </a>
-            <div class="flex items-center gap-3">
-                <a href="images.html" class="btn-primary px-4 py-2 rounded-lg text-sm font-bold">Images</a>
-                <a href="car-listing.html" class="btn-primary px-4 py-2 rounded-lg text-sm font-bold">Cars</a>
+<body class="bg-bg-light">
+    <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-500">
+        <div id="site-topbar" class="relative z-20 h-10 bg-gradient-to-r from-white/70 via-orange-50/70 to-orange-300/70 backdrop-blur-md border-b border-orange-200/60">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center justify-between text-[10px] sm:text-xs text-slate-800">
+                <div class="flex items-center gap-2 sm:gap-5">
+                    <a href="tel:+14073414310" class="hidden sm:inline-flex items-center gap-1.5 hover:text-accent transition-colors">
+                        <i class="ri-phone-line text-[10px]"></i>
+                        <span>+1-4073414310</span>
+                    </a>
+                    <a href="mailto:support@luxuryfleetservices.com" class="inline-flex items-center gap-1.5 hover:text-accent transition-colors">
+                        <i class="ri-mail-line text-[10px]"></i>
+                        <span class="max-w-[130px] sm:max-w-none truncate">support@luxuryfleetservices.com</span>
+                    </a>
+                </div>
+                <div class="flex items-center gap-2">
+                    <a href="#" aria-label="Facebook" class="w-6 h-6 rounded-full bg-orange-100 hover:bg-accent hover:text-white flex items-center justify-center transition-colors">
+                        <i class="ri-facebook-fill text-[10px]"></i>
+                    </a>
+                    <a href="#" aria-label="Instagram" class="w-6 h-6 rounded-full bg-orange-100 hover:bg-accent hover:text-white flex items-center justify-center transition-colors">
+                        <i class="ri-instagram-line text-[10px]"></i>
+                    </a>
+                    <a href="#" aria-label="YouTube" class="w-6 h-6 rounded-full bg-orange-100 hover:bg-accent hover:text-white flex items-center justify-center transition-colors">
+                        <i class="ri-youtube-fill text-[10px]"></i>
+                    </a>
+                </div>
             </div>
         </div>
-    </header>
 
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-        <div class="mb-8">
-            <p class="text-sm font-bold text-accent uppercase tracking-[0.2em]">Insights</p>
-            <h1 class="text-4xl font-extrabold text-primary-dark mt-2">Luxury Fleet Services Blog</h1>
-            <p class="text-text-secondary mt-2">Practical guides to help you plan airport, cruise, and city transportation with confidence.</p>
+        <div class="absolute inset-0 bg-gradient-to-r from-orange-300/45 via-orange-50/45 to-white/45 backdrop-blur-xl border-b border-orange-200/40"></div>
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="index.html" class="flex items-center space-x-3 group">
+                    <img src="images/logo.png" alt="Luxury Fleet Services logo" class="w-10 h-10 object-contain drop-shadow-md transition-transform group-hover:scale-105">
+                    <div>
+                        <span class="text-xl font-extrabold bg-gradient-to-r from-primary-dark to-primary bg-clip-text text-transparent">PrimeTransit</span>
+                        <div class="text-xs font-semibold -mt-1 bg-gradient-to-r from-[#FFD700] via-[#C9A227] to-black bg-clip-text text-transparent">Luxury Fleet Services</div>
+                    </div>
+                </a>
+
+                <div class="hidden lg:flex items-center space-x-1">
+                    <a href="index.html" class="nav-link px-4 py-1.5 rounded-xl font-semibold text-sm transition-all"><i class="ri-home-5-line mr-2"></i>Home</a>
+                    <div class="relative services-nav-group">
+                        <a href="service.html" class="nav-link px-4 py-1.5 rounded-xl font-semibold text-sm transition-all inline-flex items-center"><i class="ri-service-line mr-2"></i>Services <i class="ri-arrow-down-s-line ml-2 text-[10px]"></i></a>
+                        <div class="services-mega-dropdown">
+                            <div class="services-dropdown-cover">
+                                <img src="images/6.jpg" alt="Transportation service menu" loading="lazy">
+                            </div>
+                            <div class="services-mega-grid">
+                                <a href="service.html#route-rate-packages" class="services-mega-link services-mega-link-rates" data-cover="images/dollr.jpg">Rates</a>
+                                <a href="service.html#detail-airport-pickup-drop" class="services-mega-link" data-cover="images/03.jpg">Orlando Airport Transportation</a>
+                                <a href="service.html#detail-with-driver-car" class="services-mega-link" data-cover="images/04.jpg">Walt Disney World Transportation</a>
+                                <a href="service.html#detail-family-car-options" class="services-mega-link" data-cover="images/05.jpg">Universal Orlando Transportation</a>
+                                <a href="service.html#detail-daily-car-rental" class="services-mega-link" data-cover="images/066.jpg">Port Canaveral Cruise Transportation</a>
+                                <a href="service.html#detail-corporate-rentals" class="services-mega-link" data-cover="images/06.jpg">Corporate Transportation</a>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="car-listing.html" class="nav-link px-4 py-1.5 rounded-xl font-semibold text-sm transition-all"><i class="ri-car-line mr-2"></i>Cars</a>
+                    <a href="about.html" class="nav-link px-4 py-1.5 rounded-xl font-semibold text-sm transition-all"><i class="ri-information-line mr-2"></i>About</a>
+                    <a href="contact.html" class="nav-link px-4 py-1.5 rounded-xl font-semibold text-sm transition-all"><i class="ri-phone-line mr-2"></i>Contact</a>
+                </div>
+
+                <div class="hidden lg:flex items-center space-x-3">
+                    <a href="contact.html#enquiry-form" class="btn-primary px-6 py-2 text-white rounded-xl font-bold">Enquiry Form</a>
+                </div>
+
+                <div class="lg:hidden flex items-center gap-2">
+                    <a href="contact.html#enquiry-form" aria-label="Enquiry" class="inline-flex items-center px-3 h-9 rounded-lg btn-primary text-white text-xs font-bold shadow-sm">
+                        <i class="ri-mail-line mr-1.5 text-[11px]"></i>Enquiry
+                    </a>
+                    <a href="tel:+14073414310" aria-label="Call" class="w-9 h-9 flex items-center justify-center rounded-lg bg-white/75 backdrop-blur-sm border border-white/70 text-primary-dark hover:bg-accent hover:text-white transition-all shadow-sm">
+                        <i class="ri-phone-line text-sm"></i>
+                    </a>
+                    <button id="mobile-menu-btn" class="w-9 h-9 flex items-center justify-center rounded-xl hover:bg-bg-light text-primary-dark transition-all">
+                        <i class="ri-menu-line text-xl"></i>
+                    </button>
+                </div>
+            </div>
         </div>
 
-        <section class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-            <article class="bg-white rounded-2xl border border-border shadow-sm p-6">
-                <p class="text-xs font-bold text-accent uppercase tracking-[0.15em]">Transportation</p>
-                <h2 class="text-2xl font-extrabold text-primary-dark mt-2">Private Transportation Planning Tips</h2>
-                <p class="text-text-secondary mt-3">Checklist before pickup, damage inspection method, and return best practices.</p>
-                <a href="#transportation-tips" class="inline-flex items-center gap-2 mt-5 btn-primary px-4 py-2 rounded-lg font-bold text-sm">
-                    Read In This Page
-                    <i class="ri-arrow-down-line"></i>
-                </a>
-            </article>
-
-            <article class="bg-white rounded-2xl border border-border shadow-sm p-6">
-                <p class="text-xs font-bold text-accent uppercase tracking-[0.15em]">Airport Travel</p>
-                <h2 class="text-2xl font-extrabold text-primary-dark mt-2">Airport Pickup And Drop Guide</h2>
-                <p class="text-text-secondary mt-3">Vehicle selection, timing buffer, and coordination tips for on-time airport travel.</p>
-                <a href="#airport-guide" class="inline-flex items-center gap-2 mt-5 btn-primary px-4 py-2 rounded-lg font-bold text-sm">
-                    Read In This Page
-                    <i class="ri-arrow-down-line"></i>
-                </a>
-            </article>
-        </section>
-
-        <section id="transportation-tips" class="bg-white rounded-2xl border border-border shadow-sm p-7 mb-6">
-            <p class="text-xs font-bold text-accent uppercase tracking-[0.2em]">Article 1</p>
-            <h3 class="text-3xl font-extrabold text-primary-dark mt-2">7 Transportation Planning Tips Before You Travel</h3>
-            <div class="mt-5 space-y-3 text-text-secondary leading-relaxed">
-                <p><strong class="text-primary-dark">1. Inspect and record condition:</strong> Capture photos or a short video of body panels, wheels, and windshield at pickup.</p>
-                <p><strong class="text-primary-dark">2. Confirm policy details:</strong> Validate fuel, late return, and outstation usage rules before you leave.</p>
-                <p><strong class="text-primary-dark">3. Keep support number ready:</strong> Save emergency and booking contacts for quick help during the trip.</p>
-                <p><strong class="text-primary-dark">4. Plan route in advance:</strong> Account for tolls, parking, and peak traffic windows.</p>
-                <p><strong class="text-primary-dark">5. Return on time:</strong> Timely return avoids avoidable hourly or daily overage charges.</p>
+        <div id="mobile-menu" class="lg:hidden absolute top-full left-0 right-0 bg-white border-b border-border shadow-xl transform -translate-y-full opacity-0 invisible transition-all duration-300">
+            <div class="px-4 py-6 space-y-2">
+                <a href="index.html" class="flex items-center px-4 py-3 rounded-xl font-medium text-text-secondary hover:bg-bg-light hover:text-accent transition"><i class="ri-home-5-line mr-3"></i>Home</a>
+                <a href="service.html" class="flex items-center px-4 py-3 rounded-xl font-medium text-text-secondary hover:bg-bg-light hover:text-accent transition"><i class="ri-service-line mr-3"></i>Services</a>
+                <a href="car-listing.html" class="flex items-center px-4 py-3 rounded-xl font-medium text-text-secondary hover:bg-bg-light hover:text-accent transition"><i class="ri-car-line mr-3"></i>Cars</a>
+                <a href="about.html" class="flex items-center px-4 py-3 rounded-xl font-medium text-text-secondary hover:bg-bg-light hover:text-accent transition"><i class="ri-information-line mr-3"></i>About</a>
+                <a href="contact.html" class="flex items-center px-4 py-3 rounded-xl font-medium text-text-secondary hover:bg-bg-light hover:text-accent transition"><i class="ri-phone-line mr-3"></i>Contact</a>
+                <div class="pt-4 border-t border-border space-y-2">
+                    <a href="contact.html#enquiry-form" class="w-full inline-flex items-center justify-center px-4 py-3 btn-primary text-white rounded-xl font-bold"><i class="ri-mail-line mr-2"></i>Enquiry Form</a>
+                </div>
             </div>
-        </section>
+        </div>
+    </nav>
 
-        <section id="airport-guide" class="bg-white rounded-2xl border border-border shadow-sm p-7">
-            <p class="text-xs font-bold text-accent uppercase tracking-[0.2em]">Article 2</p>
-            <h3 class="text-3xl font-extrabold text-primary-dark mt-2">Airport Pickup And Drop: Quick Planning Guide</h3>
-            <div class="mt-5 space-y-3 text-text-secondary leading-relaxed">
-                <p><strong class="text-primary-dark">1. Choose by passengers plus luggage:</strong> One category up is better than a cramped ride for airport transfers.</p>
-                <p><strong class="text-primary-dark">2. Share precise flight info:</strong> Include terminal, flight number, and expected landing/departure time.</p>
-                <p><strong class="text-primary-dark">3. Keep 30-45 minutes buffer:</strong> It helps absorb traffic or baggage delays.</p>
-                <p><strong class="text-primary-dark">4. Confirm waiting terms:</strong> Know included waiting time and additional charges in advance.</p>
-                <p><strong class="text-primary-dark">5. Reconfirm one day before:</strong> Final confirmation reduces last-minute confusion.</p>
+    <section class="pt-[104px] h-[420px] relative overflow-hidden">
+        <img src="images/5.jpg" alt="PrimeTransit blog banner" class="absolute inset-0 w-full h-full object-cover">
+        <div class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/55 to-black/55"></div>
+        <div class="relative h-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center">
+            <div class="max-w-2xl text-white">
+                <h1 class="text-4xl md:text-5xl font-extrabold">Travel Blog & Service Guides</h1>
+                <p class="mt-3 text-slate-200 text-lg">Useful Orlando transportation tips, route planning guides, and service insights for smarter booking.</p>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
 
+    <section class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10">
+                <span class="inline-flex items-center px-4 py-1 rounded-full border border-accent/40 text-xs font-semibold tracking-[0.16em] uppercase text-accent">Latest Articles</span>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+                <article class="bg-white rounded-2xl border border-border shadow-sm overflow-hidden hover:shadow-lg transition-shadow">
+                    <img src="images/03.jpg" alt="Airport transportation guide" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-extrabold text-primary-dark leading-tight">Orlando Airport Pickup Planning Guide</h3>
+                        <p class="mt-3 text-sm text-text-secondary leading-relaxed">How to plan pickup timing, flight delays, luggage space, and child seat requirements before confirming your ride.</p>
+                        <button type="button" class="mt-5 inline-flex items-center px-4 py-2 rounded-lg btn-primary text-white text-sm font-bold blog-learn-btn"
+                            data-title="Orlando Airport Pickup Planning Guide"
+                            data-content="For airport transfers, confirm airline, terminal, arrival time, passenger count, and luggage details in advance. Add a 20-30 minute buffer for baggage claim and share contact number for instant coordination. If you are traveling with kids, request car seats at booking to avoid delays.">Learn More <i class='ri-arrow-right-line ml-2'></i></button>
+                    </div>
+                </article>
+
+                <article class="bg-white rounded-2xl border border-border shadow-sm overflow-hidden hover:shadow-lg transition-shadow">
+                    <img src="images/04.jpg" alt="Disney transfer tips" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-extrabold text-primary-dark leading-tight">Best Transfer Strategy For Disney Trips</h3>
+                        <p class="mt-3 text-sm text-text-secondary leading-relaxed">Vehicle type, stroller-friendly luggage space, and return schedule planning for Walt Disney World families.</p>
+                        <button type="button" class="mt-5 inline-flex items-center px-4 py-2 rounded-lg btn-primary text-white text-sm font-bold blog-learn-btn"
+                            data-title="Best Transfer Strategy For Disney Trips"
+                            data-content="For Disney-area transportation, choose vehicles based on stroller and luggage volume, not only passenger count. Morning slots fill early, so pre-book both pickup and return rides. Keep hotel check-in and park timings aligned to avoid waiting charges.">Learn More <i class='ri-arrow-right-line ml-2'></i></button>
+                    </div>
+                </article>
+
+                <article class="bg-white rounded-2xl border border-border shadow-sm overflow-hidden hover:shadow-lg transition-shadow">
+                    <img src="images/05.jpg" alt="Universal travel route" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-extrabold text-primary-dark leading-tight">Universal Orlando Route & Timing Tips</h3>
+                        <p class="mt-3 text-sm text-text-secondary leading-relaxed">Peak-hour insights, direct route planning, and return booking tips for Universal Orlando visitors.</p>
+                        <button type="button" class="mt-5 inline-flex items-center px-4 py-2 rounded-lg btn-primary text-white text-sm font-bold blog-learn-btn"
+                            data-title="Universal Orlando Route & Timing Tips"
+                            data-content="Universal routes can be slower during evening rush hours. Schedule pickup with enough lead time, especially for event days. Share real-time location and hotel name correctly so the driver can choose the quickest gate and reduce wait time.">Learn More <i class='ri-arrow-right-line ml-2'></i></button>
+                    </div>
+                </article>
+
+                <article class="bg-white rounded-2xl border border-border shadow-sm overflow-hidden hover:shadow-lg transition-shadow">
+                    <img src="images/066.jpg" alt="Cruise transfer guide" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-extrabold text-primary-dark leading-tight">Port Canaveral Cruise Transfer Checklist</h3>
+                        <p class="mt-3 text-sm text-text-secondary leading-relaxed">Simple checklist for terminal timing, luggage handling, and smooth transfer to Port Canaveral cruises.</p>
+                        <button type="button" class="mt-5 inline-flex items-center px-4 py-2 rounded-lg btn-primary text-white text-sm font-bold blog-learn-btn"
+                            data-title="Port Canaveral Cruise Transfer Checklist"
+                            data-content="Cruise trips require strict arrival windows. Plan departure based on cruise check-in cutoff, not only distance. Keep booking documents ready and choose larger vehicle options if your group has heavy luggage. Round-trip booking usually gives better coordination.">Learn More <i class='ri-arrow-right-line ml-2'></i></button>
+                    </div>
+                </article>
+
+                <article class="bg-white rounded-2xl border border-border shadow-sm overflow-hidden hover:shadow-lg transition-shadow">
+                    <img src="images/06.jpg" alt="Corporate transportation advice" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-extrabold text-primary-dark leading-tight">Corporate Travel Transportation Standards</h3>
+                        <p class="mt-3 text-sm text-text-secondary leading-relaxed">Business travel expectations: punctuality, clean cars, chauffeur protocol, and invoice-friendly billing.</p>
+                        <button type="button" class="mt-5 inline-flex items-center px-4 py-2 rounded-lg btn-primary text-white text-sm font-bold blog-learn-btn"
+                            data-title="Corporate Travel Transportation Standards"
+                            data-content="Corporate clients usually need punctual pickups, professional drivers, and clean executive vehicles. For meetings and events, share a fixed itinerary and backup contact. Ask for trip summaries and invoices if you need company expense records.">Learn More <i class='ri-arrow-right-line ml-2'></i></button>
+                    </div>
+                </article>
+
+                <article class="bg-white rounded-2xl border border-border shadow-sm overflow-hidden hover:shadow-lg transition-shadow">
+                    <img src="images/3.jpg" alt="Family vacation transport" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-extrabold text-primary-dark leading-tight">Family Vacation Ride Booking Mistakes To Avoid</h3>
+                        <p class="mt-3 text-sm text-text-secondary leading-relaxed">Top mistakes in group-size planning, luggage assumptions, and pickup detail mismatch that cause delays.</p>
+                        <button type="button" class="mt-5 inline-flex items-center px-4 py-2 rounded-lg btn-primary text-white text-sm font-bold blog-learn-btn"
+                            data-title="Family Vacation Ride Booking Mistakes To Avoid"
+                            data-content="Common mistakes include underestimating luggage, skipping child seat requests, and sharing incomplete pickup details. Verify address spelling, phone number, and timing one day before travel. A quick reconfirmation prevents most last-minute issues.">Learn More <i class='ri-arrow-right-line ml-2'></i></button>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <div id="blog-modal" class="fixed inset-0 z-[80] hidden">
+        <div class="absolute inset-0 bg-black/60" data-close-blog-modal></div>
+        <div class="relative h-full w-full flex items-center justify-center p-4">
+            <div class="w-full max-w-2xl bg-white rounded-2xl shadow-2xl border border-border overflow-hidden">
+                <div class="flex items-center justify-between px-6 py-4 border-b border-border bg-slate-50">
+                    <h3 id="blog-modal-title" class="text-xl font-extrabold text-primary-dark">Article Details</h3>
+                    <button type="button" class="w-9 h-9 rounded-lg border border-border text-slate-600 hover:bg-slate-100" data-close-blog-modal>
+                        <i class="ri-close-line text-lg"></i>
+                    </button>
+                </div>
+                <div class="px-6 py-5">
+                    <p id="blog-modal-text" class="text-text-secondary leading-relaxed"></p>
+                    <div class="mt-6 flex justify-end gap-3">
+                        <button type="button" class="px-4 py-2 rounded-lg border border-border text-sm font-semibold text-slate-700 hover:bg-slate-100" data-close-blog-modal>Close</button>
+                        <a href="contact.html#enquiry-form" class="px-4 py-2 rounded-lg btn-primary text-white text-sm font-bold">Book Service</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/navbar.js"></script>
     <script src="js/footer.js"></script>
+    <script>
+        (function () {
+            const modal = document.getElementById('blog-modal');
+            const titleNode = document.getElementById('blog-modal-title');
+            const textNode = document.getElementById('blog-modal-text');
+            const openBtns = document.querySelectorAll('.blog-learn-btn');
+            const closeBtns = document.querySelectorAll('[data-close-blog-modal]');
+
+            function openModal(title, content) {
+                titleNode.textContent = title;
+                textNode.textContent = content;
+                modal.classList.remove('hidden');
+                document.body.classList.add('overflow-hidden');
+            }
+
+            function closeModal() {
+                modal.classList.add('hidden');
+                document.body.classList.remove('overflow-hidden');
+            }
+
+            openBtns.forEach((btn) => {
+                btn.addEventListener('click', () => {
+                    openModal(btn.dataset.title || 'Article Details', btn.dataset.content || 'Details coming soon.');
+                });
+            });
+
+            closeBtns.forEach((btn) => {
+                btn.addEventListener('click', closeModal);
+            });
+
+            document.addEventListener('keydown', (event) => {
+                if (event.key === 'Escape' && !modal.classList.contains('hidden')) {
+                    closeModal();
+                }
+            });
+        })();
+    </script>
 </body>
 </html>

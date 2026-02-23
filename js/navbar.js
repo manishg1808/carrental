@@ -198,6 +198,30 @@ document.addEventListener('DOMContentLoaded', function() {
         const menu = group.querySelector('.services-mega-dropdown');
         if (!trigger || !menu) return;
 
+        const coverImage = menu.querySelector('.services-dropdown-cover img');
+        const defaultCover = coverImage ? (coverImage.getAttribute('data-default-cover') || coverImage.getAttribute('src') || '') : '';
+        const previewLinks = menu.querySelectorAll('.services-mega-link[data-cover]');
+
+        const setCoverPreview = (link) => {
+            if (!link) return;
+            const coverSrc = link.getAttribute('data-cover');
+            if (coverImage && coverSrc) {
+                coverImage.setAttribute('src', coverSrc);
+            }
+        };
+
+        const resetCoverPreview = () => {
+            if (coverImage && defaultCover) {
+                coverImage.setAttribute('src', defaultCover);
+            }
+        };
+
+        previewLinks.forEach((link) => {
+            link.addEventListener('mouseenter', () => setCoverPreview(link));
+            link.addEventListener('focus', () => setCoverPreview(link));
+            link.addEventListener('blur', resetCoverPreview);
+        });
+
         trigger.setAttribute('aria-haspopup', 'true');
         trigger.setAttribute('aria-expanded', 'false');
 
@@ -212,6 +236,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (!desktopNavMedia.matches) return;
             group.classList.remove('is-open');
             trigger.setAttribute('aria-expanded', 'false');
+            resetCoverPreview();
         });
 
         trigger.addEventListener('click', (event) => {
@@ -349,7 +374,11 @@ document.addEventListener('DOMContentLoaded', function() {
         document.body.classList.add('overflow-hidden');
     };
 
-    document.querySelectorAll('a[href="contact.html#enquiry-form"], a[href="#enquiry-form"]').forEach((trigger) => {
+    // Enquiry buttons in navbar should always open popup instead of navigating.
+    const navbarEnquiryTriggers = document.querySelectorAll(
+        '#navbar a[href="#enquiry-form"], #navbar a[href="contact.html#enquiry-form"]'
+    );
+    navbarEnquiryTriggers.forEach((trigger) => {
         trigger.addEventListener('click', (e) => {
             e.preventDefault();
             openEnquiryModal();

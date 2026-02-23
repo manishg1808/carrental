@@ -49,10 +49,33 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function applyFromHash(shouldScroll) {
-        focusSectionById(currentHashId(), shouldScroll);
+        const hashId = currentHashId();
+        if (!hashId) {
+            showAllSections();
+            return;
+        }
+
+        if (validSectionIds.has(hashId)) {
+            focusSectionById(hashId, shouldScroll);
+            return;
+        }
+
+        // For non-service-detail anchors (e.g. #route-rate-packages), keep all sections visible
+        // and smooth-scroll to the requested section.
+        showAllSections();
+        if (shouldScroll) {
+            const target = document.getElementById(hashId);
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
     }
 
     applyFromHash(false);
+    // Ensure cross-page anchor links scroll correctly after full layout is painted.
+    window.requestAnimationFrame(function () {
+        applyFromHash(true);
+    });
     window.addEventListener('hashchange', function () {
         applyFromHash(true);
     });

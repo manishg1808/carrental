@@ -64,9 +64,6 @@
                     <a href="#" aria-label="Instagram" class="w-6 h-6 rounded-full bg-orange-100 hover:bg-accent hover:text-white flex items-center justify-center transition-colors">
                         <i class="ri-instagram-line text-[10px]"></i>
                     </a>
-                    <a href="#" aria-label="X" class="w-6 h-6 rounded-full bg-orange-100 hover:bg-accent hover:text-white flex items-center justify-center transition-colors">
-                        <i class="ri-twitter-x-line text-[10px]"></i>
-                    </a>
                     <a href="#" aria-label="YouTube" class="w-6 h-6 rounded-full bg-orange-100 hover:bg-accent hover:text-white flex items-center justify-center transition-colors">
                         <i class="ri-youtube-fill text-[10px]"></i>
                     </a>
@@ -96,16 +93,17 @@
                     </a>
                     <div class="relative services-nav-group">
     <a href="service.html" class="nav-link px-4 py-1.5 rounded-xl font-semibold text-sm transition-all inline-flex items-center"><i class="ri-service-line mr-2"></i>Services <i class="ri-arrow-down-s-line ml-2 text-[10px]"></i></a>
-    <div class="services-mega-dropdown">
+<div class="services-mega-dropdown">
     <div class="services-dropdown-cover">
-        <img src="images/6.jpg" alt="Transportation service menu" loading="lazy">
+        <img src="images/6.jpg" alt="Transportation service menu" loading="lazy" data-default-cover="images/6.jpg">
     </div>
     <div class="services-mega-grid">
-        <a href="service.html#detail-airport-pickup-drop" class="services-mega-link">Orlando Airport Transportation</a>
-        <a href="service.html#detail-with-driver-car" class="services-mega-link">Walt Disney World Transportation</a>
-        <a href="service.html#detail-family-car-options" class="services-mega-link">Universal Orlando Transportation</a>
-        <a href="service.html#detail-daily-car-rental" class="services-mega-link">Port Canaveral Cruise Transportation</a>
-        <a href="service.html#detail-corporate-rentals" class="services-mega-link">Corporate Transportation</a>
+        <a href="service.html#route-rate-packages" class="services-mega-link services-mega-link-rates" data-cover="images/dollr.jpg">Rates</a>
+        <a href="service.html#detail-airport-pickup-drop" class="services-mega-link" data-cover="images/03.jpg">Orlando Airport Transportation</a>
+        <a href="service.html#detail-with-driver-car" class="services-mega-link" data-cover="images/04.jpg">Walt Disney World Transportation</a>
+        <a href="service.html#detail-family-car-options" class="services-mega-link" data-cover="images/05.jpg">Universal Orlando Transportation</a>
+        <a href="service.html#detail-daily-car-rental" class="services-mega-link" data-cover="images/066.jpg">Port Canaveral Cruise Transportation</a>
+        <a href="service.html#detail-corporate-rentals" class="services-mega-link" data-cover="images/06.jpg">Corporate Transportation</a>
     </div>
 </div>
 </div>
@@ -196,7 +194,7 @@
                         </span>
                     </div>
                     <h1 class="text-5xl md:text-7xl font-extrabold mb-6 leading-tight">
-                        Book <span class="gradient-text" style="-webkit-text-fill-color: #FFD700;">Luxury Fleet Services</span> Today
+                        Book <span class="bg-gradient-to-r from-[#FFD700] via-[#f6d75a] to-[#c9a227] bg-clip-text text-transparent">Orlando Luxury Fleet Services</span> Today
                     </h1>
                     <p class="text-xl md:text-2xl mb-8 text-gray-200 leading-relaxed">
                         Professional transportation with clean vehicles, trained chauffeurs and on-time service for every trip.
@@ -212,35 +210,41 @@
                             <div class="w-12 h-12 bg-accent/20 rounded-lg flex items-center justify-center">
                                 <i class="ri-check-line text-accent"></i>
                             </div>
-                            <span class="text-gray-200">Airport & Cruise Routes</span>
+                            <span class="text-gray-200">50+ Airport & Cruise Routes</span>
                         </div>
                         <div class="flex items-center space-x-2">
                             <div class="w-12 h-12 bg-accent/20 rounded-lg flex items-center justify-center">
                                 <i class="ri-check-line text-accent"></i>
                             </div>
-                            <span class="text-gray-200">24/7 Support</span>
+                            <span class="text-gray-200">24/7 Live Support</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <div class="w-12 h-12 bg-accent/20 rounded-lg flex items-center justify-center">
+                                <i class="ri-check-line text-accent"></i>
+                            </div>
+                            <span class="text-gray-200">15+ Years Experience</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Right Search Form -->
                 <div class="fade-in-up" style="animation-delay: 0.2s;">
-                    <div class="glass rounded-3xl p-8 shadow-2xl border border-white/20">
-                        <div class="flex items-center mb-6">
-                            <div class="w-12 h-12 bg-accent rounded-xl flex items-center justify-center mr-4">
-                                <i class="ri-search-line text-white text-xl"></i>
+                    <div class="glass quick-booking-card rounded-3xl p-6 shadow-2xl border border-white/20">
+                        <div class="flex items-center mb-4">
+                            <div class="w-11 h-11 bg-accent rounded-xl flex items-center justify-center mr-3">
+                                <i class="ri-search-line text-white text-lg"></i>
                             </div>
                             <div>
-                                <h3 class="text-2xl font-bold text-primary-dark">Quick Booking</h3>
-                                <p class="text-text-secondary">Choose your best fleet and schedule instantly</p>
+                                <h3 class="text-xl font-bold text-primary-dark">Quick Booking</h3>
+                                <p class="text-sm text-text-secondary">Choose fleet and schedule instantly</p>
                             </div>
                         </div>
-                        <form id="search-form" class="space-y-4">
+                        <form id="search-form" class="quick-booking-form space-y-3">
                             <div>
-                                <label class="block text-sm font-semibold text-primary-dark mb-2">
+                                <label class="block text-xs font-semibold text-primary-dark mb-1.5">
                                     <i class="ri-roadster-line text-accent mr-2"></i>Choose Best Fleet
                                 </label>
-                                <select id="quick-fleet" class="w-full px-4 py-3.5 border-2 border-border rounded-xl text-primary-dark focus:outline-none focus:ring-2 focus:ring-accent focus:border-accent transition-all">
+                                <select id="quick-fleet" class="quick-booking-input w-full px-3.5 py-2.5 border-2 border-border rounded-xl text-sm text-primary-dark focus:outline-none focus:ring-2 focus:ring-accent focus:border-accent transition-all">
                                     <option value="">Choose Best Fleet</option>
                                     <option value="Toyota Camry">Toyota Camry</option>
                                     <option value="Honda CR-V">Honda CR-V</option>
@@ -254,33 +258,33 @@
                             </div>
                             <div class="grid grid-cols-2 gap-4">
                                 <div>
-                                    <label class="block text-sm font-semibold text-primary-dark mb-2">
+                                    <label class="block text-xs font-semibold text-primary-dark mb-1.5">
                                         <i class="ri-calendar-line text-accent mr-2"></i>Date
                                     </label>
-                                    <input id="quick-date" type="date" class="w-full px-4 py-3.5 border-2 border-border rounded-xl text-primary-dark focus:outline-none focus:ring-2 focus:ring-accent focus:border-accent transition-all">
+                                    <input id="quick-date" type="date" class="quick-booking-input w-full px-3.5 py-2.5 border-2 border-border rounded-xl text-sm text-primary-dark focus:outline-none focus:ring-2 focus:ring-accent focus:border-accent transition-all">
                                 </div>
                                 <div>
-                                    <label class="block text-sm font-semibold text-primary-dark mb-2">
+                                    <label class="block text-xs font-semibold text-primary-dark mb-1.5">
                                         <i class="ri-time-line text-accent mr-2"></i>Time
                                     </label>
-                                    <input id="quick-time" type="time" class="w-full px-4 py-3.5 border-2 border-border rounded-xl text-primary-dark focus:outline-none focus:ring-2 focus:ring-accent focus:border-accent transition-all">
+                                    <input id="quick-time" type="time" class="quick-booking-input w-full px-3.5 py-2.5 border-2 border-border rounded-xl text-sm text-primary-dark focus:outline-none focus:ring-2 focus:ring-accent focus:border-accent transition-all">
                                 </div>
                             </div>
                             <div class="grid grid-cols-2 gap-4">
                                 <div>
-                                    <label class="block text-sm font-semibold text-primary-dark mb-2">
+                                    <label class="block text-xs font-semibold text-primary-dark mb-1.5">
                                         <i class="ri-map-pin-2-line text-accent mr-2"></i>Location
                                     </label>
-                                    <input id="quick-location" type="text" placeholder="Enter location" class="w-full px-4 py-3.5 border-2 border-border rounded-xl text-primary-dark focus:outline-none focus:ring-2 focus:ring-accent focus:border-accent transition-all">
+                                    <input id="quick-location" type="text" placeholder="Enter location" class="quick-booking-input w-full px-3.5 py-2.5 border-2 border-border rounded-xl text-sm text-primary-dark focus:outline-none focus:ring-2 focus:ring-accent focus:border-accent transition-all">
                                 </div>
                                 <div>
-                                    <label class="block text-sm font-semibold text-primary-dark mb-2">
+                                    <label class="block text-xs font-semibold text-primary-dark mb-1.5">
                                         <i class="ri-phone-line text-accent mr-2"></i>Number
                                     </label>
-                                    <input id="quick-number" type="tel" placeholder="+1 XXX XXX XXXX" class="w-full px-4 py-3.5 border-2 border-border rounded-xl text-primary-dark focus:outline-none focus:ring-2 focus:ring-accent focus:border-accent transition-all">
+                                    <input id="quick-number" type="tel" placeholder="+1 XXX XXX XXXX" class="quick-booking-input w-full px-3.5 py-2.5 border-2 border-border rounded-xl text-sm text-primary-dark focus:outline-none focus:ring-2 focus:ring-accent focus:border-accent transition-all">
                                 </div>
                             </div>
-                            <button type="submit" class="w-full btn-primary px-6 py-4 text-white rounded-xl font-bold text-lg flex items-center justify-center">
+                            <button type="submit" class="w-full btn-primary px-5 py-3 text-white rounded-xl font-bold text-base flex items-center justify-center">
                                 <span>Submit</span>
                                 <i class="ri-arrow-right-line ml-2"></i>
                             </button>
@@ -590,7 +594,7 @@
                 <a href="service.html#detail-airport-pickup-drop" class="services-neon-card is-far-left group">
                     <div>
                         <div class="services-neon-thumb">
-                            <img src="images/1.jpg" alt="Orlando airport transportation">
+                            <img src="images/oo.jpeg" alt="Orlando airport transportation">
                         </div>
                         <i class="ri-road-map-line text-accent text-xl"></i>
                         <h3 class="mt-3 text-primary-dark font-bold text-lg">Orlando Airport</h3>
@@ -604,7 +608,7 @@
                 <a href="service.html#detail-with-driver-car" class="services-neon-card is-left group">
                     <div>
                         <div class="services-neon-thumb">
-                            <img src="images/2.jpg" alt="Walt Disney World transportation">
+                            <img src="images/06.jpg" alt="Walt Disney World transportation">
                         </div>
                         <i class="ri-user-star-line text-accent text-2xl"></i>
                         <h3 class="mt-4 text-primary-dark font-bold text-xl">Walt Disney World</h3>
@@ -632,7 +636,7 @@
                 <a href="service.html#detail-corporate-rentals" class="services-neon-card is-right group">
                     <div>
                         <div class="services-neon-thumb">
-                            <img src="images/4.jpg" alt="Corporate transportation">
+                            <img src="images/11.jpg" alt="Corporate transportation">
                         </div>
                         <i class="ri-team-line text-accent text-2xl"></i>
                         <h3 class="mt-4 text-primary-dark font-bold text-xl">Corporate Transportation</h3>
@@ -646,7 +650,7 @@
                 <a href="service.html#detail-daily-car-rental" class="services-neon-card is-far-right group">
                     <div>
                         <div class="services-neon-thumb">
-                            <img src="images/5.jpg" alt="Port Canaveral cruise transportation">
+                            <img src="images/o.jpeg" alt="Port Canaveral cruise transportation">
                         </div>
                         <i class="ri-gemini-line text-accent text-xl"></i>
                         <h3 class="mt-3 text-primary-dark font-bold text-lg">Port Canaveral</h3>
@@ -689,10 +693,12 @@
                     <h3>Executive Sedan</h3>
                     <p>Smooth and punctual transportation for airport rides and business appointments.</p>
                     <div class="ride-meta">
+                        <span><i class="ri-price-tag-3-line"></i>Toyota Brand</span>
                         <span><i class="ri-group-line"></i>3 Passengers</span>
                         <span><i class="ri-armchair-line"></i>3 Seats</span>
                         <span><i class="ri-suitcase-3-line"></i>2 Luggage</span>
                         <span><i class="ri-gas-station-line"></i>Gasoline</span>
+                        <span><i class="ri-checkbox-circle-fill"></i>Available</span>
                     </div>
                     <div class="ride-footer">
                         <strong>From $85 / trip</strong>
@@ -706,10 +712,12 @@
                     <h3>Family SUV</h3>
                     <p>Comfort-focused option for Disney routes, city tours, and long-distance transfers.</p>
                     <div class="ride-meta">
+                        <span><i class="ri-price-tag-3-line"></i>Honda Brand</span>
                         <span><i class="ri-group-line"></i>6 Passengers</span>
                         <span><i class="ri-armchair-line"></i>6 Seats</span>
                         <span><i class="ri-suitcase-3-line"></i>4 Luggage</span>
                         <span><i class="ri-gas-station-line"></i>Hybrid</span>
+                        <span><i class="ri-checkbox-circle-fill"></i>Available</span>
                     </div>
                     <div class="ride-footer">
                         <strong>From $130 / trip</strong>
@@ -723,10 +731,12 @@
                     <h3>Premium Van</h3>
                     <p>Ideal for group transportation with extra cabin space and luggage capacity.</p>
                     <div class="ride-meta">
+                        <span><i class="ri-price-tag-3-line"></i>Toyota Brand</span>
                         <span><i class="ri-group-line"></i>10 Passengers</span>
                         <span><i class="ri-armchair-line"></i>10 Seats</span>
                         <span><i class="ri-suitcase-3-line"></i>8 Luggage</span>
                         <span><i class="ri-gas-station-line"></i>Diesel</span>
+                        <span><i class="ri-checkbox-circle-fill"></i>Available</span>
                     </div>
                     <div class="ride-footer">
                         <strong>From $180 / trip</strong>
@@ -740,10 +750,12 @@
                     <h3>Luxury Black Car</h3>
                     <p>Private chauffeur transportation for VIP meetings, events, and executive travel.</p>
                     <div class="ride-meta">
+                        <span><i class="ri-price-tag-3-line"></i>Mercedes Brand</span>
                         <span><i class="ri-group-line"></i>3 Passengers</span>
                         <span><i class="ri-armchair-line"></i>3 Seats</span>
                         <span><i class="ri-suitcase-3-line"></i>2 Luggage</span>
                         <span><i class="ri-gas-station-line"></i>Premium Gasoline</span>
+                        <span><i class="ri-checkbox-circle-fill"></i>Available</span>
                     </div>
                     <div class="ride-footer">
                         <strong>From $240 / trip</strong>
@@ -766,50 +778,122 @@
 
 
 
-    <!-- How It Works Section -->
-    <section class="how-works-tree py-20">
+    <!-- Top Routes Section -->
+    <section class="routes-showcase-section py-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <span class="inline-block px-4 py-2 rounded-full text-sm font-bold tracking-wide bg-white/70 text-accent border border-orange-200">Journey Tree</span>
-                <h2 class="text-4xl md:text-5xl font-extrabold text-primary-dark mt-4 mb-4">How It Works</h2>
-                <p class="text-text-secondary text-lg max-w-2xl mx-auto">Follow the journey from service selection to confirmed transportation.</p>
+            <div class="text-center mb-14">
+                <span class="routes-showcase-pill">Most Requested</span>
+                <h2 class="routes-showcase-title mt-4">Top Orlando Transportation Routes</h2>
+                <p class="routes-showcase-subtitle mt-3">All-inclusive pricing with taxes, fees, and tolls included for transparent trip planning.</p>
             </div>
 
-            <div class="journey-tree">
-                <div class="tree-trunk" aria-hidden="true"></div>
-                <div class="tree-grid">
-                    <article class="tree-step is-left">
-                        <div class="tree-connector" aria-hidden="true"></div>
-                        <div class="tree-node" aria-hidden="true"></div>
-                        <div class="tree-card">
-                            <span class="tree-label">Step 01</span>
-                            <div class="tree-icon"><i class="ri-search-line"></i></div>
-                            <h3>Choose Your Car</h3>
-                            <p>Browse options by budget, category, fuel and comfort to shortlist the perfect ride.</p>
+            <div class="routes-showcase-grid">
+                <article class="routes-showcase-card">
+                    <span class="routes-card-badge">Popular</span>
+                    <div class="routes-card-icon"><i class="ri-flight-takeoff-line"></i></div>
+                    <h3>Orlando Airport to Disney</h3>
+                    <p class="routes-card-brief">Comfort-focused direct transfer for families and vacation travelers.</p>
+                    <ul class="routes-card-list">
+                        <li><i class="ri-checkbox-circle-fill"></i>Direct, non-stop service</li>
+                        <li><i class="ri-checkbox-circle-fill"></i>Inside airport meet & greet</li>
+                        <li><i class="ri-checkbox-circle-fill"></i>Free car seats available</li>
+                    </ul>
+                    <div class="routes-card-footer">
+                        <div>
+                            <p class="routes-price-label">From</p>
+                            <p class="routes-price">$185</p>
+                            <p class="routes-trip-type">round trip</p>
                         </div>
-                    </article>
+                        <a href="index.html#premium-service-enquiry" class="routes-book-btn">Book Now</a>
+                    </div>
+                </article>
 
-                    <article class="tree-step is-right">
-                        <div class="tree-connector" aria-hidden="true"></div>
-                        <div class="tree-node" aria-hidden="true"></div>
-                        <div class="tree-card">
-                            <span class="tree-label">Step 02</span>
-                            <div class="tree-icon"><i class="ri-calendar-check-line"></i></div>
-                            <h3>Book & Confirm</h3>
-                            <p>Pick date and pickup point, complete details and get instant confirmation.</p>
+                <article class="routes-showcase-card">
+                    <div class="routes-card-icon"><i class="ri-map-pin-2-line"></i></div>
+                    <h3>Orlando Airport to Universal</h3>
+                    <p class="routes-card-brief">Fast route with smooth dispatch and punctual chauffeur support.</p>
+                    <ul class="routes-card-list">
+                        <li><i class="ri-checkbox-circle-fill"></i>Direct, non-stop service</li>
+                        <li><i class="ri-checkbox-circle-fill"></i>Inside airport meet & greet</li>
+                        <li><i class="ri-checkbox-circle-fill"></i>Free car seats available</li>
+                    </ul>
+                    <div class="routes-card-footer">
+                        <div>
+                            <p class="routes-price-label">From</p>
+                            <p class="routes-price">$185</p>
+                            <p class="routes-trip-type">round trip</p>
                         </div>
-                    </article>
+                        <a href="index.html#premium-service-enquiry" class="routes-book-btn">Book Now</a>
+                    </div>
+                </article>
 
-                    <article class="tree-step is-left">
-                        <div class="tree-connector" aria-hidden="true"></div>
-                        <div class="tree-node" aria-hidden="true"></div>
-                        <div class="tree-card">
-                            <span class="tree-label">Step 03</span>
-                            <div class="tree-icon"><i class="ri-roadster-line"></i></div>
-                            <h3>Start Your Journey</h3>
-                            <p>Meet your driver and travel confidently with full trip support.</p>
+                <article class="routes-showcase-card">
+                    <div class="routes-card-icon"><i class="ri-ship-2-line"></i></div>
+                    <h3>Orlando Airport to Cruise Port</h3>
+                    <p class="routes-card-brief">Cruise-ready service with luggage-friendly vehicles and timing flexibility.</p>
+                    <ul class="routes-card-list">
+                        <li><i class="ri-checkbox-circle-fill"></i>Direct service to cruise terminal</li>
+                        <li><i class="ri-checkbox-circle-fill"></i>Flexible cruise time scheduling</li>
+                        <li><i class="ri-checkbox-circle-fill"></i>Spacious vehicles for luggage</li>
+                    </ul>
+                    <div class="routes-card-footer">
+                        <div>
+                            <p class="routes-price-label">From</p>
+                            <p class="routes-price">$290</p>
+                            <p class="routes-trip-type">round trip</p>
                         </div>
-                    </article>
+                        <a href="index.html#premium-service-enquiry" class="routes-book-btn">Book Now</a>
+                    </div>
+                </article>
+            </div>
+
+            <div class="text-center mt-10">
+                <a href="service.html#route-rate-packages" class="routes-view-all-btn inline-flex items-center justify-center">
+                    View All Routes & Pricing
+                    <i class="ri-arrow-right-line ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Section -->
+    <section class="py-20 bg-gradient-to-b from-white to-bg-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="rounded-3xl overflow-hidden border border-border bg-white shadow-xl">
+                <div class="grid grid-cols-1 lg:grid-cols-12">
+                    <div class="lg:col-span-5 bg-primary-dark text-white p-8 md:p-10">
+                        <p class="inline-flex items-center px-3 py-1.5 rounded-full bg-white/10 border border-white/20 text-xs font-semibold tracking-[0.2em] uppercase text-orange-200">
+                            Why Choose Us
+                        </p>
+                        <h2 class="mt-5 text-3xl md:text-4xl font-extrabold leading-tight">Why Choose Luxury fleet services For Orlando Car Services</h2>
+                        <p class="mt-4 text-slate-200 leading-relaxed">
+                            Reliability, Comfort, and Class - The LUXURY FLEET SERVICES Promise Your journey is our priority. Here's why travelers choose us for their Orlando car service needs:
+                        </p>
+                    </div>
+                    <div class="lg:col-span-7 p-8 md:p-10 bg-gradient-to-br from-white to-orange-50/40">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <article class="rounded-2xl border border-border bg-white p-5 shadow-sm">
+                                <div class="w-11 h-11 rounded-xl bg-accent/15 text-accent flex items-center justify-center mb-3"><i class="ri-map-pin-2-line"></i></div>
+                                <h3 class="text-lg font-bold text-primary-dark">Trusted Local Expertise</h3>
+                                <p class="mt-2 text-sm text-text-secondary">Navigate Orlando with a car service company that knows every corner of the city. We specialize in providing top-notch transportation services from Orlando Airport (MCO) directly to your hotel, Disney, Universal, Port Canaveral, and beyond.</p>
+                            </article>
+                            <article class="rounded-2xl border border-border bg-white p-5 shadow-sm">
+                                <div class="w-11 h-11 rounded-xl bg-accent/15 text-accent flex items-center justify-center mb-3"><i class="ri-shield-check-line"></i></div>
+                                <h3 class="text-lg font-bold text-primary-dark">Impeccable Safety Standards</h3>
+                                <p class="mt-2 text-sm text-text-secondary">Your safety is paramount. As a fully licensed and insured executive car service provider, we offer the peace of mind you deserve.</p>
+                            </article>
+                            <article class="rounded-2xl border border-border bg-white p-5 shadow-sm">
+                                <div class="w-11 h-11 rounded-xl bg-accent/15 text-accent flex items-center justify-center mb-3"><i class="ri-roadster-line"></i></div>
+                                <h3 class="text-lg font-bold text-primary-dark">Luxurious Fleet Choices</h3>
+                                <p class="mt-2 text-sm text-text-secondary">Indulge in the comfort of our selection of five premium cars and two spacious 14-seater vans, ensuring a perfect fit for both individual travelers and larger groups.</p>
+                            </article>
+                            <article class="rounded-2xl border border-border bg-white p-5 shadow-sm">
+                                <div class="w-11 h-11 rounded-xl bg-accent/15 text-accent flex items-center justify-center mb-3"><i class="ri-user-star-line"></i></div>
+                                <h3 class="text-lg font-bold text-primary-dark">Professionalism Personified</h3>
+                                <p class="mt-2 text-sm text-text-secondary">Our uniformed drivers are not just drivers; they're courteous professionals, rigorously vetted for their expertise and commitment to service excellence.</p>
+                            </article>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -867,44 +951,50 @@
         </div>
     </section>
 
-    <!-- Why Choose Section -->
-    <section class="py-20 bg-gradient-to-b from-white to-bg-light">
+    <!-- How It Works Section -->
+    <section class="how-works-tree py-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="rounded-3xl overflow-hidden border border-border bg-white shadow-xl">
-                <div class="grid grid-cols-1 lg:grid-cols-12">
-                    <div class="lg:col-span-5 bg-primary-dark text-white p-8 md:p-10">
-                        <p class="inline-flex items-center px-3 py-1.5 rounded-full bg-white/10 border border-white/20 text-xs font-semibold tracking-[0.2em] uppercase text-orange-200">
-                            Why Choose Us
-                        </p>
-                        <h2 class="mt-5 text-3xl md:text-4xl font-extrabold leading-tight">Why Choose Luxury fleet services For Orlando Car Services</h2>
-                        <p class="mt-4 text-slate-200 leading-relaxed">
-                            Reliability, Comfort, and Class - The LUXURY FLEET SERVICES Promise Your journey is our priority. Here's why travelers choose us for their Orlando car service needs:
-                        </p>
-                    </div>
-                    <div class="lg:col-span-7 p-8 md:p-10 bg-gradient-to-br from-white to-orange-50/40">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <article class="rounded-2xl border border-border bg-white p-5 shadow-sm">
-                                <div class="w-11 h-11 rounded-xl bg-accent/15 text-accent flex items-center justify-center mb-3"><i class="ri-map-pin-2-line"></i></div>
-                                <h3 class="text-lg font-bold text-primary-dark">Trusted Local Expertise</h3>
-                                <p class="mt-2 text-sm text-text-secondary">Navigate Orlando with a car service company that knows every corner of the city. We specialize in providing top-notch transportation services from Orlando Airport (MCO) directly to your hotel, Disney, Universal, Port Canaveral, and beyond.</p>
-                            </article>
-                            <article class="rounded-2xl border border-border bg-white p-5 shadow-sm">
-                                <div class="w-11 h-11 rounded-xl bg-accent/15 text-accent flex items-center justify-center mb-3"><i class="ri-shield-check-line"></i></div>
-                                <h3 class="text-lg font-bold text-primary-dark">Impeccable Safety Standards</h3>
-                                <p class="mt-2 text-sm text-text-secondary">Your safety is paramount. As a fully licensed and insured executive car service provider, we offer the peace of mind you deserve.</p>
-                            </article>
-                            <article class="rounded-2xl border border-border bg-white p-5 shadow-sm">
-                                <div class="w-11 h-11 rounded-xl bg-accent/15 text-accent flex items-center justify-center mb-3"><i class="ri-roadster-line"></i></div>
-                                <h3 class="text-lg font-bold text-primary-dark">Luxurious Fleet Choices</h3>
-                                <p class="mt-2 text-sm text-text-secondary">Indulge in the comfort of our selection of five premium cars and two spacious 14-seater vans, ensuring a perfect fit for both individual travelers and larger groups.</p>
-                            </article>
-                            <article class="rounded-2xl border border-border bg-white p-5 shadow-sm">
-                                <div class="w-11 h-11 rounded-xl bg-accent/15 text-accent flex items-center justify-center mb-3"><i class="ri-user-star-line"></i></div>
-                                <h3 class="text-lg font-bold text-primary-dark">Professionalism Personified</h3>
-                                <p class="mt-2 text-sm text-text-secondary">Our uniformed drivers are not just drivers; they're courteous professionals, rigorously vetted for their expertise and commitment to service excellence.</p>
-                            </article>
+            <div class="text-center mb-16">
+                <span class="inline-block px-4 py-2 rounded-full text-sm font-bold tracking-wide bg-white/70 text-accent border border-orange-200">Simple Booking Flow</span>
+                <h2 class="text-4xl md:text-5xl font-extrabold text-primary-dark mt-4 mb-4">How It Works</h2>
+                <p class="text-text-secondary text-lg max-w-2xl mx-auto">Follow the journey from service selection to confirmed transportation.</p>
+            </div>
+
+            <div class="journey-tree">
+                <div class="tree-trunk" aria-hidden="true"></div>
+                <div class="tree-grid">
+                    <article class="tree-step is-left">
+                        <div class="tree-connector" aria-hidden="true"></div>
+                        <div class="tree-node" aria-hidden="true"></div>
+                        <div class="tree-card">
+                            <span class="tree-label">Step 01</span>
+                            <div class="tree-icon"><i class="ri-search-line"></i></div>
+                            <h3>Choose Your Car</h3>
+                            <p>Browse options by budget, category, fuel and comfort to shortlist the perfect ride.</p>
                         </div>
-                    </div>
+                    </article>
+
+                    <article class="tree-step is-right">
+                        <div class="tree-connector" aria-hidden="true"></div>
+                        <div class="tree-node" aria-hidden="true"></div>
+                        <div class="tree-card">
+                            <span class="tree-label">Step 02</span>
+                            <div class="tree-icon"><i class="ri-calendar-check-line"></i></div>
+                            <h3>Book & Confirm</h3>
+                            <p>Pick date and pickup point, complete details and get instant confirmation.</p>
+                        </div>
+                    </article>
+
+                    <article class="tree-step is-left">
+                        <div class="tree-connector" aria-hidden="true"></div>
+                        <div class="tree-node" aria-hidden="true"></div>
+                        <div class="tree-card">
+                            <span class="tree-label">Step 03</span>
+                            <div class="tree-icon"><i class="ri-roadster-line"></i></div>
+                            <h3>Start Your Journey</h3>
+                            <p>Meet your driver and travel confidently with full trip support.</p>
+                        </div>
+                    </article>
                 </div>
             </div>
         </div>
@@ -951,7 +1041,7 @@
                                 </div>
                                 <iframe
                                     title="Luxury Fleet Services location map"
-                                    src="https://www.google.com/maps?q=New+Delhi+India&output=embed"
+                                    src="https://www.google.com/maps?q=5549+Bay+Lagoo+Cir,+Orlando+FL+32819&output=embed"
                                     loading="lazy"
                                     referrerpolicy="no-referrer-when-downgrade"
                                     class="w-full h-64 border-0">
@@ -966,9 +1056,6 @@
                                     </a>
                                     <a href="#" aria-label="Instagram" class="w-8 h-8 rounded-full border border-white/30 text-slate-100 hover:bg-accent hover:border-accent hover:text-white flex items-center justify-center transition">
                                         <i class="ri-instagram-line text-xs"></i>
-                                    </a>
-                                    <a href="#" aria-label="X" class="w-8 h-8 rounded-full border border-white/30 text-slate-100 hover:bg-accent hover:border-accent hover:text-white flex items-center justify-center transition">
-                                        <i class="ri-twitter-x-line text-xs"></i>
                                     </a>
                                     <a href="#" aria-label="YouTube" class="w-8 h-8 rounded-full border border-white/30 text-slate-100 hover:bg-accent hover:border-accent hover:text-white flex items-center justify-center transition">
                                         <i class="ri-youtube-fill text-xs"></i>
@@ -1084,8 +1171,98 @@
             </div>
         </div>
     </section>
+        <section class="reviews-marquee-section py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-8">
+                <span class="reviews-kicker" aria-label="Google"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google"></span>
+                <h2 class="reviews-title mt-3">What Our Clients Say</h2>
+                <p class="reviews-subtitle mt-2">Verified-style sample testimonials in a live review feed layout.</p>
+            </div>
 
-        <section class="cta-pro-section">
+            <div class="reviews-rail" role="region" aria-label="Client reviews">
+                <div class="reviews-rail-track">
+                    <div class="reviews-track-set">
+                        <article class="review-card">
+                            <div class="review-head">
+                                <span class="review-avatar review-avatar-img"><img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Ethan Brooks"></span>
+                                <div><h3>Ethan Brooks</h3></div>
+                                <span class="review-google"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google"></span>
+                            </div>
+                            <p class="review-stars" aria-label="5 stars"><span>?????</span><small>5.0</small></p>
+                            <p class="review-text">Pickup exactly on time, clean vehicle, and very polite driver. Our Disney transfer felt safe and stress-free throughout the route.</p>
+                        </article>
+                        <article class="review-card">
+                            <div class="review-head">
+                                <span class="review-avatar">OC</span>
+                                <div><h3>Olivia Carter</h3></div>
+                                <span class="review-google"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google"></span>
+                            </div>
+                            <p class="review-stars" aria-label="4.5 stars"><span>?????</span><small>4.5</small></p>
+                            <p class="review-text">Booking process was quick and communication stayed clear from confirmation to drop. Driver handled airport traffic professionally and calmly.</p>
+                        </article>
+                        <article class="review-card">
+                            <div class="review-head">
+                                <span class="review-avatar review-avatar-img"><img src="https://randomuser.me/api/portraits/men/51.jpg" alt="Mason Reed"></span>
+                                <div><h3>Mason Reed</h3></div>
+                                <span class="review-google"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google"></span>
+                            </div>
+                            <p class="review-stars" aria-label="4 stars"><span>?????</span><small>4.0</small></p>
+                            <p class="review-text">Corporate ride was well managed and on schedule. Car condition was good, and support team responded quickly to small timing changes.</p>
+                        </article>
+                        <article class="review-card">
+                            <div class="review-head">
+                                <span class="review-avatar review-avatar-img"><img src="https://randomuser.me/api/portraits/women/28.jpg" alt="Ava Thompson"></span>
+                                <div><h3>Ava Thompson</h3></div>
+                                <span class="review-google"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google"></span>
+                            </div>
+                            <p class="review-stars" aria-label="5 stars"><span>?????</span><small>5.0</small></p>
+                            <p class="review-text">Universal transfer was smooth with no waiting. Chauffeur was courteous, assisted with bags, and ensured our family reached early.</p>
+                        </article>
+                        <article class="review-card">
+                            <div class="review-head">
+                                <span class="review-avatar">LP</span>
+                                <div><h3>Liam Parker</h3></div>
+                                <span class="review-google"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google"></span>
+                            </div>
+                            <p class="review-stars" aria-label="4.5 stars"><span>?????</span><small>4.5</small></p>
+                            <p class="review-text">Great vehicle quality and friendly dispatch support. Slight route delay due to traffic, but service quality remained solid end-to-end.</p>
+                        </article>
+                        <article class="review-card">
+                            <div class="review-head">
+                                <span class="review-avatar review-avatar-img"><img src="https://randomuser.me/api/portraits/women/19.jpg" alt="Sophia Bennett"></span>
+                                <div><h3>Sophia Bennett</h3></div>
+                                <span class="review-google"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google"></span>
+                            </div>
+                            <p class="review-stars" aria-label="5 stars"><span>?????</span><small>5.0</small></p>
+                            <p class="review-text">Used the service twice in one week and both rides were consistent. Pricing was transparent and there were no hidden surprises.</p>
+                        </article>
+                        <article class="review-card">
+                            <div class="review-head">
+                                <span class="review-avatar">NC</span>
+                                <div><h3>Noah Collins</h3></div>
+                                <span class="review-google"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google"></span>
+                            </div>
+                            <p class="review-stars" aria-label="4 stars"><span>?????</span><small>4.0</small></p>
+                            <p class="review-text">Cruise port drop was reliable and luggage handling was efficient. Timing was accurate and driver shared useful route updates.</p>
+                        </article>
+                    </div>
+                    <div class="reviews-track-set" aria-hidden="true">
+                        <article class="review-card">
+                            <div class="review-head"><span class="review-avatar review-avatar-img"><img src="https://randomuser.me/api/portraits/men/32.jpg" alt=""></span><div><h3>Ethan Brooks</h3></div><span class="review-google"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt=""></span></div>
+                            <p class="review-stars"><span>?????</span><small>5.0</small></p><p class="review-text">Pickup exactly on time, clean vehicle, and very polite driver. Our Disney transfer felt safe and stress-free throughout the route.</p>
+                        </article>
+                        <article class="review-card"><div class="review-head"><span class="review-avatar">OC</span><div><h3>Olivia Carter</h3></div><span class="review-google"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt=""></span></div><p class="review-stars"><span>?????</span><small>4.5</small></p><p class="review-text">Booking process was quick and communication stayed clear from confirmation to drop. Driver handled airport traffic professionally and calmly.</p></article>
+                        <article class="review-card"><div class="review-head"><span class="review-avatar review-avatar-img"><img src="https://randomuser.me/api/portraits/men/51.jpg" alt=""></span><div><h3>Mason Reed</h3></div><span class="review-google"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt=""></span></div><p class="review-stars"><span>?????</span><small>4.0</small></p><p class="review-text">Corporate ride was well managed and on schedule. Car condition was good, and support team responded quickly to small timing changes.</p></article>
+                        <article class="review-card"><div class="review-head"><span class="review-avatar review-avatar-img"><img src="https://randomuser.me/api/portraits/women/28.jpg" alt=""></span><div><h3>Ava Thompson</h3></div><span class="review-google"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt=""></span></div><p class="review-stars"><span>?????</span><small>5.0</small></p><p class="review-text">Universal transfer was smooth with no waiting. Chauffeur was courteous, assisted with bags, and ensured our family reached early.</p></article>
+                        <article class="review-card"><div class="review-head"><span class="review-avatar">LP</span><div><h3>Liam Parker</h3></div><span class="review-google"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt=""></span></div><p class="review-stars"><span>?????</span><small>4.5</small></p><p class="review-text">Great vehicle quality and friendly dispatch support. Slight route delay due to traffic, but service quality remained solid end-to-end.</p></article>
+                        <article class="review-card"><div class="review-head"><span class="review-avatar review-avatar-img"><img src="https://randomuser.me/api/portraits/women/19.jpg" alt=""></span><div><h3>Sophia Bennett</h3></div><span class="review-google"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt=""></span></div><p class="review-stars"><span>?????</span><small>5.0</small></p><p class="review-text">Used the service twice in one week and both rides were consistent. Pricing was transparent and there were no hidden surprises.</p></article>
+                        <article class="review-card"><div class="review-head"><span class="review-avatar">NC</span><div><h3>Noah Collins</h3></div><span class="review-google"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt=""></span></div><p class="review-stars"><span>?????</span><small>4.0</small></p><p class="review-text">Cruise port drop was reliable and luggage handling was efficient. Timing was accurate and driver shared useful route updates.</p></article>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<section class="cta-pro-section">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="cta-pro-card">
                 <div class="cta-pro-orb cta-pro-orb-left" aria-hidden="true"></div>
@@ -1145,7 +1322,6 @@
                     <div class="flex items-center gap-3 mt-5">
                         <a href="#" aria-label="Facebook" class="w-9 h-9 rounded-full border border-white/20 text-slate-200 hover:bg-accent hover:border-accent hover:text-white flex items-center justify-center transition"><i class="ri-facebook-fill text-sm"></i></a>
                         <a href="#" aria-label="Instagram" class="w-9 h-9 rounded-full border border-white/20 text-slate-200 hover:bg-accent hover:border-accent hover:text-white flex items-center justify-center transition"><i class="ri-instagram-line text-sm"></i></a>
-                        <a href="#" aria-label="X" class="w-9 h-9 rounded-full border border-white/20 text-slate-200 hover:bg-accent hover:border-accent hover:text-white flex items-center justify-center transition"><i class="ri-twitter-x-line text-sm"></i></a>
                         <a href="#" aria-label="YouTube" class="w-9 h-9 rounded-full border border-white/20 text-slate-200 hover:bg-accent hover:border-accent hover:text-white flex items-center justify-center transition"><i class="ri-youtube-fill text-sm"></i></a>
                     </div>
                 </div>
@@ -1154,7 +1330,7 @@
                     <h4 class="text-white font-bold text-lg mb-4">Quick Links</h4>
                     <ul class="space-y-2 text-sm">
                         <li><a href="index.html" class="text-slate-300 hover:text-accent transition">Home</a></li>
-                        <li><a href="car-listing.html" class="text-slate-300 hover:text-accent transition">Fleet</a></li>
+                        <li><a href="car-listing.html" class="text-slate-300 hover:text-accent transition">Cars</a></li>
                         <li><a href="service.html" class="text-slate-300 hover:text-accent transition">Services</a></li>
                         <li><a href="about.html" class="text-slate-300 hover:text-accent transition">About Us</a></li>
                         <li><a href="contact.html" class="text-slate-300 hover:text-accent transition">Contact</a></li>
@@ -1179,10 +1355,6 @@
                         <p><i class="ri-mail-line text-accent mr-2"></i><a href="mailto:support@luxuryfleetservices.com" class="hover:text-accent transition">support@luxuryfleetservices.com</a></p>
                         <p><i class="ri-map-pin-line text-accent mr-2"></i>5549 Bay Lagoo Cir, Orlando FL 32819</p>
                     </div>
-                    <form class="footer-newsletter-form flex gap-2" action="#" method="post">
-                        <input type="email" required placeholder="Your email" class="w-full px-3 py-2 rounded-lg bg-white/10 border border-white/20 text-white placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-accent">
-                        <button type="submit" class="px-4 py-2 rounded-lg bg-accent text-white font-semibold hover:bg-orange-500 transition">Join</button>
-                    </form>
                 </div>
             </div>
 
@@ -1310,4 +1482,11 @@
     </script>
     <script src="js/footer.js"></script></body>
 </html>
+
+
+
+
+
+
+
 

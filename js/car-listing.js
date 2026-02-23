@@ -276,6 +276,20 @@ function getSeatCount(car) {
     return seatValue || 'N/A';
 }
 
+function getPassengerCount(car) {
+    if (car && car.passengers) return String(car.passengers);
+    return getSeatCount(car);
+}
+
+function getCarBrand(car) {
+    const specBrand = getSpecValue(car.specs, ['Brand', 'Make']);
+    if (car && car.brand) return String(car.brand);
+    if (specBrand) return specBrand;
+
+    const name = String((car && car.name) || '').trim();
+    return name ? name.split(/\s+/)[0] : 'N/A';
+}
+
 function getLuggageLabel(car) {
     const bootSpace = getSpecValue(car.specs, ['Boot Space']);
     if (bootSpace) {
@@ -636,10 +650,12 @@ function loadCars() {
                     <p>${car.description}</p>
                 </div>
                 <div class="listing-car-specs">
+                    <span><i class="ri-price-tag-3-line"></i>${getCarBrand(car)} Brand</span>
+                    <span><i class="ri-group-line"></i>${getPassengerCount(car)} Passengers</span>
                     <span><i class="ri-user-3-line"></i>${getSeatCount(car)} Seats</span>
-                    <span><i class="ri-settings-3-line"></i>${car.transmission}</span>
                     <span><i class="ri-gas-station-line"></i>${car.fuel}</span>
                     <span><i class="ri-suitcase-3-line"></i>${getLuggageLabel(car)}</span>
+                    <span><i class="${car.available ? 'ri-checkbox-circle-fill' : 'ri-close-circle-fill'}"></i>${car.available ? 'Available' : 'Unavailable'}</span>
                 </div>
                 <div class="listing-car-footer">
                     <div class="listing-price-block">

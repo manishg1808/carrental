@@ -221,3 +221,103 @@ flowchart TD
 - Accessibility pass (ARIA labels, focus states, keyboard paths).
 - Image optimization + lazy loading audit.
 - Automated tests for listing filters/pagination/admin storage flows.
+
+## 11. Latest UI Iteration Log (Current Workspace)
+
+This section captures the latest round of UI work completed after the initial redesign.
+
+### A) Home Page (`index.html`)
+- Refined **Most Popular Vehicles** and card hover content hierarchy.
+- Improved card text sizing and placement (price above CTA where required).
+- Fixed edge-card hover visibility issues (first/last card clipping on desktop/mobile).
+- Updated vehicle/section imagery in multiple home blocks.
+- Added and refined **What Our Clients Say** marquee-based Google-style review rail:
+  - professional card styling
+  - Google icon usage
+  - mixed avatar/no-avatar pattern
+  - mixed ratings (4.0 / 4.5 / 5.0)
+  - continuous infinite feel
+  - reduced to **7 review cards** (duplicated set for seamless loop)
+- Updated map embed in premium enquiry area to:
+  - `5549 Bay Lagoo Cir, Orlando FL 32819`
+- Updated hero heading to gradient:
+  - `Orlando Luxury Fleet Services`
+- Added count-based highlight set in hero:
+  - `500+ Daily Trips`
+  - `50+ Airport & Cruise Routes`
+  - `24/7 Live Support`
+  - `15+ Years Experience`
+- Synced **Most Requested - Top Orlando Transportation Routes** prices with service rate table:
+  - Airport to Disney: `$185` round trip
+  - Airport to Universal: `$185` round trip
+  - Airport to Cruise Port: `$290` round trip
+- `View All Routes & Pricing` links to:
+  - `service.html#route-rate-packages`
+
+### B) Services Page (`service.html`)
+- Reworked **Explore Service Details** cards (images, CTA behavior, spacing).
+- Added detailed modal flows for:
+  - Corporate Transportation
+  - Port Canaveral Cruise Transportation
+  - Universal Orlando Transportation
+  - Walt Disney World Transportation
+- Added professional **Orlando Transportation Inclusions** section above Why Choose Us.
+- Added **Rates** option in services dropdown and linked to route rates section.
+- Built/expanded **Route Rate Packages** section with multi-pickup structured tables:
+  - Orlando International Airport
+  - Universal Studios
+  - Sea World
+  - Sanford Airport (SFB)
+  - Port Canaveral
+  - Orlando (Tampa/Miami routes)
+- Added per-row action controls in rates (Book/Call), plus responsive treatment.
+- Improved table readability (larger price text where requested).
+- Fixed mobile layout issues for action buttons and overflow.
+
+### C) Navbar / Cross-Page UX (`js/navbar.js`)
+- Improved dropdown interactions and hover-image preview behavior.
+- Added `Rates` hover cover preview support (`data-cover` pattern).
+- Fixed anchor routing so cross-page hash links land on intended sections.
+- Updated enquiry behavior:
+  - Navbar `Enquiry Form` / `Enquiry` buttons now open popup modal instead of navigating to contact page.
+
+### D) Footer / Shared Components (`js/footer.js`, public pages)
+- Normalized social icon styling to original palette behavior.
+- Removed `X` social icon across pages/components.
+- Replaced `Fleet` label with `Cars` in footer/service references where requested.
+- Removed newsletter/join input block from footer contact area where applicable.
+
+### E) Blog Page (`blog.html`)
+- Full redesign with:
+  - full website navbar
+  - About-style banner hero
+  - image-led professional blog cards
+  - `Learn More` popup modal content flow
+- Banner image set to:
+  - `images/5.jpg`
+- Removed extra section heading `Professional Blog Updates` per latest request.
+
+### F) Media / Assets
+- Updated service and home section images per provided local paths.
+- Added/used:
+  - `images/dollr.jpg` (rates dropdown cover)
+  - additional uploaded image variants in current workspace
+
+### G) Current changed files snapshot (UI phase)
+- `index.html`
+- `service.html`
+- `blog.html`
+- `about.html`
+- `contact.html`
+- `car-listing.html`
+- `car-detail.html`
+- `service-detail.html`
+- `images.html`
+- `styles.css`
+- `js/navbar.js`
+- `js/footer.js`
+- `js/home.js`
+- `js/service-focus.js`
+- `js/car-listing.js`
+- `js/corporate-modal.js` (new)
+- `js/route-rate-booking.js` (new)
